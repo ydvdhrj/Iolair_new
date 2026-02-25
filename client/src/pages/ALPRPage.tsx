@@ -9,15 +9,15 @@ export default function ALPRPage() {
       <main className="container mx-auto px-4 md:px-6 py-24">
         <div className="max-w-6xl mx-auto">
           {/* Hero Card */}
-          <div className="bg-gradient-to-br from-[#332D41] via-[#2A2535] to-[#1F1B2E] rounded-3xl p-8 md:p-12 lg:p-16 mb-16 shadow-2xl border border-white/5">
+          <div className="bg-gradient-to-br from-card to-muted rounded-3xl p-8 md:p-12 lg:p-16 mb-16 shadow-2xl border border-border">
             <div className="text-center space-y-8">
               {/* Main Heading */}
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground leading-tight">
                 An Intelligent ALPR Platform for Faster, Smarter Enforcement
               </h2>
               
               {/* Introductory Text */}
-              <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
                 In an era of growing urban complexity and increasing safety expectations, our automatic license plate recognition (ALPR) platform delivers:
               </p>
               
@@ -28,17 +28,17 @@ export default function ALPRPage() {
                   <div className="text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-primary mb-2">
                     95%
                   </div>
-                  <div className="text-base md:text-lg text-white/90 font-medium">
+                  <div className="text-base md:text-lg text-muted-foreground font-medium">
                     Image accuracy
                   </div>
                 </div>
                 
                 {/* Geo Location Accuracy Metric */}
                 <div className="flex flex-col items-center">
-                  <div className="text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-[#2ECC71] mb-2">
+                  <div className="text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-primary mb-2">
                     100%
                   </div>
-                  <div className="text-base md:text-lg text-white/90 font-medium">
+                  <div className="text-base md:text-lg text-muted-foreground font-medium">
                     Geo location accuracy
                   </div>
                 </div>

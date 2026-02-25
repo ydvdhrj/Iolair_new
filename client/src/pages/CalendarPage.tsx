@@ -165,13 +165,13 @@ export default function CalendarPage() {
       <main className="relative bg-background min-h-[calc(100vh-64px)]">
         {/* Background gradient */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-[#22c55e]/5" />
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-success/5" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 md:px-6 pt-20 pb-16">
           {/* Hero Section */}
           <div className="text-center mb-8">
-            <h1 className="text-3xl md:text-4xl font-heading font-bold mb-3 bg-gradient-to-r from-foreground via-primary to-[#22c55e] bg-clip-text text-transparent">
+            <h1 className="text-3xl md:text-4xl font-heading font-bold mb-3 bg-gradient-to-r from-foreground via-primary to-success bg-clip-text text-transparent">
               Book an Appointment
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -232,9 +232,9 @@ export default function CalendarPage() {
                           !isClickable
                             ? "text-muted-foreground/30 cursor-not-allowed"
                             : dayInfo.isToday
-                            ? "bg-[#22c55e]/15 border-2 border-[#22c55e]/50 text-[#15803d] font-semibold cursor-pointer hover:bg-[#22c55e]/25"
+                            ? "bg-success/15 border-2 border-success/50 text-success font-semibold cursor-pointer hover:bg-success/25"
                             : isSelected
-                            ? "bg-primary text-white shadow-lg shadow-primary/40 cursor-pointer scale-105"
+                            ? "bg-primary text-primary-foreground shadow-lg shadow-primary/40 cursor-pointer scale-105"
                             : !dayInfo.isCurrentMonth && isNextMonthFuture
                             ? "text-foreground/60 hover:bg-primary/10 hover:text-primary cursor-pointer hover:scale-105"
                             : "text-foreground hover:bg-primary/10 hover:text-primary cursor-pointer hover:scale-105"
@@ -264,7 +264,7 @@ export default function CalendarPage() {
                           py-2.5 px-3 rounded-xl text-sm font-medium transition-all text-center
                           ${
                             isSelected
-                              ? "bg-[#22c55e] text-white shadow-lg shadow-[#22c55e]/40 scale-105"
+                              ? "bg-success text-success-foreground shadow-lg shadow-success/40 scale-105"
                               : "bg-background border border-border text-foreground hover:bg-primary/10 hover:border-primary/40 hover:text-primary hover:scale-105"
                           }
                         `}
@@ -291,8 +291,8 @@ export default function CalendarPage() {
                   </div>
 
                   {/* Selected Date/Time Display */}
-                  <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-[#22c55e]/10 border border-primary/20 rounded-xl p-4 mb-6 flex items-center gap-4 shadow-sm">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white flex-shrink-0 shadow-md">
+                  <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-success/10 border border-primary/20 rounded-xl p-4 mb-6 flex items-center gap-4 shadow-sm">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-primary-foreground flex-shrink-0 shadow-md">
                       <Calendar className="h-6 w-6" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -417,7 +417,7 @@ export default function CalendarPage() {
                     <Button
                       type="submit"
                       disabled={!isFormValid()}
-                      className="w-full bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl h-12 text-base shadow-lg shadow-primary/30 disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-[1.02] active:scale-[0.98]"
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl h-12 text-base shadow-lg shadow-primary/30 disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-[1.02] active:scale-[0.98]"
                     >
                       Confirm Appointment
                     </Button>
@@ -425,8 +425,8 @@ export default function CalendarPage() {
                 </>
               ) : (
                 <div className="text-center py-12">
-                  <div className="w-20 h-20 rounded-full bg-[#22c55e] flex items-center justify-center mx-auto mb-6 animate-in zoom-in duration-500">
-                    <Check className="h-10 w-10 text-white" />
+                  <div className="w-20 h-20 rounded-full bg-success flex items-center justify-center mx-auto mb-6 animate-in zoom-in duration-500">
+                    <Check className="h-10 w-10 text-success-foreground" />
                   </div>
                   <h3 className="text-2xl font-heading font-bold text-foreground mb-2">
                     Appointment Confirmed!
