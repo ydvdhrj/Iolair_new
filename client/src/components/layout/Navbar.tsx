@@ -33,7 +33,6 @@ export function Navbar() {
     { 
       name: "INDUSTRY SOLUTIONS", 
       options: [
-        { label: "Industry Solutions", path: "/industry-solutions" },
         { label: "Retail", path: "/retail" },
         { label: "Safety Enforcement", path: "/safety-enforcement" }
       ]
