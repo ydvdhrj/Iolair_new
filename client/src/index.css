@@ -128,9 +128,9 @@
     animation: logo-scroll 30s linear infinite;
   }
 
-  /* Subtle section backgrounds for rhythm */
+  /* Section background: white in light mode for consistent page background */
   .section-soft {
-    background-color: hsl(265 89% 98%);
+    background-color: hsl(0 0% 100%);
   }
   .dark .section-soft {
     background-color: hsl(222 22% 12%);
