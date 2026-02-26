@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Menu, X, ChevronDown, ExternalLink, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 import {
   HoverCard,
@@ -108,7 +107,6 @@ export function Navbar() {
           </div>
           
           <div className="flex items-center gap-2">
-            <ThemeToggle className="h-9 w-9" />
             <Link href="/calendar">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-5 flex items-center gap-2 h-9 text-sm">
                 Contact Us <ExternalLink className="h-3.5 w-3.5" />
@@ -143,10 +141,6 @@ export function Navbar() {
             </div>
           ))}
           <div className="flex flex-col gap-2 pt-2">
-            <div className="flex items-center justify-between gap-2">
-              <span className="text-sm font-medium text-muted-foreground">Theme</span>
-              <ThemeToggle className="h-10 w-10" />
-            </div>
             <Link href="/calendar">
               <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full h-10 text-sm">
                 Contact Us

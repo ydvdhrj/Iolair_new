@@ -17,12 +17,6 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { VisionAIFeatureTracks } from "@/components/VisionAIFeatureTracks";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-} from "@/components/ui/carousel";
 
 import heroPageImg from "@assets/HeroPage.png";
 import retailHeroImg from "@assets/retail-hero.png";
@@ -66,21 +60,21 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans selection:bg-primary/30">
       <Navbar />
 
-      {/* 1. HERO SECTION */}
-      <section className="relative pt-24 pb-20 md:pt-36 md:pb-32 overflow-hidden hero-pattern">
+      {/* 1. HERO SECTION - fills first viewport */}
+      <section className="relative min-h-screen flex flex-col justify-center pt-24 pb-20 md:pt-28 md:pb-24 overflow-hidden hero-pattern">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/15 rounded-full blur-[140px] -z-10 opacity-60" />
         <div className="absolute top-1/4 right-0 w-[500px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10 opacity-40" />
-        <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-0">
+        <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-0 flex-1">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             className="z-10"
           >
-            <h1 className="text-5xl md:text-7xl font-heading font-bold leading-[1.1] mb-6 tracking-tight text-foreground">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.1] mb-6 tracking-tight text-foreground">
               Vision AI <span className="text-gradient">Platform</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
               Powering Safety Enforcement
               <br />
               and
@@ -91,9 +85,9 @@ export default function Home() {
               <Link href="/calendar">
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full h-12 px-8 text-base shadow-lg shadow-primary/20"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full h-14 px-10 text-lg shadow-lg shadow-primary/20"
                 >
-                  Get a demo <ArrowRight className="ml-2 h-4 w-4" />
+                  Get a demo <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>
@@ -102,7 +96,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative lg:h-[500px]"
+            className="relative h-[320px] sm:h-[400px] lg:h-[70vh] lg:min-h-[420px]"
           >
             <div className="relative w-full h-full rounded-2xl overflow-hidden border border-border/60 shadow-2xl shadow-primary/10">
               <img
@@ -117,7 +111,7 @@ export default function Home() {
       </section>
 
       {/* 2. RETAIL CARD */}
-      <section className="py-20 md:py-28 section-soft border-b border-border/50">
+      <section className="py-20 md:py-28 section-soft">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -159,7 +153,7 @@ export default function Home() {
       </section>
 
       {/* SAFETY ENFORCEMENT CARD */}
-      <section className="py-20 md:py-28 bg-background border-b border-border/50">
+      <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -200,9 +194,9 @@ export default function Home() {
       </section>
 
       {/* 5. FUTURE OF VISION AI + LOGO SCROLLER */}
-      <section className="py-20 md:py-28 section-soft border-b border-border/50">
+      <section className="py-20 md:py-28 section-soft">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mb-12">
+          <div className="max-w-4xl mx-auto mb-12 text-center">
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4 leading-tight">
               One Vision AI Partner Building Real-Time Trust and Engagement for{" "}
               <span className="text-primary">Last Mile Advertising</span>{" "}
@@ -211,9 +205,9 @@ export default function Home() {
             <p className="text-lg text-muted-foreground mb-8">
               Our advanced AI delivers accuracy where it matters most
             </p>
-            <div className="flex flex-wrap gap-12 md:gap-16 mb-8">
-              <div className="flex items-start gap-3">
-                <span className="text-primary mt-1">↗</span>
+            <div className="flex flex-wrap justify-center gap-16 md:gap-24 lg:gap-32 mb-8">
+              <div className="flex items-center gap-3">
+                <span className="text-primary">↗</span>
                 <div>
                   <div className="text-4xl md:text-5xl font-heading font-bold text-primary">
                     95%
@@ -223,8 +217,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <span className="text-primary mt-1">↗</span>
+              <div className="flex items-center gap-3">
+                <span className="text-primary">↗</span>
                 <div>
                   <div className="text-4xl md:text-5xl font-heading font-bold text-primary">
                     100%
@@ -235,11 +229,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Link href="/calendar">
-              <a className="link-underline inline-flex items-center gap-1 text-primary font-semibold">
-                Request a demo <span className="ml-1">-&gt;</span>
-              </a>
-            </Link>
+            <div className="flex justify-center">
+              <Link href="/calendar">
+                <a className="link-underline inline-flex items-center gap-1 text-primary font-semibold">
+                  Request a demo <span className="ml-1">-&gt;</span>
+                </a>
+              </Link>
+            </div>
           </div>
           {/* Scrollers run full width; card sits centered on top */}
           <div className="relative min-h-[320px] md:min-h-[360px] flex items-center justify-center py-12 md:py-16">
@@ -270,53 +266,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. SEE THE RESULTS - Carousel with highway image */}
+      {/* 6. SEE THE RESULTS - Single card with highway image */}
       <section className="relative py-20 md:py-28 bg-background overflow-hidden">
         <div className="relative w-full max-w-6xl mx-auto px-4 md:px-6">
-          <Carousel
-            opts={{ align: "start", loop: true }}
-            className="w-full relative"
-          >
-            <CarouselContent className="ml-0">
-              <CarouselItem className="pl-0">
-                <div className="relative min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden">
-                  <img
-                    src={seeResultsHighwayImg}
-                    alt="IOLAIRE.AI - See the results"
-                    className="absolute inset-0 w-full h-full object-cover object-top"
-                  />
-                  <div className="absolute left-0 top-0 bottom-0 flex items-center p-6 md:p-12 max-w-md z-10">
-                    <div className="rounded-2xl bg-foreground/80 backdrop-blur-sm p-6 md:p-8 border border-primary-foreground/10">
-                      <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-6 leading-tight">
-                        See the results
-                        <br />
-                        for yourself
-                      </h2>
-                      <Link href="/calendar">
-                        <Button
-                          size="lg"
-                          className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full w-full sm:w-auto"
-                        >
-                          Book an appointment{" "}
-                          <Calendar className="ml-2 h-4 w-4" />
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="pl-0">
-                <div className="min-h-[400px] md:min-h-[500px] rounded-2xl bg-muted/30 flex items-center justify-center">
-                  <p className="text-muted-foreground text-lg">
-                    More slides can be added here later.
-                  </p>
-                </div>
-              </CarouselItem>
-            </CarouselContent>
-            <div className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-10">
-              <CarouselNext className="relative static translate-y-0 h-12 w-12 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground border-0" />
+          <div className="relative min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden">
+            <img
+              src={seeResultsHighwayImg}
+              alt="IOLAIRE.AI - See the results"
+              className="absolute inset-0 w-full h-full object-cover object-top"
+            />
+            <div className="absolute left-0 top-0 bottom-0 flex items-center p-6 md:p-12 max-w-md z-10">
+              <div className="rounded-2xl bg-foreground/80 backdrop-blur-sm p-6 md:p-8 border border-primary-foreground/10">
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-6 leading-tight">
+                  See the results
+                  <br />
+                  for yourself
+                </h2>
+                <Link href="/calendar">
+                  <Button
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full w-full sm:w-auto"
+                  >
+                    Book an appointment{" "}
+                    <Calendar className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
             </div>
-          </Carousel>
+          </div>
         </div>
       </section>
 
@@ -369,15 +346,15 @@ export default function Home() {
                 <a className="group relative block overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 p-8 md:p-10 text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.99] transition-all duration-300">
                   {/* Subtle inner glow */}
                   <div className="pointer-events-none absolute -top-12 -right-12 h-24 w-24 rounded-full bg-primary-foreground/10 blur-2xl" />
-                  <div className="relative flex flex-col sm:flex-row sm:items-center gap-6">
+                  <div className="relative flex flex-col sm:flex-row items-center gap-6">
                     <div className="shrink-0 h-16 w-16 rounded-2xl bg-primary-foreground/20 backdrop-blur-sm flex items-center justify-center ring-2 ring-primary-foreground/10 group-hover:bg-primary-foreground/25 group-hover:ring-primary-foreground/20 transition-all duration-300">
                       <card.icon className="h-8 w-8 text-primary-foreground" />
                     </div>
-                    <div className="min-w-0 flex-1">
+                    <div className="min-w-0 flex-1 flex flex-col justify-center text-center sm:text-left">
                       <span className="font-heading font-bold text-lg md:text-xl leading-snug block group-hover:underline decoration-2 underline-offset-2">
                         {card.title}
                       </span>
-                      <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-primary-foreground/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="mt-2 inline-flex items-center justify-center sm:justify-start gap-1.5 text-sm font-medium text-primary-foreground/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         Learn more
                         <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                       </span>
