@@ -3,15 +3,15 @@ import { FileText, Cookie, Settings } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 md:px-6">
+    <footer className="bg-card border-t border-border font-sans">
+      <div className="container mx-auto px-4 md:px-6 font-sans">
         {/* Row 1: Products, Company, Logo + Social */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 py-12 md:py-16">
           <div>
-            <h4 className="text-primary font-bold uppercase tracking-wider text-sm mb-4">
+            <h4 className="text-primary font-bold uppercase tracking-wider text-sm mb-4 font-sans">
               Products
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm font-sans">
               <li>
                 <Link href="/hla">
                   <a className="text-primary hover:underline font-medium">
@@ -65,31 +65,30 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-primary font-bold uppercase tracking-wider text-sm mb-4">
+            <h4 className="text-primary font-bold uppercase tracking-wider text-sm mb-4 font-sans">
               Company
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm font-sans">
               <li>
                 <Link href="/about-us">
-                  <a className="text-primary hover:underline">About Us</a>
+                  <a className="text-primary hover:underline font-medium">Company</a>
                 </Link>
               </li>
               <li>
                 <Link href="/careers">
-                  <a className="text-primary hover:underline">Careers</a>
+                  <a className="text-primary hover:underline font-medium">Careers</a>
                 </Link>
               </li>
             </ul>
           </div>
 
-          <div className="flex flex-col items-start md:items-end">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="flex flex-col items-start md:items-end font-sans">
+            <div className="flex items-center mb-4">
               <img
                 src="/logo.png"
                 alt="IOLAIRE.AI"
                 className="h-10 w-auto object-contain"
               />
-              <span className="text-primary font-bold text-lg">IOLAIRE.AI</span>
             </div>
             <div className="flex gap-2">
               <a
@@ -124,22 +123,22 @@ export function Footer() {
         </div>
 
         {/* Row 2: Office locations - purple bar */}
-        <div className="rounded-xl bg-primary py-4 px-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0 sm:divide-x sm:divide-white/30 divide-y sm:divide-y-0">
-          <span className="text-primary-foreground font-medium sm:pr-6">
+        <div className="rounded-xl bg-primary py-4 px-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0 sm:divide-x sm:divide-white/30 divide-y sm:divide-y-0 font-sans">
+          <span className="text-primary-foreground font-medium sm:pr-6 font-sans">
             🇺🇸 San Jose, California
           </span>
-          <span className="text-primary-foreground font-medium sm:px-6">
+          <span className="text-primary-foreground font-medium sm:px-6 font-sans">
             🇺🇸 Dallas, Texas
           </span>
-          <span className="text-primary-foreground font-medium sm:pl-6">
+          <span className="text-primary-foreground font-medium sm:pl-6 font-sans">
             🇮🇳 Bengaluru, India
           </span>
         </div>
 
         {/* Row 3: Copyright + legal links */}
-        <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
-          <p className="text-muted-foreground">© 2026 IOLAIRE.AI</p>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-primary">
+        <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-sans">
+          <p className="text-muted-foreground font-sans">© 2026 IOLAIRE.AI</p>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-primary font-sans">
             <a href="#" className="inline-flex items-center gap-1.5 hover:underline">
               <FileText className="h-4 w-4" />
               Terms of Service

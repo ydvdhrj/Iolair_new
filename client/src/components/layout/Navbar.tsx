@@ -25,8 +25,8 @@ export function Navbar() {
     { 
       name: "PRODUCTS", 
       options: [
-        { label: "ALPR Platform", path: "/alpr" },
-        { label: "AdTech Platform", path: "/hla" }
+        { label: "AdTech Platform", path: "/hla" },
+        { label: "ALPR Platform", path: "/alpr" }
       ]
     },
     { 
@@ -44,9 +44,9 @@ export function Navbar() {
       ]
     },
     { 
-      name: "ABOUT US", 
+      name: "COMPANY", 
       options: [
-        { label: "About Us", path: "/about-us" },
+        { label: "Company", path: "/about-us" },
         { label: "Get In Touch", path: "/get-in-touch" },
         { label: "Careers", path: "/careers" },
         { label: "Office Locations", path: "/office-locations" }

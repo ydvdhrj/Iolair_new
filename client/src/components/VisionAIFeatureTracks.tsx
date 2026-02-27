@@ -13,15 +13,12 @@ type VisionAIFeatureTracksProps = {
 
 function FeatureCard({ label, iconSrc }: { label: string; iconSrc: string }) {
   return (
-    <div className="flex shrink-0 items-center gap-4 rounded-2xl bg-card px-5 py-4 shadow-md border border-border/50">
+    <div className="flex shrink-0 w-[320px] h-[130px] rounded-2xl bg-card p-4 shadow-md border border-border/50 overflow-hidden flex items-center justify-center">
       <img
         src={iconSrc}
         alt={label}
-        className="h-12 w-12 object-contain"
+        className="max-w-full max-h-full w-auto h-auto object-contain"
       />
-      <span className="text-sm font-bold text-foreground whitespace-nowrap">
-        {label}
-      </span>
     </div>
   );
 }

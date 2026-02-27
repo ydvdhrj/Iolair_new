@@ -55,6 +55,15 @@ const VISION_AI_FEATURES = [
   { id: "edge-applications", label: "Edge Applications", iconSrc: iconEdgeApplications },
 ];
 
+const PLATFORM_CARD_COLORS = [
+  "bg-slate-700",
+  "bg-indigo-800",
+  "bg-teal-800",
+  "bg-amber-800",
+  "bg-rose-800",
+  "bg-violet-800",
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans selection:bg-primary/30">
@@ -75,11 +84,7 @@ export default function Home() {
               Vision AI <span className="text-gradient">Platform</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              Powering Safety Enforcement
-              <br />
-              and
-              <br />
-              Intelligent Retail Engagement at the Edge
+              Powering Intelligent <span className="text-primary font-semibold">Retail</span> Engagement and <span className="text-primary font-semibold">Safety Enforcement</span> at the Edge
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/calendar">
@@ -111,7 +116,7 @@ export default function Home() {
       </section>
 
       {/* 2. RETAIL CARD */}
-      <section className="py-20 md:py-28 section-soft">
+      <section className="py-14 md:py-20 section-soft">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -127,7 +132,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-4">
                 Retail
               </h2>
-              <p className="text-xl md:text-2xl font-medium italic text-foreground mb-6">
+              <p className="text-xl md:text-2xl font-medium text-foreground mb-6">
                 Real-Time Impact. Realized.
               </p>
               <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
@@ -153,7 +158,7 @@ export default function Home() {
       </section>
 
       {/* SAFETY ENFORCEMENT CARD */}
-      <section className="py-20 md:py-28 bg-background">
+      <section className="py-14 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -169,7 +174,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-4">
                 Safety Enforcement
               </h2>
-              <p className="text-xl md:text-2xl font-medium italic text-foreground mb-6">
+              <p className="text-xl md:text-2xl font-medium text-foreground mb-6">
                 Advancing the future of safety for every resident
               </p>
               <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
@@ -194,7 +199,7 @@ export default function Home() {
       </section>
 
       {/* 5. FUTURE OF VISION AI + LOGO SCROLLER */}
-      <section className="py-20 md:py-28 section-soft">
+      <section className="py-14 md:py-20 section-soft">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto mb-12 text-center">
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4 leading-tight">
@@ -267,7 +272,7 @@ export default function Home() {
       </section>
 
       {/* 6. SEE THE RESULTS - Single card with highway image */}
-      <section className="relative py-20 md:py-28 bg-background overflow-hidden">
+      <section className="relative py-14 md:py-20 bg-background overflow-hidden">
         <div className="relative w-full max-w-6xl mx-auto px-4 md:px-6">
           <div className="relative min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden">
             <img
@@ -298,7 +303,7 @@ export default function Home() {
       </section>
 
       {/* 7. EXPLORE OUR PLATFORM */}
-      <section className="py-20 md:py-28 section-soft">
+      <section className="py-14 md:py-20 section-soft">
         <div className="container mx-auto px-4 md:px-6">
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
@@ -341,14 +346,16 @@ export default function Home() {
                 href: "/alpr",
                 icon: ShieldCheck,
               },
-            ].map((card) => (
+            ].map((card, index) => {
+              const bgColor = PLATFORM_CARD_COLORS[index % PLATFORM_CARD_COLORS.length];
+              return (
               <Link key={card.title} href={card.href}>
-                <a className="group relative block overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 p-8 md:p-10 text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.99] transition-all duration-300">
+                <a className={`group relative block overflow-hidden rounded-3xl ${bgColor} p-8 md:p-10 text-white shadow-xl shadow-black/10 hover:shadow-xl hover:opacity-95 hover:scale-[1.02] active:scale-[0.99] transition-all duration-300`}>
                   {/* Subtle inner glow */}
                   <div className="pointer-events-none absolute -top-12 -right-12 h-24 w-24 rounded-full bg-primary-foreground/10 blur-2xl" />
                   <div className="relative flex flex-col sm:flex-row items-center gap-6">
-                    <div className="shrink-0 h-16 w-16 rounded-2xl bg-primary-foreground/20 backdrop-blur-sm flex items-center justify-center ring-2 ring-primary-foreground/10 group-hover:bg-primary-foreground/25 group-hover:ring-primary-foreground/20 transition-all duration-300">
-                      <card.icon className="h-8 w-8 text-primary-foreground" />
+                    <div className="shrink-0 h-20 w-20 rounded-2xl bg-primary-foreground/20 backdrop-blur-sm flex items-center justify-center ring-2 ring-primary-foreground/10 group-hover:bg-primary-foreground/25 group-hover:ring-primary-foreground/20 transition-all duration-300">
+                      <card.icon className="h-10 w-10 text-primary-foreground" />
                     </div>
                     <div className="min-w-0 flex-1 flex flex-col justify-center text-center sm:text-left">
                       <span className="font-heading font-bold text-lg md:text-xl leading-snug block group-hover:underline decoration-2 underline-offset-2">
@@ -362,7 +369,8 @@ export default function Home() {
                   </div>
                 </a>
               </Link>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
