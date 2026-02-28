@@ -1,7 +1,10 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import {
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
   Lock,
   ShoppingCart,
   LineChart,
@@ -55,14 +58,118 @@ const VISION_AI_FEATURES = [
   { id: "edge-applications", label: "Edge Applications", iconSrc: iconEdgeApplications },
 ];
 
+/* Explore Our Platform card colors - similar tones for 5 & 6 */
 const PLATFORM_CARD_COLORS = [
-  "bg-slate-700",
-  "bg-indigo-800",
-  "bg-teal-800",
-  "bg-amber-800",
-  "bg-rose-800",
-  "bg-violet-800",
+  "#feac00", /* 1 - Orange */
+  "#639b5c", /* 2 - Green */
+  "#e84826", /* 3 - Red-Orange */
+  "#78afdb", /* 4 - Blue */
+  "#e9c46a", /* 5 - Golden (similar to orange) */
+  "#2a9d8f", /* 6 - Teal (similar to green) */
 ];
+
+function RotatingPhrase({
+  phrases,
+  intervalMs = 3000,
+}: {
+  phrases: string[];
+  intervalMs?: number;
+}) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setIndex((i) => (i + 1) % phrases.length), intervalMs);
+    return () => clearInterval(id);
+  }, [phrases.length, intervalMs]);
+
+  return (
+    <span className="relative inline-block">
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={index}
+          initial={{ y: "100%", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: "-100%", opacity: 0 }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="inline-block"
+        >
+          {phrases[index]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
+
+function SeeTheResultsCarousel() {
+  const [index, setIndex] = useState(0);
+  const totalSlides = 2;
+
+  return (
+    <section className="relative py-14 md:py-20 bg-background overflow-hidden">
+      <div className="relative w-full max-w-6xl mx-auto px-4 md:px-6">
+        <div className="relative min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden">
+          {/* Slides container */}
+          <div
+            className="flex h-full transition-transform duration-300 ease-out"
+            style={{ transform: `translateX(-${index * 100}%)` }}
+          >
+            {/* Slide 1: highway image + card */}
+            <div className="min-w-full min-h-[400px] md:min-h-[500px] relative shrink-0">
+              <img
+                src={seeResultsHighwayImg}
+                alt="IOLAIRE.AI - See the results"
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
+              <div className="absolute left-0 top-0 bottom-0 flex items-center p-6 md:p-12 max-w-md z-10">
+                <div className="rounded-2xl bg-foreground/80 backdrop-blur-sm p-6 md:p-8 border border-primary-foreground/10">
+                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-6 leading-tight">
+                    See the results
+                    <br />
+                    for yourself
+                  </h2>
+                  <Link href="/calendar">
+                    <Button
+                      size="lg"
+                      className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full w-full sm:w-auto"
+                    >
+                      Book an appointment{" "}
+                      <Calendar className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {/* Slide 2: placeholder for content later */}
+            <div className="min-w-full min-h-[400px] md:min-h-[500px] shrink-0 bg-black" />
+          </div>
+
+          {/* Right arrow - only on first slide */}
+          {index === 0 && (
+            <button
+              type="button"
+              onClick={() => setIndex((i) => Math.min(i + 1, totalSlides - 1))}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-foreground/80 hover:bg-foreground text-primary-foreground flex items-center justify-center shadow-lg transition-colors"
+              aria-label="Next"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          )}
+          {/* Left arrow - only on last slide */}
+          {index === totalSlides - 1 && (
+            <button
+              type="button"
+              onClick={() => setIndex((i) => Math.max(i - 1, 0))}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-foreground/80 hover:bg-foreground text-primary-foreground flex items-center justify-center shadow-lg transition-colors"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   return (
@@ -202,10 +309,14 @@ export default function Home() {
       <section className="py-14 md:py-20 section-soft">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto mb-12 text-center">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4 leading-tight flex flex-wrap items-center justify-center gap-x-2">
               One Vision AI Partner Building Real-Time Trust and Engagement for{" "}
-              <span className="text-primary">Last Mile Advertising</span>{" "}
-              <span className="text-primary">Safer Neighborhoods</span>
+              <span className="inline-block min-h-[1.2em] overflow-hidden text-primary align-middle">
+                <RotatingPhrase
+                  phrases={["Last Mile Advertising", "Safer Neighborhoods"]}
+                  intervalMs={3000}
+                />
+              </span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               Our advanced AI delivers accuracy where it matters most
@@ -242,13 +353,13 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          {/* Scrollers run full width; card sits centered on top */}
-          <div className="relative min-h-[320px] md:min-h-[360px] flex items-center justify-center py-12 md:py-16">
-            <div className="absolute inset-x-0 top-14 md:top-20 bottom-0 z-0">
-              <VisionAIFeatureTracks features={VISION_AI_FEATURES} />
+          {/* Scrollers fill full width in background; card centered on top */}
+          <div className="relative min-h-[280px] md:min-h-[320px] flex items-center justify-center py-10 md:py-12">
+            <div className="absolute inset-0 z-0 overflow-hidden">
+              <VisionAIFeatureTracks features={VISION_AI_FEATURES} className="absolute inset-0 flex flex-col justify-center" />
             </div>
             <div className="relative z-10 w-full max-w-3xl px-4">
-              <div className="bg-background p-8 md:p-12 text-center">
+              <div className="bg-background/95 backdrop-blur-sm p-8 md:p-12 text-center rounded-2xl">
                 <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
                   Future of Vision AI is here
                 </h3>
@@ -271,36 +382,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. SEE THE RESULTS - Single card with highway image */}
-      <section className="relative py-14 md:py-20 bg-background overflow-hidden">
-        <div className="relative w-full max-w-6xl mx-auto px-4 md:px-6">
-          <div className="relative min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden">
-            <img
-              src={seeResultsHighwayImg}
-              alt="IOLAIRE.AI - See the results"
-              className="absolute inset-0 w-full h-full object-cover object-top"
-            />
-            <div className="absolute left-0 top-0 bottom-0 flex items-center p-6 md:p-12 max-w-md z-10">
-              <div className="rounded-2xl bg-foreground/80 backdrop-blur-sm p-6 md:p-8 border border-primary-foreground/10">
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-6 leading-tight">
-                  See the results
-                  <br />
-                  for yourself
-                </h2>
-                <Link href="/calendar">
-                  <Button
-                    size="lg"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full w-full sm:w-auto"
-                  >
-                    Book an appointment{" "}
-                    <Calendar className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 6. SEE THE RESULTS - Carousel: slide 1 = image, slide 2 = placeholder for content */}
+      <SeeTheResultsCarousel />
 
       {/* 7. EXPLORE OUR PLATFORM */}
       <section className="py-14 md:py-20 section-soft">
@@ -347,29 +430,25 @@ export default function Home() {
                 icon: ShieldCheck,
               },
             ].map((card, index) => {
-              const bgColor = PLATFORM_CARD_COLORS[index % PLATFORM_CARD_COLORS.length];
+              const IconComponent = card.icon;
+              const bgColor = PLATFORM_CARD_COLORS[index];
               return (
-              <Link key={card.title} href={card.href}>
-                <a className={`group relative block overflow-hidden rounded-3xl ${bgColor} p-8 md:p-10 text-white shadow-xl shadow-black/10 hover:shadow-xl hover:opacity-95 hover:scale-[1.02] active:scale-[0.99] transition-all duration-300`}>
-                  {/* Subtle inner glow */}
-                  <div className="pointer-events-none absolute -top-12 -right-12 h-24 w-24 rounded-full bg-primary-foreground/10 blur-2xl" />
-                  <div className="relative flex flex-col sm:flex-row items-center gap-6">
-                    <div className="shrink-0 h-20 w-20 rounded-2xl bg-primary-foreground/20 backdrop-blur-sm flex items-center justify-center ring-2 ring-primary-foreground/10 group-hover:bg-primary-foreground/25 group-hover:ring-primary-foreground/20 transition-all duration-300">
-                      <card.icon className="h-10 w-10 text-primary-foreground" />
-                    </div>
-                    <div className="min-w-0 flex-1 flex flex-col justify-center text-center sm:text-left">
-                      <span className="font-heading font-bold text-lg md:text-xl leading-snug block group-hover:underline decoration-2 underline-offset-2">
+                <Link key={card.title} href={card.href}>
+                  <a
+                    className="group relative flex flex-col justify-end rounded-2xl p-8 min-h-[200px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0"
+                    style={{ backgroundColor: bgColor }}
+                  >
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                      <span className="font-heading font-bold text-lg md:text-xl leading-snug">
                         {card.title}
                       </span>
-                      <span className="mt-2 inline-flex items-center justify-center sm:justify-start gap-1.5 text-sm font-medium text-primary-foreground/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        Learn more
-                        <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-                      </span>
+                      <div className="shrink-0 w-10 h-10 rounded-full bg-white flex items-center justify-center transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1">
+                        <IconComponent className="h-5 w-5" style={{ color: "#5e17eb" }} />
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </Link>
-            );
+                  </a>
+                </Link>
+              );
             })}
           </div>
         </div>

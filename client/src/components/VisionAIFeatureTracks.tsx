@@ -11,13 +11,20 @@ type VisionAIFeatureTracksProps = {
   className?: string;
 };
 
+const CARD_WIDTH = 160;
+const CARD_HEIGHT = 66;
+const CARD_GAP = 8; /* same gap between cards in every scroller */
+
 function FeatureCard({ label, iconSrc }: { label: string; iconSrc: string }) {
   return (
-    <div className="flex shrink-0 w-[320px] h-[130px] rounded-2xl bg-card p-4 shadow-md border border-border/50 overflow-hidden flex items-center justify-center">
+    <div
+      className="flex shrink-0 rounded-xl bg-card shadow-md border border-border/50 overflow-hidden"
+      style={{ width: CARD_WIDTH, height: CARD_HEIGHT }}
+    >
       <img
         src={iconSrc}
         alt={label}
-        className="max-w-full max-h-full w-auto h-auto object-contain"
+        className="w-full h-full object-cover object-center"
       />
     </div>
   );
@@ -34,18 +41,25 @@ function Track({
   duration?: number;
   className?: string;
 }) {
-  const duplicated = [...features, ...features, ...features];
+  /* Three identical blocks: -33.333% scrolls exactly one block; loop resets with same content so no gap */
+  const renderBlock = (blockKey: string) => (
+    <div className="flex shrink-0 py-0.5" style={{ gap: CARD_GAP }} key={blockKey}>
+      {features.map((f, i) => (
+        <FeatureCard key={`${f.id}-${i}`} label={f.label} iconSrc={f.iconSrc} />
+      ))}
+    </div>
+  );
   return (
-    <div className={cn("overflow-hidden", className)}>
+    <div className={cn("overflow-hidden w-full", className)}>
       <div
-        className="flex gap-6 py-2 w-max"
+        className="flex w-max py-1"
         style={{
           animation: `platform-track-${direction} ${duration}s linear infinite`,
         }}
       >
-        {duplicated.map((f, i) => (
-          <FeatureCard key={`${f.id}-${i}`} label={f.label} iconSrc={f.iconSrc} />
-        ))}
+        {renderBlock("1")}
+        {renderBlock("2")}
+        {renderBlock("3")}
       </div>
     </div>
   );
@@ -57,18 +71,14 @@ export function VisionAIFeatureTracks({
 }: VisionAIFeatureTracksProps) {
   if (features.length === 0) return null;
 
-  const chunk = Math.ceil(features.length / 3);
-  const track1 = features.slice(0, chunk);
-  const track2 = features.slice(chunk, chunk * 2);
-  const track3 = features.slice(chunk * 2);
-
+  /* Use full list per track so every row is wide enough to fill the viewport (no blank on right) */
   return (
-    <div className={cn(className)}>
-      {/* Desktop: 3 tracks - minimal gap between rows */}
-      <div className="hidden md:block space-y-0.5">
-        <Track features={track1.length ? track1 : features} direction="left" duration={55} />
-        <Track features={track2.length ? track2 : features} direction="right" duration={70} />
-        <Track features={track3.length ? track3 : features} direction="left" duration={65} />
+    <div className={cn("w-full flex flex-col items-center justify-center", className)}>
+      {/* Desktop: 3 tracks - same width so no track has blank space */}
+      <div className="hidden md:flex flex-col gap-1 justify-center">
+        <Track features={features} direction="left" duration={55} />
+        <Track features={features} direction="right" duration={70} />
+        <Track features={features} direction="left" duration={65} />
       </div>
       {/* Mobile: single track */}
       <div className="md:hidden">

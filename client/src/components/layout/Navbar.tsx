@@ -39,12 +39,12 @@ export function Navbar() {
     { 
       name: "RESOURCES", 
       options: [
-        { label: "ALPR Resources", path: "/alpr-resources" },
-        { label: "AdTech Resources", path: "/hla-resources" }
+        { label: "AdTech Resources", path: "/hla-resources" },
+        { label: "ALPR Resources", path: "/alpr-resources" }
       ]
     },
     { 
-      name: "COMPANY", 
+      name: "ABOUT US", 
       options: [
         { label: "Company", path: "/about-us" },
         { label: "Get In Touch", path: "/get-in-touch" },
