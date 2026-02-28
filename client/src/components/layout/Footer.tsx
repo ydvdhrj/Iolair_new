@@ -1,6 +1,45 @@
 import { Link } from "wouter";
 import { FileText, Cookie, Settings } from "lucide-react";
 
+/* Inline flag SVGs for cross-platform visibility (Windows often doesn't render flag emojis) */
+function FlagUS({ className }: { className?: string }) {
+  return (
+    <span className={className} role="img" aria-label="United States">
+      <svg viewBox="0 0 60 30" className="h-4 w-4 inline-block align-middle" preserveAspectRatio="xMidYMid slice">
+        <rect fill="#b22234" width="60" height="30" />
+        {[1, 3, 5, 7, 9, 11].map((i) => (
+          <rect key={i} fill="#fff" width="60" height="2.3" y={i * 2.5} />
+        ))}
+        <rect fill="#3c3b6e" width="24" height="13.85" />
+        <g fill="#fff">
+          {[1, 3, 5, 7, 9].map((row, i) =>
+            [2, 5, 8, 11, 14].map((col, j) => (
+              <circle key={`${i}-${j}`} r="0.9" cx={col} cy={1.5 + i * 2.2} />
+            ))
+          )}
+        </g>
+      </svg>
+    </span>
+  );
+}
+function FlagIN({ className }: { className?: string }) {
+  return (
+    <span className={className} role="img" aria-label="India">
+      <svg viewBox="0 0 60 40" className="h-4 w-4 inline-block align-middle" preserveAspectRatio="xMidYMid slice">
+        <path fill="#ff9933" d="M0,0 h60 v13.33 h-60 z" />
+        <path fill="#fff" d="M0,13.33 h60 v13.33 h-60 z" />
+        <path fill="#138808" d="M0,26.66 h60 v13.34 h-60 z" />
+        <circle fill="#000080" cx="30" cy="20" r="5" />
+        <g stroke="#fff" strokeWidth="0.6" fill="none" transform="translate(30,20)">
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i) => (
+            <line key={i} y1="-4.2" y2="-5" transform={`rotate(${i * 30})`} />
+          ))}
+        </g>
+      </svg>
+    </span>
+  );
+}
+
 export function Footer() {
   return (
     <footer className="bg-card border-t border-border font-sans">
@@ -124,14 +163,14 @@ export function Footer() {
 
         {/* Row 2: Office locations - purple bar */}
         <div className="rounded-xl bg-primary py-4 px-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0 sm:divide-x sm:divide-white/30 divide-y sm:divide-y-0 font-sans">
-          <span className="text-primary-foreground font-medium sm:pr-6 font-sans">
-            🇺🇸 San Jose, California
+          <span className="text-primary-foreground font-medium sm:pr-6 font-sans inline-flex items-center gap-2">
+            <FlagUS className="shrink-0" /> San Jose, California
           </span>
-          <span className="text-primary-foreground font-medium sm:px-6 font-sans">
-            🇺🇸 Dallas, Texas
+          <span className="text-primary-foreground font-medium sm:px-6 font-sans inline-flex items-center gap-2">
+            <FlagUS className="shrink-0" /> Dallas, Texas
           </span>
-          <span className="text-primary-foreground font-medium sm:pl-6 font-sans">
-            🇮🇳 Bengaluru, India
+          <span className="text-primary-foreground font-medium sm:pl-6 font-sans inline-flex items-center gap-2">
+            <FlagIN className="shrink-0" /> Bengaluru, India
           </span>
         </div>
 
