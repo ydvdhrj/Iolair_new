@@ -162,7 +162,7 @@ export function Footer() {
         </div>
 
         {/* Row 2: Office locations - purple bar */}
-        <div className="rounded-xl bg-primary py-4 px-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0 sm:divide-x sm:divide-white/30 divide-y sm:divide-y-0 font-sans">
+        <div className="rounded-xl bg-primary py-4 px-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0 sm:divide-x sm:divide-white/30 font-sans">
           <span className="text-primary-foreground font-medium sm:pr-6 font-sans inline-flex items-center gap-2">
             <FlagUS className="shrink-0" /> San Jose, California
           </span>

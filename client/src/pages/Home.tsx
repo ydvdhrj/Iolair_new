@@ -25,6 +25,8 @@ import heroPageImg from "@assets/HeroPage.png";
 import retailHeroImg from "@assets/retail-hero.png";
 import safetyTeamImg from "@assets/safety-enforcement-team.png";
 import seeResultsHighwayImg from "@assets/see-results-highway.png";
+import seeResultsBillboardImg from "@assets/see-results-billboard.png";
+import seeResultsAlprImg from "@assets/see-results-alpr.png";
 
 import icon5g from "@assets/vision-ai/5g.png";
 import iconApis from "@assets/vision-ai/apis.png";
@@ -102,7 +104,7 @@ function RotatingPhrase({
 
 function SeeTheResultsCarousel() {
   const [index, setIndex] = useState(0);
-  const totalSlides = 2;
+  const totalSlides = 3;
 
   return (
     <section className="relative py-14 md:py-20 bg-background overflow-hidden">
@@ -139,12 +141,26 @@ function SeeTheResultsCarousel() {
                 </div>
               </div>
             </div>
-            {/* Slide 2: placeholder for content later */}
-            <div className="min-w-full min-h-[400px] md:min-h-[500px] shrink-0 bg-black" />
+            {/* Slide 2: digital billboard street scene */}
+            <div className="min-w-full min-h-[400px] md:min-h-[500px] relative shrink-0">
+              <img
+                src={seeResultsBillboardImg}
+                alt="Digital billboard advertising in an urban setting"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+              />
+            </div>
+            {/* Slide 3: ALPR alerts / vision AI in action */}
+            <div className="min-w-full min-h-[400px] md:min-h-[500px] relative shrink-0">
+              <img
+                src={seeResultsAlprImg}
+                alt="ALPR system - real-time vehicle detection and alerts"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+              />
+            </div>
           </div>
 
-          {/* Right arrow - only on first slide */}
-          {index === 0 && (
+          {/* Right arrow - when not on last slide */}
+          {index < totalSlides - 1 && (
             <button
               type="button"
               onClick={() => setIndex((i) => Math.min(i + 1, totalSlides - 1))}
@@ -154,8 +170,8 @@ function SeeTheResultsCarousel() {
               <ChevronRight className="w-6 h-6" />
             </button>
           )}
-          {/* Left arrow - only on last slide */}
-          {index === totalSlides - 1 && (
+          {/* Left arrow - when not on first slide */}
+          {index > 0 && (
             <button
               type="button"
               onClick={() => setIndex((i) => Math.max(i - 1, 0))}
@@ -232,7 +248,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
           >
-            <div className="order-2 lg:order-1">
+            <div className="order-1 lg:order-1">
               <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
                 Product Suite
               </span>
@@ -253,7 +269,7 @@ export default function Home() {
                 </a>
               </Link>
             </div>
-            <div className="order-1 lg:order-2 relative aspect-[4/3] lg:aspect-auto lg:min-h-[400px] rounded-2xl overflow-hidden shadow-lg shadow-primary/5">
+            <div className="order-2 lg:order-2 relative aspect-[4/3] lg:aspect-auto lg:min-h-[400px] rounded-2xl overflow-hidden shadow-lg shadow-primary/5">
               <img
                 src={retailHeroImg}
                 alt="Retail - Digital display in urban environment"
