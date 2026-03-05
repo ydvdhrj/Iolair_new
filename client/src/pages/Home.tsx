@@ -103,84 +103,64 @@ function RotatingPhrase({
 }
 
 function SeeTheResultsCarousel() {
+  // Auto-rotating background images (billboard + ALPR) with a fixed foreground card
+  const slides = [seeResultsBillboardImg, seeResultsAlprImg];
   const [index, setIndex] = useState(0);
-  const totalSlides = 3;
+
+  useEffect(() => {
+    const id = setInterval(
+      () => setIndex((i) => (i + 1) % slides.length),
+      6000
+    );
+    return () => clearInterval(id);
+  }, [slides.length]);
 
   return (
     <section className="relative py-14 md:py-20 bg-background overflow-hidden">
       <div className="relative w-full max-w-6xl mx-auto px-4 md:px-6">
         <div className="relative min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden">
-          {/* Slides container */}
-          <div
-            className="flex h-full transition-transform duration-300 ease-out"
-            style={{ transform: `translateX(-${index * 100}%)` }}
-          >
-            {/* Slide 1: highway image + card */}
-            <div className="min-w-full min-h-[400px] md:min-h-[500px] relative shrink-0">
+          {/* Background images that fade between each other */}
+          <div className="absolute inset-0">
+            {slides.map((src, i) => (
               <img
-                src={seeResultsHighwayImg}
-                alt="IOLAIRE.AI - See the results"
-                className="absolute inset-0 w-full h-full object-cover object-top"
+                key={i}
+                src={src}
+                alt={
+                  i === 0
+                    ? "Digital billboard advertising in an urban setting"
+                    : "ALPR system - real-time vehicle detection and alerts"
+                }
+                className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${
+                  i === index ? "opacity-100" : "opacity-0"
+                }`}
               />
-              <div className="absolute left-0 top-0 bottom-0 flex items-center p-6 md:p-12 max-w-md z-10">
-                <div className="rounded-2xl bg-foreground/80 backdrop-blur-sm p-6 md:p-8 border border-primary-foreground/10">
-                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-6 leading-tight">
-                    See the results
-                    <br />
-                    for yourself
-                  </h2>
-                  <Link href="/calendar">
-                    <Button
-                      size="lg"
-                      className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full w-full sm:w-auto"
-                    >
-                      Book an appointment{" "}
-                      <Calendar className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
+            ))}
+          </div>
+
+          {/* Fixed foreground card */}
+          <div className="relative z-10 h-full flex items-center">
+            <div className="max-w-md p-6 md:p-12">
+              <div className="rounded-2xl bg-foreground/80 backdrop-blur-sm p-6 md:p-8 border border-primary-foreground/10">
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-6 leading-tight">
+                  See the results
+                  <br />
+                  for yourself
+                </h2>
+                <Link href="/calendar">
+                  <Button
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full w-full sm:w-auto"
+                  >
+                    Book an appointment{" "}
+                    <Calendar className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
-            </div>
-            {/* Slide 2: digital billboard street scene */}
-            <div className="min-w-full min-h-[400px] md:min-h-[500px] relative shrink-0">
-              <img
-                src={seeResultsBillboardImg}
-                alt="Digital billboard advertising in an urban setting"
-                className="absolute inset-0 w-full h-full object-cover object-center"
-              />
-            </div>
-            {/* Slide 3: ALPR alerts / vision AI in action */}
-            <div className="min-w-full min-h-[400px] md:min-h-[500px] relative shrink-0">
-              <img
-                src={seeResultsAlprImg}
-                alt="ALPR system - real-time vehicle detection and alerts"
-                className="absolute inset-0 w-full h-full object-cover object-center"
-              />
             </div>
           </div>
 
-          {/* Right arrow - when not on last slide */}
-          {index < totalSlides - 1 && (
-            <button
-              type="button"
-              onClick={() => setIndex((i) => Math.min(i + 1, totalSlides - 1))}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-foreground/80 hover:bg-foreground text-primary-foreground flex items-center justify-center shadow-lg transition-colors"
-              aria-label="Next"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          )}
-          {/* Left arrow - when not on first slide */}
-          {index > 0 && (
-            <button
-              type="button"
-              onClick={() => setIndex((i) => Math.max(i - 1, 0))}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-foreground/80 hover:bg-foreground text-primary-foreground flex items-center justify-center shadow-lg transition-colors"
-              aria-label="Previous"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-          )}
+          {/* Optional subtle overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-background/10 to-transparent pointer-events-none" />
         </div>
       </div>
     </section>

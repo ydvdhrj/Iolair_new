@@ -66,11 +66,13 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between h-16">
         <Link href="/">
           <a className="flex items-center gap-2 group">
-            <img
-              src="/logo.png"
-              alt="IOLAIRE.AI"
-              className="h-10 w-auto object-contain"
-            />
+            <div className="h-10 w-auto rounded-md bg-white flex items-center justify-center px-2 py-1">
+              <img
+                src="/logo.png"
+                alt="IOLAIRE.AI"
+                className="bg-white h-8 w-auto object-contain"
+              />
+            </div>
           </a>
         </Link>
 

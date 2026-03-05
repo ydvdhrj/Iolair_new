@@ -123,11 +123,13 @@ export function Footer() {
 
           <div className="flex flex-col items-start md:items-end font-sans">
             <div className="flex items-center mb-4">
-              <img
-                src="/logo.png"
-                alt="IOLAIRE.AI"
-                className="h-10 w-auto object-contain"
-              />
+              <div className="h-10 w-auto rounded-md bg-white flex items-center justify-center px-2 py-1">
+                <img
+                  src="/logo.png"
+                  alt="IOLAIRE.AI"
+                  className="h-8 w-auto object-contain"
+                />
+              </div>
             </div>
             <div className="flex gap-2">
               <a
@@ -166,11 +168,8 @@ export function Footer() {
           <span className="text-primary-foreground font-medium sm:pr-6 font-sans inline-flex items-center gap-2">
             <FlagUS className="shrink-0" /> San Jose, California
           </span>
-          <span className="text-primary-foreground font-medium sm:px-6 font-sans inline-flex items-center gap-2">
-            <FlagUS className="shrink-0" /> Dallas, Texas
-          </span>
           <span className="text-primary-foreground font-medium sm:pl-6 font-sans inline-flex items-center gap-2">
-            <FlagIN className="shrink-0" /> Bengaluru, India
+            <FlagUS className="shrink-0" /> Dallas, Texas
           </span>
         </div>
 
