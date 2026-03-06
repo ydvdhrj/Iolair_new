@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { AutoplayVideoWithPlayPause } from "@/components/AutoplayVideoWithPlayPause";
 import heroBannerImg from "@assets/hero-banner.png";
 import alprDeepDiveBg from "@assets/alpr-deep-dive-bg.png";
 import alprPlatformVideo from "@/assets/alpr-platform.mp4";
@@ -16,6 +17,7 @@ const PRODUCT_SLIDES = [
     accentClass: "bg-[#feac00]",
     description:
       "Our advanced automated license plate reader (ALPR) platform monitors real time traffic.",
+    imageSrc: heroBannerImg,
   },
   {
     id: "alerts",
@@ -24,6 +26,7 @@ const PRODUCT_SLIDES = [
     accentClass: "bg-[#e84826]",
     description:
       "Get instant, actionable alerts from your Vision AI feeds with real-time detection and notification.",
+    imageSrc: alprDeepDiveBg,
   },
   {
     id: "security",
@@ -32,6 +35,7 @@ const PRODUCT_SLIDES = [
     accentClass: "bg-[#639b5c]",
     description:
       "Privacy-first architecture with encryption, tokenization, and compliance built in.",
+    imageSrc: alprDeepDiveBg,
   },
   {
     id: "edge",
@@ -40,6 +44,7 @@ const PRODUCT_SLIDES = [
     accentClass: "bg-[#78afdb]",
     description:
       "Run Vision AI and analytics at the edge for low latency and resilient operations.",
+    imageSrc: alprDeepDiveBg,
   },
 ];
 
@@ -80,8 +85,58 @@ const DEMO_VEHICLES = [
   },
 ];
 
+function ProductsCarousel() {
+  const [productSlideIndex, setProductSlideIndex] = useState(0);
+  useEffect(() => {
+    const id = setInterval(
+      () => setProductSlideIndex((i) => (i + 1) % PRODUCT_SLIDES.length),
+      6000
+    );
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="relative min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden">
+      {PRODUCT_SLIDES.map((slide, i) => (
+        <div
+          key={slide.id}
+          className={`absolute inset-0 grid grid-cols-1 md:grid-cols-2 transition-opacity duration-700 ${
+            i === productSlideIndex ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+          }`}
+        >
+          <div className="relative h-full min-h-[240px] md:min-h-0 bg-muted">
+            {slide.imageSrc ? (
+              <img
+                src={slide.imageSrc}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover object-center"
+              />
+            ) : (
+              <div className={`absolute inset-0 ${slide.accentClass} opacity-90`} aria-hidden />
+            )}
+          </div>
+          <div className="relative h-full flex items-center justify-center p-6 md:p-10 lg:p-12">
+            <div className="w-full max-w-md rounded-2xl bg-foreground/85 backdrop-blur-sm p-6 md:p-8 border border-primary-foreground/10">
+              <span className="text-xs font-bold uppercase tracking-wider text-primary-foreground/80">
+                {slide.tag}
+              </span>
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground mt-2 mb-4 leading-tight">
+                {slide.name}
+              </h2>
+              <p className="text-primary-foreground/90 leading-relaxed">
+                <span className="font-semibold text-primary-foreground">Our</span>{" "}
+                {slide.description}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-foreground/5 pointer-events-none z-[5]" aria-hidden />
+    </div>
+  );
+}
+
 export default function ALPRPage() {
-  const [productIndex, setProductIndex] = useState(0);
   const [demoVehicleIndex, setDemoVehicleIndex] = useState(0);
   const [cardUpdating, setCardUpdating] = useState(false);
 
@@ -102,7 +157,7 @@ export default function ALPRPage() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans">
       <Navbar />
 
-      <main>
+      <main className="pt-16">
         {/* 1. Vision AI demo: hero banner + detection overlay + ANPR card */}
         <section
           className="demo-image-section w-full relative overflow-hidden"
@@ -210,85 +265,10 @@ export default function ALPRPage() {
           </div>
         </section>
 
-        {/* 3. Products section: blue box + slider */}
-        <section className="relative py-16 md:py-24 overflow-hidden" data-section="products">
-          <div className="products_bg absolute inset-0 bg-primary/8" aria-hidden />
-          <div className="relative padding-global container mx-auto px-4 md:px-6">
-            <div className="products-blue-box max-w-6xl mx-auto rounded-2xl bg-primary/12 border border-primary/20 p-8 md:p-12">
-              <div className="products-slider-container">
-                {PRODUCT_SLIDES.map((slide, i) => (
-                  <div
-                    key={slide.id}
-                    className={`product-slide ${i === productIndex ? "block" : "hidden"}`}
-                    data-product={i + 1}
-                  >
-                    <div className="alpr-platform-layout grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                      <div className="alpr-platform-video aspect-video rounded-xl bg-foreground/10 flex items-center justify-center text-muted-foreground">
-                        <span className="text-sm">Video / demo area</span>
-                      </div>
-                      <div className="alpr-platform-content">
-                        <div className="product-header-flex flex flex-wrap items-center gap-3 mb-4">
-                          <span className="product-tag text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                            {slide.tag}
-                          </span>
-                          <span
-                            className={`product-name-button inline-block px-4 py-2 rounded-lg text-primary-foreground font-bold text-lg ${slide.accentClass}`}
-                          >
-                            {slide.name}
-                          </span>
-                        </div>
-                        <div className="product-content-card">
-                          <p className="text-muted-foreground leading-relaxed">
-                            <span className="font-semibold text-foreground">Our</span>{" "}
-                            {slide.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Slider nav: dots + arrows */}
-              <div className="products-slider-nav flex items-center justify-center gap-4 mt-10 pt-6 border-t border-border/50">
-                <button
-                  type="button"
-                  onClick={() => setProductIndex((i) => Math.max(0, i - 1))}
-                  className="p-2 rounded-full bg-muted hover:bg-muted/80 text-foreground transition-colors disabled:opacity-40"
-                  disabled={productIndex === 0}
-                  aria-label="Previous product"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <div className="flex gap-2">
-                  {PRODUCT_SLIDES.map((_, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setProductIndex(i)}
-                      className={`h-2.5 rounded-full transition-all ${
-                        i === productIndex ? "w-8 bg-primary" : "w-2.5 bg-muted-foreground/40 hover:bg-muted-foreground/60"
-                      }`}
-                      aria-label={`Go to slide ${i + 1}`}
-                      aria-current={i === productIndex ? "true" : undefined}
-                    />
-                  ))}
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setProductIndex((i) => Math.min(PRODUCT_SLIDES.length - 1, i + 1))}
-                  className="p-2 rounded-full bg-muted hover:bg-muted/80 text-foreground transition-colors disabled:opacity-40"
-                  disabled={productIndex === PRODUCT_SLIDES.length - 1}
-                  aria-label="Next product"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-            </div>
+        {/* 3. Products section: "See the results" style – one panel, half image / half text, auto-rotate */}
+        <section className="relative py-14 md:py-20 bg-background overflow-hidden" data-section="products">
+          <div className="relative w-full max-w-6xl mx-auto px-4 md:px-6">
+            <ProductsCarousel />
           </div>
         </section>
 
@@ -365,29 +345,13 @@ export default function ALPRPage() {
                   </p>
                 </div>
               </div>
-              <div className="relative aspect-video rounded-xl overflow-hidden bg-muted border border-border shadow-lg">
-                <video
-                  src={alprPlatformVideo}
-                  controls
-                  className="w-full h-full object-cover"
-                  preload="metadata"
-                >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
+              <AutoplayVideoWithPlayPause src={alprPlatformVideo} />
             </div>
 
             {/* 2. Unified Dashboard: video left, text right */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div className="order-2 lg:order-1 relative aspect-video rounded-xl overflow-hidden bg-muted border border-border shadow-lg">
-                <video
-                  src={unifiedDashboardVideo}
-                  controls
-                  className="w-full h-full object-cover"
-                  preload="metadata"
-                >
-                  Your browser does not support the video tag.
-                </video>
+              <div className="order-2 lg:order-1">
+                <AutoplayVideoWithPlayPause src={unifiedDashboardVideo} />
               </div>
               <div className="order-1 lg:order-2">
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">
@@ -433,29 +397,13 @@ export default function ALPRPage() {
                   </p>
                 </div>
               </div>
-              <div className="relative aspect-video rounded-xl overflow-hidden bg-muted border border-border shadow-lg">
-                <video
-                  src={layerSecurityVideo}
-                  controls
-                  className="w-full h-full object-cover"
-                  preload="metadata"
-                >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
+              <AutoplayVideoWithPlayPause src={layerSecurityVideo} />
             </div>
 
             {/* 4. Edge Applications: video left, text right */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div className="order-2 lg:order-1 relative aspect-video rounded-xl overflow-hidden bg-muted border border-border shadow-lg">
-                <video
-                  src={edgeApplicationVideo}
-                  controls
-                  className="w-full h-full object-cover"
-                  preload="metadata"
-                >
-                  Your browser does not support the video tag.
-                </video>
+              <div className="order-2 lg:order-1">
+                <AutoplayVideoWithPlayPause src={edgeApplicationVideo} />
               </div>
               <div className="order-1 lg:order-2">
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">

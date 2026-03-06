@@ -60,14 +60,13 @@ const VISION_AI_FEATURES = [
   { id: "edge-applications", label: "Edge Applications", iconSrc: iconEdgeApplications },
 ];
 
-/* Explore Our Platform card colors - similar tones for 5 & 6 */
+/* Explore Our Platform card colors */
 const PLATFORM_CARD_COLORS = [
-  "#feac00", /* 1 - Orange */
-  "#639b5c", /* 2 - Green */
-  "#e84826", /* 3 - Red-Orange */
-  "#78afdb", /* 4 - Blue */
-  "#e9c46a", /* 5 - Golden (similar to orange) */
-  "#2a9d8f", /* 6 - Teal (similar to green) */
+  "#feac00", // 1 - Orange (AdTech Overview)
+  "#639b5c", // 2 - Green (Loyalty & Offers)
+  "#e84825", // 3 - Red-Orange (ALPR Overview)
+  "#78afdb", // 4 - Blue (Edge Applications)
+  "#e9c46a", // 5 - Golden, similar to the above palette (shared row)
 ];
 
 function RotatingPhrase({
@@ -389,63 +388,119 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="text-3xl md:text-4xl font-heading font-bold text-foreground text-center mb-12"
+            className="text-3xl md:text-4xl font-heading font-bold text-foreground text-center mb-10"
           >
             Explore Our Platform
           </motion.h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "AdTech Platform Overview",
-                href: "/hla",
-                icon: Lock,
-              },
-              {
-                title: "Loyalty & Offers",
-                href: "/hla",
-                icon: ShoppingCart,
-              },
-              {
-                title: "Unified Dashboard",
-                href: "/hla",
-                icon: LineChart,
-              },
-              {
-                title: "ALPR Platform Overview",
-                href: "/alpr",
-                icon: Eye,
-              },
-              {
-                title: "Edge Applications",
-                href: "/industry-solutions",
-                icon: Layers,
-              },
-              {
-                title: "Layered Security & Privacy",
-                href: "/alpr",
-                icon: ShieldCheck,
-              },
-            ].map((card, index) => {
-              const IconComponent = card.icon;
-              const bgColor = PLATFORM_CARD_COLORS[index];
-              return (
-                <Link key={card.title} href={card.href}>
+
+          <div className="max-w-6xl mx-auto space-y-4">
+            {/* AdTech row: label left, cards horizontal */}
+            <div className="flex flex-col md:flex-row gap-3 md:gap-4 items-stretch">
+              <div className="flex items-center justify-center md:justify-start md:w-40 shrink-0 text-base md:text-lg font-heading font-bold text-foreground md:py-4">
+                AdTech Platform
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 flex-1 min-w-0">
+                <Link href="/hla" className="flex-1 min-w-0">
                   <a
-                    className="group relative flex flex-col justify-end rounded-2xl p-8 min-h-[200px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0"
-                    style={{ backgroundColor: bgColor }}
+                    className="group block relative flex flex-col justify-end rounded-2xl p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
+                    style={{ backgroundColor: PLATFORM_CARD_COLORS[0] }}
                   >
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                      <span className="font-heading font-bold text-lg md:text-xl leading-snug">
-                        {card.title}
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
+                      <span className="font-heading font-bold text-base md:text-lg leading-snug">
+                        Overview
                       </span>
-                      <div className="shrink-0 w-10 h-10 rounded-full bg-white flex items-center justify-center transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1">
-                        <IconComponent className="h-5 w-5" style={{ color: "#5e17eb" }} />
+                      <div className="shrink-0 w-9 h-9 rounded-full bg-white flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                        <Lock className="h-4 w-4" style={{ color: "#5e17eb" }} />
                       </div>
                     </div>
                   </a>
                 </Link>
-              );
-            })}
+                <Link href="/hla" className="flex-1 min-w-0">
+                  <a
+                    className="group block relative flex flex-col justify-end rounded-2xl p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
+                    style={{ backgroundColor: PLATFORM_CARD_COLORS[1] }}
+                  >
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
+                      <span className="font-heading font-bold text-base md:text-lg leading-snug">
+                        Loyalty &amp; Offers
+                      </span>
+                      <div className="shrink-0 w-9 h-9 rounded-full bg-white flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                        <ShoppingCart className="h-4 w-4" style={{ color: "#5e17eb" }} />
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+                <Link href="/hla" className="flex-1 min-w-0">
+                  <a
+                    className="group block relative flex flex-col justify-end rounded-2xl p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
+                    style={{ backgroundColor: PLATFORM_CARD_COLORS[4] }}
+                  >
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
+                      <span className="font-heading font-bold text-base md:text-lg leading-snug">
+                        Unified Dashboard
+                      </span>
+                      <div className="shrink-0 w-9 h-9 rounded-full bg-white flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                        <LineChart className="h-4 w-4" style={{ color: "#5e17eb" }} />
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            </div>
+
+            {/* ALPR row: label left, cards horizontal */}
+            <div className="flex flex-col md:flex-row gap-3 md:gap-4 items-stretch">
+              <div className="flex items-center justify-center md:justify-start md:w-40 shrink-0 text-base md:text-lg font-heading font-bold text-foreground md:py-4">
+                ALPR Platform
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 flex-1 min-w-0">
+                <Link href="/alpr" className="flex-1 min-w-0">
+                  <a
+                    className="group block relative flex flex-col justify-end rounded-2xl p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
+                    style={{ backgroundColor: PLATFORM_CARD_COLORS[2] }}
+                  >
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
+                      <span className="font-heading font-bold text-base md:text-lg leading-snug">
+                        Overview
+                      </span>
+                      <div className="shrink-0 w-9 h-9 rounded-full bg-white flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                        <Eye className="h-4 w-4" style={{ color: "#5e17eb" }} />
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+                <Link href="/industry-solutions" className="flex-1 min-w-0">
+                  <a
+                    className="group block relative flex flex-col justify-end rounded-2xl p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
+                    style={{ backgroundColor: PLATFORM_CARD_COLORS[3] }}
+                  >
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
+                      <span className="font-heading font-bold text-base md:text-lg leading-snug">
+                        Edge Applications
+                      </span>
+                      <div className="shrink-0 w-9 h-9 rounded-full bg-white flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                        <Layers className="h-4 w-4" style={{ color: "#5e17eb" }} />
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+                <Link href="/alpr" className="flex-1 min-w-0">
+                  <a
+                    className="group block relative flex flex-col justify-end rounded-2xl p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
+                    style={{ backgroundColor: PLATFORM_CARD_COLORS[4] }}
+                  >
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
+                      <span className="font-heading font-bold text-base md:text-lg leading-snug">
+                        Layered Security &amp; Privacy
+                      </span>
+                      <div className="shrink-0 w-9 h-9 rounded-full bg-white flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                        <ShieldCheck className="h-4 w-4" style={{ color: "#5e17eb" }} />
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
