@@ -123,7 +123,7 @@ export function Footer() {
 
           <div className="flex flex-col items-start md:items-end font-sans">
             <div className="flex items-center mb-4">
-              <div className="h-10 w-auto rounded-md bg-white flex items-center justify-center px-2 py-1">
+              <div className="h-10 w-auto rounded-md bg-card flex items-center justify-center px-2 py-1">
                 <img
                   src="/logo.png"
                   alt="IOLAIRE.AI"

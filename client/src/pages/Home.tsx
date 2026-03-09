@@ -62,11 +62,11 @@ const VISION_AI_FEATURES = [
 
 /* Explore Our Platform card colors */
 const PLATFORM_CARD_COLORS = [
-  "#feac00", // 1 - Orange (AdTech Overview)
-  "#639b5c", // 2 - Green (Loyalty & Offers)
-  "#e84825", // 3 - Red-Orange (ALPR Overview)
-  "#78afdb", // 4 - Blue (Edge Applications)
-  "#e9c46a", // 5 - Golden, similar to the above palette (shared row)
+  "#6a2de2", // 0 - AdTech Overview
+  "#39827a", // 1 - Loyalty & Offers
+  "#1f6fff", // 2 - ALPR Overview
+  "#78afdb", // 3 - Edge Applications
+  "#feac00", // 4 - Unified Dashboard & Layered Security (shared)
 ];
 
 function RotatingPhrase({
@@ -121,18 +121,25 @@ function SeeTheResultsCarousel() {
           {/* Background images that fade between each other */}
           <div className="absolute inset-0">
             {slides.map((src, i) => (
-              <img
+              <div
                 key={i}
-                src={src}
-                alt={
-                  i === 0
-                    ? "Digital billboard advertising in an urban setting"
-                    : "ALPR system - real-time vehicle detection and alerts"
-                }
-                className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${
+                className={`absolute inset-0 transition-opacity duration-700 ${
                   i === index ? "opacity-100" : "opacity-0"
                 }`}
-              />
+              >
+                <img
+                  src={src}
+                  alt={
+                    i === 0
+                      ? "Digital billboard advertising in an urban setting"
+                      : "ALPR system - real-time vehicle detection and alerts"
+                  }
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute bottom-4 right-4 bg-black/60 text-white text-sm sm:text-base md:text-lg px-4 py-1.5 rounded-full backdrop-blur-sm">
+                  {i === 0 ? "AdTech" : "ALPR"}
+                </div>
+              </div>
             ))}
           </div>
 
@@ -211,7 +218,6 @@ export default function Home() {
                 alt="IOLAIRE.AI Hero"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
             </div>
           </motion.div>
         </div>
@@ -430,9 +436,9 @@ export default function Home() {
                     </div>
                   </a>
                 </Link>
-                <Link href="/hla" className="flex-1 min-w-0">
+                <Link href="/hla" className="flex-1 min-w-0 md:-mb-2">
                   <a
-                    className="group block relative flex flex-col justify-end rounded-2xl p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
+                    className="group block relative flex flex-col justify-end rounded-2xl md:rounded-b-none p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
                     style={{ backgroundColor: PLATFORM_CARD_COLORS[4] }}
                   >
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
@@ -443,6 +449,7 @@ export default function Home() {
                         <LineChart className="h-4 w-4" style={{ color: "#5e17eb" }} />
                       </div>
                     </div>
+                    <div className="h-2 shrink-0 hidden md:block" aria-hidden="true" />
                   </a>
                 </Link>
               </div>
@@ -484,11 +491,12 @@ export default function Home() {
                     </div>
                   </a>
                 </Link>
-                <Link href="/alpr" className="flex-1 min-w-0">
+                <Link href="/alpr" className="flex-1 min-w-0 md:-mt-2">
                   <a
-                    className="group block relative flex flex-col justify-end rounded-2xl p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
+                    className="group block relative flex flex-col justify-end rounded-2xl md:rounded-t-none p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
                     style={{ backgroundColor: PLATFORM_CARD_COLORS[4] }}
                   >
+                    <div className="h-2 shrink-0 hidden md:block" aria-hidden="true" />
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
                       <span className="font-heading font-bold text-base md:text-lg leading-snug">
                         Layered Security &amp; Privacy

@@ -5,6 +5,11 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import heroBannerImg from "@assets/hero-banner.png";
 import alprDeepDiveBg from "@assets/alpr-deep-dive-bg.png";
+import adtechPlatformImg from "@assets/adtech-platform.jpg";
+import loyaltyOffersImg from "@assets/Loyalty-Offers.jpg";
+import edgeApplicationsImg from "@assets/adtechedge-application.jpg";
+import dynamicAttributionImg from "@assets/DynamicAttribution.jpg";
+import layeredSecurityImg from "@assets/adtechlayered-security.jpg";
 
 const PRODUCT_SLIDES = [
   {
@@ -160,37 +165,38 @@ export default function HLAPage() {
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
               <div className="flex flex-col">
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-8">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">
                   Key benefits
                 </h2>
-                <ul className="space-y-5 text-base md:text-lg text-foreground leading-relaxed list-none">
+                <div className="h-1 w-16 rounded-full bg-primary mb-6" />
+                <ul className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed list-none">
                   <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-1.5 w-1.5 h-1.5 rounded-sm bg-current" aria-hidden />
+                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
                     Our platform offers shopper behavior insights right at the edge, removing delays
                     caused by sending data back and forth to the cloud
                   </li>
                   <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-1.5 w-1.5 h-1.5 rounded-sm bg-current" aria-hidden />
+                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
                     Smarter targeting reduces wasted advertising spend by focusing impressions only
                     on shoppers who are most likely to respond
                   </li>
                   <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-1.5 w-1.5 h-1.5 rounded-sm bg-current" aria-hidden />
+                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
                     Ads and offers are delivered instantly by processing behavior on site and
                     responding immediately, so messages appear while shopper interest is still high
                   </li>
                   <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-1.5 w-1.5 h-1.5 rounded-sm bg-current" aria-hidden />
+                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
                     Context-aware personalization delivers messaging tailored to live demographics,
                     movement, and engagement in the moment
                   </li>
                   <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-1.5 w-1.5 h-1.5 rounded-sm bg-current" aria-hidden />
+                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
                     Clear measurement connects every impression to real-world engagement and
                     business results
                   </li>
                   <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-1.5 w-1.5 h-1.5 rounded-sm bg-current" aria-hidden />
+                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
                     A single integrated platform connects Demand Side Platforms (DSP) and Supply
                     Side Platforms (SSP) in real time, ensuring smoother coordination between
                     buyers and sellers
@@ -208,23 +214,28 @@ export default function HLAPage() {
           </div>
         </section>
 
-        {/* 5. Feature Deep Dive intro */}
-        <section className="py-14 md:py-20 section-soft">
-          <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-              We provide actionable insights into customer behavior, dwell time, and intent, helping
-              retailers make confident decisions without being overwhelmed by large volumes of data.
-            </p>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Our platform reduces wasted advertising spend and connects every impression to
-              real-world engagement and business outcomes.
-            </p>
-          </div>
-        </section>
+        {/* 5 & 6. Feature Deep Dive: heading card + 5 product sections */}
+        <section className="py-14 md:py-20">
+          <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+            <div className="rounded-3xl border border-border bg-card/90 shadow-sm overflow-hidden">
+              {/* Feature Deep Dive heading card */}
+              <div className="p-8 md:p-12 lg:p-14 border-b border-border/80 bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary mb-4">
+                  Feature Deep Dive
+                </h2>
+                <div className="h-1 w-20 rounded-full bg-primary mb-6" />
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+                  We provide actionable insights into customer behavior, dwell time, and intent, helping
+                  retailers make confident decisions without being overwhelmed by large volumes of data.
+                </p>
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  Our platform reduces wasted advertising spend and connects every impression to
+                  real-world engagement and business outcomes.
+                </p>
+              </div>
 
-        {/* 6. Product sections: text + image/video placeholder */}
-        <section className="py-14 md:py-20 bg-background">
-          <div className="container mx-auto px-4 md:px-6 max-w-6xl space-y-16 md:space-y-24">
+              {/* 5 product sections */}
+              <div className="p-8 md:p-12 lg:p-14 space-y-16 md:space-y-24 bg-[hsl(0,0%,96%)]">
             {/* 1. AdTech Platform: text left, media right */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
@@ -248,15 +259,23 @@ export default function HLAPage() {
                   </Button>
                 </Link>
               </div>
-              <div className="aspect-video rounded-xl bg-foreground/10 flex items-center justify-center text-muted-foreground">
-                <span className="text-sm">Image / demo area</span>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={adtechPlatformImg}
+                  alt="AdTech Platform"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
             {/* 2. Loyalty & Offers: media left, text right */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div className="order-2 lg:order-1 aspect-video rounded-xl bg-foreground/10 flex items-center justify-center text-muted-foreground">
-                <span className="text-sm">Image / demo area</span>
+              <div className="order-2 lg:order-1 aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={loyaltyOffersImg}
+                  alt="Loyalty & Offers"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="order-1 lg:order-2">
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">
@@ -307,15 +326,23 @@ export default function HLAPage() {
                   </Button>
                 </Link>
               </div>
-              <div className="aspect-video rounded-xl bg-foreground/10 flex items-center justify-center text-muted-foreground">
-                <span className="text-sm">Image / demo area</span>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={edgeApplicationsImg}
+                  alt="Edge Applications"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
             {/* 4. Dynamic Attribution Dashboard: media left, text right */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div className="order-2 lg:order-1 aspect-video rounded-xl bg-foreground/10 flex items-center justify-center text-muted-foreground">
-                <span className="text-sm">Image / demo area</span>
+              <div className="order-2 lg:order-1 aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={dynamicAttributionImg}
+                  alt="Dynamic Attribution Dashboard"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="order-1 lg:order-2">
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">
@@ -365,8 +392,14 @@ export default function HLAPage() {
                   </Button>
                 </Link>
               </div>
-              <div className="aspect-video rounded-xl bg-foreground/10 flex items-center justify-center text-muted-foreground">
-                <span className="text-sm">Image / demo area</span>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={layeredSecurityImg}
+                  alt="Layered Security & Privacy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
               </div>
             </div>
           </div>
