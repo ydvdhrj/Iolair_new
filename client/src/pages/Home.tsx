@@ -369,7 +369,7 @@ export default function Home() {
                   securing communities through reliable intelligence while operating
                   efficiently within existing infrastructure.
                 </p>
-                <Link href="/alpr" className="inline-flex">
+                <Link href="/platform-architecture" className="inline-flex">
                   <Button
                     size="lg"
                     className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-8"

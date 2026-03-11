@@ -17,6 +17,7 @@ import IndustrySolutionsPage from "@/pages/IndustrySolutionsPage";
 import RetailPage from "@/pages/RetailPage";
 import SafetyEnforcementPage from "@/pages/SafetyEnforcementPage";
 import CalendarPage from "@/pages/CalendarPage";
+import PlatformArchitecturePage from "@/pages/PlatformArchitecturePage";
 
 function Router() {
   return (
@@ -29,6 +30,8 @@ function Router() {
       <Route path="/industry-solutions" component={IndustrySolutionsPage} />
       <Route path="/retail" component={RetailPage} />
       <Route path="/safety-enforcement" component={SafetyEnforcementPage} />
+      {/* Platform Architecture */}
+      <Route path="/platform-architecture" component={PlatformArchitecturePage} />
       {/* Resources */}
       <Route path="/alpr-resources" component={ALPRResourcesPage} />
       <Route path="/hla-resources" component={HLAResourcesPage} />
