@@ -68,8 +68,7 @@ export function Navbar() {
           <a className="flex items-center gap-2 group">
             <div
               className={cn(
-                "h-10 w-auto rounded-md flex items-center justify-center px-2 py-1",
-                isScrolled ? "bg-background/98" : "bg-background/80"
+                "h-10 w-auto rounded-md flex items-center justify-center px-2 py-1 bg-white"
               )}
             >
               <img

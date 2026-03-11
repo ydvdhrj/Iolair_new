@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { AutoplayVideoWithPlayPause } from "@/components/AutoplayVideoWithPlayPause";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import heroBannerImg from "@assets/hero-banner.png";
 import alprDeepDiveBg from "@assets/alpr-deep-dive-bg.png";
 import alprPlatformVideo from "@/assets/alpr-platform.mp4";
@@ -48,10 +49,63 @@ const PRODUCT_SLIDES = [
   },
 ];
 
-/* Box positions (left, top 0–1, width/height in %) align with license plates in hero banner */
+const ALPR_PRODUCT_SLIDES = [
+  {
+    id: "alpr-platform",
+    tag: "Products",
+    name: "ALPR Platform",
+    description:
+      "advanced automated license plate reader (ALPR) platform monitors real time traffic.",
+    accentClass: "bg-[#5E17EB]",
+    media: { type: "video" as const, src: alprPlatformVideo },
+  },
+  {
+    id: "real-time-alerts",
+    tag: "Features",
+    name: "Real Time AI Alerts",
+    description:
+      'immediately generates an alert for law enforcement: "FELONY WARRANT - STOLEN VEHICLE."',
+    accentClass: "bg-[#e84826]",
+    media: { type: "video" as const, src: unifiedDashboardVideo },
+  },
+  {
+    id: "layered-security",
+    tag: "Features",
+    name: "Layered Security & Privacy",
+    description:
+      "ensures layered security and compliance across platforms to protect public data and preserve privacy.",
+    accentClass: "bg-[#feac00]",
+    media: { type: "video" as const, src: layerSecurityVideo },
+  },
+  {
+    id: "edge-applications",
+    tag: "Use Cases",
+    name: "Edge Applications",
+    description:
+      "integrates IoT applications at the edge such as signal intervention and water main leak detection.",
+    accentClass: "bg-[#78afdb]",
+    media: { type: "video" as const, src: edgeApplicationVideo },
+  },
+];
+
+/* Box positions (left, top 0–1, width/height in %) align with license plates in hero banner
+ * Order: 0 = left silver car, 1 = center blue BMW, 2 = right red car
+ */
 const DEMO_VEHICLES = [
   {
-    id: "car-1",
+    id: "car-left-silver",
+    fallbackPlate: "OR-A21B",
+    region: "Oregon",
+    model: "Accord",
+    make: "Honda",
+    color: "Silver",
+    direction: "Moving West",
+    confidence: "95.8%",
+    // Slightly further left and a bit higher to sit on the plate
+    box: { left: 0.14, top: 0.52, width: 7.5, height: 4 },
+  },
+  {
+    id: "car-center-blue-bmw",
     fallbackPlate: "GXB-5332",
     region: "New York",
     model: "3 Series (F30)",
@@ -59,10 +113,11 @@ const DEMO_VEHICLES = [
     color: "Dark Blue",
     direction: "Moving West",
     confidence: "97.2%",
-    box: { left: 0.34, top: 0.56, width: 8, height: 4 },
+    // Move more toward the center and slightly adjust height for the BMW plate
+    box: { left: 0.32, top: 0.90, width: 7.5, height: 4 },
   },
   {
-    id: "car-2",
+    id: "car-right-red",
     fallbackPlate: "2AQC214",
     region: "California",
     model: "Camry",
@@ -71,17 +126,6 @@ const DEMO_VEHICLES = [
     direction: "Moving West",
     confidence: "96.5%",
     box: { left: 0.68, top: 0.52, width: 8, height: 4 },
-  },
-  {
-    id: "car-3",
-    fallbackPlate: "OR-A21B",
-    region: "Oregon",
-    model: "Accord",
-    make: "Honda",
-    color: "Silver",
-    direction: "Moving West",
-    confidence: "95.8%",
-    box: { left: 0.20, top: 0.60, width: 8, height: 4 },
   },
 ];
 
@@ -136,6 +180,76 @@ function ProductsCarousel() {
   );
 }
 
+function ALPRProductsSlider() {
+  const [index, setIndex] = useState(0);
+  const slide = ALPR_PRODUCT_SLIDES[index];
+
+  const handleNext = () => {
+    setIndex((i) => (i + 1) % ALPR_PRODUCT_SLIDES.length);
+  };
+
+  const handlePrev = () => {
+    setIndex((i) => (i - 1 + ALPR_PRODUCT_SLIDES.length) % ALPR_PRODUCT_SLIDES.length);
+  };
+
+  return (
+    <section className="relative py-14 md:py-20 bg-background overflow-hidden" data-section="products">
+      <div className="relative w-full max-w-6xl mx-auto px-4 md:px-6">
+        <div className="relative rounded-3xl bg-[#020617] text-white overflow-hidden shadow-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-14 p-6 md:p-10 lg:p-12 items-center">
+            <div className="relative">
+              {slide.media.type === "video" ? (
+                <AutoplayVideoWithPlayPause src={slide.media.src} />
+              ) : null}
+            </div>
+            <div className="space-y-5 md:space-y-6">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+                  {slide.tag}
+                </span>
+                <span
+                  className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white shadow-sm ${slide.accentClass}`}
+                >
+                  Vision AI
+                </span>
+              </div>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold leading-tight">
+                {slide.name}
+              </h2>
+              <p className="text-sm md:text-base text-white/80 leading-relaxed">
+                <span className="font-semibold text-white">Our </span>
+                {slide.description}
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom-aligned slide controls (previous/next arrows) */}
+          <div className="absolute inset-x-0 bottom-4 flex justify-end px-6 md:px-10">
+            <div className="inline-flex items-center gap-3 rounded-full bg-white/5 backdrop-blur-sm p-1 shadow-lg shadow-black/40">
+              <button
+                type="button"
+                onClick={handlePrev}
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#111827] text-white hover:bg-[#1f2937] transition-colors"
+                aria-label="Previous product"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </button>
+              <button
+                type="button"
+                onClick={handleNext}
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5E17EB] text-white hover:bg-[#4b12c2] transition-colors"
+                aria-label="Next product"
+              >
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function ALPRPage() {
   const [demoVehicleIndex, setDemoVehicleIndex] = useState(0);
   const [cardUpdating, setCardUpdating] = useState(false);
@@ -171,9 +285,10 @@ export default function ALPRPage() {
               className="demo-image-section__bg absolute inset-0 bg-cover bg-center bg-no-repeat bg-[#0b1220]"
               style={{ backgroundImage: `url(${heroBannerImg})` }}
             />
+            {/* Hide overlay and card on small screens; show only hero image */}
             <div
               id="vehicle-detection-overlay"
-              className="vehicle-detection-overlay absolute inset-0 pointer-events-none z-[1]"
+              className="vehicle-detection-overlay absolute inset-0 pointer-events-none z-[1] hidden md:block"
               aria-hidden
             >
               {currentVehicle && (
@@ -189,12 +304,12 @@ export default function ALPRPage() {
                 />
               )}
             </div>
-            <div className="demo-image-section__card absolute bottom-6 right-6 z-[2] max-w-[340px]">
+            <div className="demo-image-section__card absolute bottom-6 right-6 z-[2] max-w-[340px] hidden md:block">
               <div
                 id="anpr-card"
-                className={`vehicle-detection-card rounded-xl bg-card/95 backdrop-blur-sm border border-border shadow-2xl p-5 ${cardUpdating ? "is-updating" : ""}`}
+                className="vehicle-detection-card rounded-xl bg-black/70 text-white border border-white/15 shadow-2xl p-5"
               >
-                <div className="vehicle-card-top space-y-4">
+                <div className={`vehicle-card-top space-y-4 ${cardUpdating ? "is-updating" : ""}`}>
                   <div className="vehicle-card-left">
                     <div className="license-plate-display inline-block rounded bg-primary px-3 py-1.5">
                       <div className="plate-number js-plate-number text-primary-foreground font-bold text-lg tracking-wide">
@@ -265,14 +380,10 @@ export default function ALPRPage() {
           </div>
         </section>
 
-        {/* 3. Products section: "See the results" style – one panel, half image / half text, auto-rotate */}
-        <section className="relative py-14 md:py-20 bg-background overflow-hidden" data-section="products">
-          <div className="relative w-full max-w-6xl mx-auto px-4 md:px-6">
-            <ProductsCarousel />
-          </div>
-        </section>
+        {/* 3. Products section – ALPR platform layers slider (video left, content right) */}
+        <ALPRProductsSlider />
 
-        {/* 5. Key benefits + Feature Deep Dive */}
+        {/* 4. Key benefits + Feature Deep Dive */}
         <section className="py-14 md:py-20 bg-background">
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
