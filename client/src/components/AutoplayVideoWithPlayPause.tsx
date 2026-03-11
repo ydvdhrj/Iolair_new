@@ -41,7 +41,7 @@ export function AutoplayVideoWithPlayPause({
         muted
         playsInline
         loop
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover object-center"
         onClick={toggle}
         aria-label="Video"
       />

@@ -46,10 +46,10 @@ export default function SafetyEnforcementPage() {
               {SAFETY_KEY_CHALLENGES.map((item) => (
                 <li
                   key={item}
-                  className="flex gap-3 text-base md:text-lg text-muted-foreground leading-relaxed"
+                  className="flex items-center gap-3 text-base md:text-lg text-muted-foreground leading-relaxed"
                 >
-                  <span className="text-primary shrink-0 mt-1.5" aria-hidden>
-                    •
+                  <span className="text-primary shrink-0 text-xs md:text-sm leading-none -translate-y-px" aria-hidden>
+                    ■
                   </span>
                   <span>{item}</span>
                 </li>

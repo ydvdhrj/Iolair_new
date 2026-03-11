@@ -106,6 +106,14 @@ function SeeTheResultsCarousel() {
   const slides = [seeResultsBillboardImg, seeResultsAlprImg];
   const [index, setIndex] = useState(0);
 
+  const goToPrev = () => {
+    setIndex((i) => (i - 1 + slides.length) % slides.length);
+  };
+
+  const goToNext = () => {
+    setIndex((i) => (i + 1) % slides.length);
+  };
+
   useEffect(() => {
     const id = setInterval(
       () => setIndex((i) => (i + 1) % slides.length),
@@ -136,11 +144,24 @@ function SeeTheResultsCarousel() {
                   }
                   className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute bottom-4 right-4 bg-black/60 text-white text-sm sm:text-base md:text-lg px-4 py-1.5 rounded-full backdrop-blur-sm">
-                  {i === 0 ? "AdTech" : "ALPR"}
+                <div className="absolute bottom-4 right-4 bg-white/70 text-foreground text-[1.2rem] sm:text-[1.35rem] md:text-[1.5rem] px-5 py-2 rounded-full backdrop-blur-sm shadow-md flex items-center gap-1.5">
+                  <span>{i === 0 ? "AdTech" : "ALPR"}</span>
+                  <span className="text-gradient font-semibold">Platform</span>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Manual controls */}
+          <div className="absolute inset-0 flex items-center justify-end px-4 z-10 pointer-events-none">
+            <button
+              type="button"
+              onClick={goToNext}
+              className="pointer-events-auto inline-flex items-center justify-center h-10 w-10 rounded-full bg-background/80 text-foreground shadow-md hover:bg-background"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
           </div>
 
           {/* Fixed foreground card */}
@@ -234,7 +255,7 @@ export default function Home() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
           >
             <div className="order-1 lg:order-1">
-              <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
+              <span className="text-primary font-bold tracking-widest uppercase text-[1.05rem] mb-4 block">
                 Product Suite
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-4">
@@ -276,7 +297,7 @@ export default function Home() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
           >
             <div>
-              <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
+              <span className="text-primary font-bold tracking-widest uppercase text-[1.05rem] mb-4 block">
                 Product Suite
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-4">
@@ -311,7 +332,9 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto mb-12 text-center">
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4 leading-tight flex flex-wrap items-center justify-center gap-x-2">
-              One Vision AI Partner Building Real-Time Trust and Engagement for{" "}
+              One Vision AI Partner Building
+              <br />
+              Real-Time Trust and Engagement for{" "}
               <span className="inline-block min-h-[1.2em] overflow-hidden text-primary align-middle">
                 <RotatingPhrase
                   phrases={["Last Mile Advertising", "Safer Neighborhoods"]}

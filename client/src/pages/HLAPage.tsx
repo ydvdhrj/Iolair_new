@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -170,33 +171,33 @@ export default function HLAPage() {
                 </h2>
                 <div className="h-1 w-16 rounded-full bg-primary mb-6" />
                 <ul className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed list-none">
-                  <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
+                  <li className="flex gap-3 items-start">
+                    <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
                     Our platform offers shopper behavior insights right at the edge, removing delays
                     caused by sending data back and forth to the cloud
                   </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
+                  <li className="flex gap-3 items-start">
+                    <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
                     Smarter targeting reduces wasted advertising spend by focusing impressions only
                     on shoppers who are most likely to respond
                   </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
+                  <li className="flex gap-3 items-start">
+                    <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
                     Ads and offers are delivered instantly by processing behavior on site and
                     responding immediately, so messages appear while shopper interest is still high
                   </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
+                  <li className="flex gap-3 items-start">
+                    <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
                     Context-aware personalization delivers messaging tailored to live demographics,
                     movement, and engagement in the moment
                   </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
+                  <li className="flex gap-3 items-start">
+                    <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
                     Clear measurement connects every impression to real-world engagement and
                     business results
                   </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
+                  <li className="flex gap-3 items-start">
+                    <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
                     A single integrated platform connects Demand Side Platforms (DSP) and Supply
                     Side Platforms (SSP) in real time, ensuring smoother coordination between
                     buyers and sellers
@@ -256,6 +257,7 @@ export default function HLAPage() {
                 <Link href="/calendar" className="inline-block mt-6">
                   <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full">
                     Get a demo
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </div>
@@ -296,6 +298,7 @@ export default function HLAPage() {
                 <Link href="/calendar" className="inline-block mt-6">
                   <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full">
                     Get a demo
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </div>
@@ -323,6 +326,7 @@ export default function HLAPage() {
                 <Link href="/calendar" className="inline-block mt-6">
                   <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full">
                     Get a demo
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </div>
@@ -363,6 +367,7 @@ export default function HLAPage() {
                 <Link href="/calendar" className="inline-block mt-6">
                   <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full">
                     Get a demo
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </div>
@@ -389,6 +394,7 @@ export default function HLAPage() {
                 <Link href="/calendar" className="inline-block mt-6">
                   <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full">
                     Get a demo
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </div>

@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { AutoplayVideoWithPlayPause } from "@/components/AutoplayVideoWithPlayPause";
+import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import heroBannerImg from "@assets/hero-banner.png";
 import alprDeepDiveBg from "@assets/alpr-deep-dive-bg.png";
@@ -394,28 +396,28 @@ export default function ALPRPage() {
                 </h2>
                 <div className="h-1 w-16 rounded-full bg-primary mb-6" />
                 <ul className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed list-none">
-                  <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
+                  <li className="flex gap-3 items-start">
+                    <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
                     Improved officer safety through situational awareness and location accuracy
                   </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
+                  <li className="flex gap-3 items-start">
+                    <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
                     Early detection of potential threats before they escalate
                   </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
+                  <li className="flex gap-3 items-start">
+                    <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
                     Increased situational awareness. Faster and confident decision making
                   </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
+                  <li className="flex gap-3 items-start">
+                    <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
                     Optimized for existing infrastructure, low operational overhead
                   </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
+                  <li className="flex gap-3 items-start">
+                    <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
                     Stronger protection of public events, crowded zones, and sensitive buildings
                   </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary shrink-0 mt-[0.6em] w-1.5 h-1.5 rounded-sm bg-current self-start" aria-hidden />
+                  <li className="flex gap-3 items-start">
+                    <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
                     Reduced manual monitoring workload for control room teams
                   </li>
                 </ul>
@@ -472,6 +474,12 @@ export default function ALPRPage() {
                     parks, transit, public area, and community environments.
                   </p>
                 </div>
+                <Link href="/calendar" className="inline-block mt-6">
+                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full">
+                    Get a demo
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
               <AutoplayVideoWithPlayPause src={alprPlatformVideo} />
             </div>
@@ -500,6 +508,12 @@ export default function ALPRPage() {
                     improved awareness and precise location information.
                   </p>
                 </div>
+                <Link href="/calendar" className="inline-block mt-6">
+                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full">
+                    Get a demo
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -524,6 +538,12 @@ export default function ALPRPage() {
                     privacy requirements.
                   </p>
                 </div>
+                <Link href="/calendar" className="inline-block mt-6">
+                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full">
+                    Get a demo
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
               <AutoplayVideoWithPlayPause src={layerSecurityVideo} />
             </div>
@@ -552,6 +572,12 @@ export default function ALPRPage() {
                     with confidence and care.
                   </p>
                 </div>
+                <Link href="/calendar" className="inline-block mt-6">
+                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full">
+                    Get a demo
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
               </div>
