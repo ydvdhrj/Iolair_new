@@ -8,6 +8,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import logoNew from "@assets/LogoNew.png";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,15 +67,10 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between h-16">
         <Link href="/">
           <a className="flex items-center gap-2 group">
-            <div
-              className={cn(
-                "h-10 w-auto rounded-md flex items-center justify-center px-2 py-1",
-                isScrolled ? "bg-background/98" : "bg-background/80"
-              )}
-            >
+            <div className="h-10 w-auto flex items-center justify-center px-2 py-1">
               <img
-                src="/logo.png"
-                alt="IOLAIRE.AI"
+                src={logoNew}
+                alt=""
                 className="h-8 w-auto object-contain"
               />
             </div>
