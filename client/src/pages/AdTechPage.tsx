@@ -73,7 +73,10 @@ function AdTechProductsSlider() {
   };
 
   return (
-    <section className="relative py-14 md:py-20 bg-background overflow-hidden" data-section="products">
+    <section
+      className="relative pt-14 md:pt-20 pb-14 md:pb-20 bg-background overflow-hidden"
+      data-section="products"
+    >
       <div className="relative w-full max-w-6xl mx-auto px-4 md:px-6">
         <div className="relative rounded-3xl bg-[#020617] text-white overflow-hidden shadow-2xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-14 p-6 md:p-10 lg:p-12 items-center">
@@ -145,7 +148,10 @@ export default function AdTechPage() {
 
       <main className="pt-16">
         {/* 1. Hero */}
-        <section className="w-full relative overflow-hidden bg-white" aria-label="AdTech Platform hero">
+        <section
+          className="w-full relative overflow-hidden bg-white pb-14 md:pb-20"
+          aria-label="AdTech Platform hero"
+        >
           <div
             className="relative w-full max-h-[85vh] min-h-[400px] bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${adtechHeroImg})`, aspectRatio: "1920 / 810" }}
@@ -163,7 +169,7 @@ export default function AdTechPage() {
         </section>
 
         {/* 2. Intro text */}
-        <section className="py-14 md:py-20 section-soft">
+        <section className="pt-14 md:pt-20 pb-0 section-soft">
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
               For forward-thinking retailers, the core challenge is clear: How do you close the time

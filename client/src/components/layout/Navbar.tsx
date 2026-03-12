@@ -119,9 +119,11 @@ export function Navbar() {
                 Contact Us <ExternalLink className="h-3.5 w-3.5" />
               </Button>
             </Link>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-5 flex items-center gap-2 h-9 text-base">
-              Client Login <Lock className="h-3.5 w-3.5" />
-            </Button>
+            <Link href="/client-login">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-5 flex items-center gap-2 h-9 text-base">
+                Client Login <Lock className="h-3.5 w-3.5" />
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -153,9 +155,11 @@ export function Navbar() {
                 Contact Us
               </Button>
             </Link>
-            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full h-10 text-base">
-              Client Login
-            </Button>
+            <Link href="/client-login">
+              <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full h-10 text-base">
+                Client Login
+              </Button>
+            </Link>
           </div>
         </div>
       )}

@@ -12,6 +12,10 @@ import AboutUsPage from "@/pages/AboutUsPage";
 import GetInTouchPage from "@/pages/GetInTouchPage";
 import CareersPage from "@/pages/CareersPage";
 import OfficeLocationsPage from "@/pages/OfficeLocationsPage";
+import ClientLoginPage from "@/pages/ClientLoginPage";
+import TermsOfServicePage from "@/pages/TermsOfServicePage";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
+import PrivacySettingsPage from "@/pages/PrivacySettingsPage";
 import ALPRResourcesPage from "@/pages/ALPRResourcesPage";
 import AdTechResourcesPage from "@/pages/AdTechResourcesPage";
 import IndustrySolutionsPage from "@/pages/IndustrySolutionsPage";
@@ -19,6 +23,7 @@ import RetailPage from "@/pages/RetailPage";
 import SafetyEnforcementPage from "@/pages/SafetyEnforcementPage";
 import CalendarPage from "@/pages/CalendarPage";
 import PlatformArchitecturePage from "@/pages/PlatformArchitecturePage";
+import { CookieConsent } from "@/components/CookieConsent";
 
 function Router() {
   const [location] = useLocation();
@@ -50,6 +55,12 @@ function Router() {
       {/* Calendar/Booking */}
       <Route path="/calendar" component={CalendarPage} />
       <Route path="/book-appointment" component={CalendarPage} />
+      {/* Client login */}
+      <Route path="/client-login" component={ClientLoginPage} />
+      {/* Legal */}
+      <Route path="/terms-of-service" component={TermsOfServicePage} />
+      <Route path="/privacy-policy" component={PrivacyPolicyPage} />
+      <Route path="/privacy-settings" component={PrivacySettingsPage} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -61,6 +72,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
+        <CookieConsent />
       </TooltipProvider>
     </QueryClientProvider>
   );

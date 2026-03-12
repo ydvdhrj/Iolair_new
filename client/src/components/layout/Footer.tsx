@@ -193,22 +193,36 @@ export function Footer() {
         <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-sans">
           <p className="text-muted-foreground font-sans">© 2026 IOLAIRE.AI</p>
           <div className="flex flex-wrap items-center justify-center gap-4 text-primary font-sans">
-            <a href="#" className="inline-flex items-center gap-1.5 hover:underline">
-              <FileText className="h-4 w-4" />
-              Terms of Service
-            </a>
-            <a href="#" className="inline-flex items-center gap-1.5 hover:underline">
-              <FileText className="h-4 w-4" />
-              Privacy Policy
-            </a>
-            <a href="#" className="inline-flex items-center gap-1.5 hover:underline">
-              <Settings className="h-4 w-4" />
-              Privacy Settings
-            </a>
-            <a href="#" className="inline-flex items-center gap-1.5 hover:underline">
+            <Link href="/terms-of-service">
+              <a className="inline-flex items-center gap-1.5 hover:underline">
+                <FileText className="h-4 w-4" />
+                Terms of Service
+              </a>
+            </Link>
+            <Link href="/privacy-policy">
+              <a className="inline-flex items-center gap-1.5 hover:underline">
+                <FileText className="h-4 w-4" />
+                Privacy Policy
+              </a>
+            </Link>
+            <Link href="/privacy-settings">
+              <a className="inline-flex items-center gap-1.5 hover:underline">
+                <Settings className="h-4 w-4" />
+                Privacy Settings
+              </a>
+            </Link>
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  window.dispatchEvent(new Event("open-cookie-settings"));
+                }
+              }}
+              className="inline-flex items-center gap-1.5 hover:underline text-primary"
+            >
               <Cookie className="h-4 w-4" />
               Manage Cookies
-            </a>
+            </button>
           </div>
         </div>
       </div>
