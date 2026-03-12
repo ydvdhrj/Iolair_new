@@ -24,6 +24,10 @@ import SafetyEnforcementPage from "@/pages/SafetyEnforcementPage";
 import CalendarPage from "@/pages/CalendarPage";
 import PlatformArchitecturePage from "@/pages/PlatformArchitecturePage";
 import { CookieConsent } from "@/components/CookieConsent";
+import LoyaltyOffersPage from "@/pages/LoyaltyOffersPage";
+import UnifiedDashboardPage from "@/pages/UnifiedDashboardPage";
+import LayeredSecurityPrivacyPage from "@/pages/LayeredSecurityPrivacyPage";
+import EdgeApplicationsALPRPage from "@/pages/EdgeApplicationsALPRPage";
 
 function Router() {
   const [location] = useLocation();
@@ -38,6 +42,10 @@ function Router() {
       {/* Products */}
       <Route path="/alpr" component={ALPRPage} />
       <Route path="/adtech" component={AdTechPage} />
+      <Route path="/adtech/loyalty-offers" component={LoyaltyOffersPage} />
+      <Route path="/alpr/unified-dashboard" component={UnifiedDashboardPage} />
+      <Route path="/alpr/layered-security-privacy" component={LayeredSecurityPrivacyPage} />
+      <Route path="/alpr/edge-applications" component={EdgeApplicationsALPRPage} />
       {/* Industry Solutions */}
       <Route path="/industry-solutions" component={IndustrySolutionsPage} />
       <Route path="/retail" component={RetailPage} />

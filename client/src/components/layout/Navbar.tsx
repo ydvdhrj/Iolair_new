@@ -23,12 +23,12 @@ export function Navbar() {
   }, []);
 
   const navItems = [
-    { 
-      name: "PRODUCTS", 
+    {
+      name: "PRODUCTS",
       options: [
         { label: "AdTech Platform", path: "/adtech" },
-        { label: "ALPR Platform", path: "/alpr" }
-      ]
+        { label: "ALPR Platform", path: "/alpr" },
+      ],
     },
     { 
       name: "INDUSTRY SOLUTIONS", 
@@ -97,17 +97,62 @@ export function Navbar() {
                 <HoverCardContent
                   sideOffset={6}
                   align="start"
-                  className="bg-card/98 backdrop-blur-xl border border-border/50 shadow-lg rounded-xl w-auto p-2 mt-1"
+                  className="bg-card/98 backdrop-blur-xl border border-border/50 shadow-lg rounded-xl w-auto p-3 mt-1"
                 >
-                  <div className="flex flex-col gap-0.5">
-                    {item.options.map((opt) => (
-                      <Link key={opt.path} href={opt.path}>
-                        <a className="text-base py-2 px-3 rounded-lg hover:bg-primary/10 hover:text-primary cursor-pointer transition-all duration-200 font-medium whitespace-nowrap">
-                          {opt.label}
-                        </a>
-                      </Link>
-                    ))}
-                  </div>
+                  {item.name === "PRODUCTS" ? (
+                    <div className="flex gap-6">
+                      <div className="flex flex-col gap-1.5 min-w-[180px]">
+                        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground px-1">
+                          AdTech Platform
+                        </span>
+                        <Link href="/adtech">
+                          <a className="text-base py-1.5 px-2 rounded-lg hover:bg-primary/10 hover:text-primary cursor-pointer transition-all duration-200 font-medium whitespace-nowrap">
+                            Overview
+                          </a>
+                        </Link>
+                        <Link href="/adtech/loyalty-offers">
+                          <a className="text-base py-1.5 px-2 rounded-lg hover:bg-primary/10 hover:text-primary cursor-pointer transition-all duration-200 font-medium whitespace-nowrap">
+                            Loyalty &amp; Offers
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="flex flex-col gap-1.5 min-w-[200px]">
+                        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground px-1">
+                          ALPR Platform
+                        </span>
+                        <Link href="/alpr">
+                          <a className="text-base py-1.5 px-2 rounded-lg hover:bg-primary/10 hover:text-primary cursor-pointer transition-all duration-200 font-medium whitespace-nowrap">
+                            Overview
+                          </a>
+                        </Link>
+                        <Link href="/alpr/unified-dashboard">
+                          <a className="text-base py-1.5 px-2 rounded-lg hover:bg-primary/10 hover:text-primary cursor-pointer transition-all duration-200 font-medium whitespace-nowrap">
+                            Unified Dashboard
+                          </a>
+                        </Link>
+                        <Link href="/alpr/layered-security-privacy">
+                          <a className="text-base py-1.5 px-2 rounded-lg hover:bg-primary/10 hover:text-primary cursor-pointer transition-all duration-200 font-medium whitespace-nowrap">
+                            Layered Security &amp; Privacy
+                          </a>
+                        </Link>
+                        <Link href="/alpr/edge-applications">
+                          <a className="text-base py-1.5 px-2 rounded-lg hover:bg-primary/10 hover:text-primary cursor-pointer transition-all duration-200 font-medium whitespace-nowrap">
+                            Edge Applications
+                          </a>
+                        </Link>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col gap-0.5">
+                      {item.options.map((opt) => (
+                        <Link key={opt.path} href={opt.path}>
+                          <a className="text-base py-2 px-3 rounded-lg hover:bg-primary/10 hover:text-primary cursor-pointer transition-all duration-200 font-medium whitespace-nowrap">
+                            {opt.label}
+                          </a>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </HoverCardContent>
               </HoverCard>
             ))}
@@ -142,11 +187,54 @@ export function Navbar() {
           {navItems.map((item) => (
             <div key={item.name} className="flex flex-col gap-1.5">
               <span className="text-sm font-bold text-muted-foreground uppercase tracking-widest px-2">{item.name}</span>
-              {item.options.map((opt) => (
-                <Link key={opt.path} href={opt.path}>
-                  <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">{opt.label}</a>
-                </Link>
-              ))}
+              {item.name === "PRODUCTS" ? (
+                <div className="flex flex-col gap-1.5">
+                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.18em] px-3 mt-1">
+                    AdTech Platform
+                  </span>
+                  <Link href="/adtech">
+                    <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">
+                      Overview
+                    </a>
+                  </Link>
+                  <Link href="/adtech/loyalty-offers">
+                    <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">
+                      Loyalty &amp; Offers
+                    </a>
+                  </Link>
+                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.18em] px-3 mt-3">
+                    ALPR Platform
+                  </span>
+                  <Link href="/alpr">
+                    <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">
+                      Overview
+                    </a>
+                  </Link>
+                  <Link href="/alpr/unified-dashboard">
+                    <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">
+                      Unified Dashboard
+                    </a>
+                  </Link>
+                  <Link href="/alpr/layered-security-privacy">
+                    <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">
+                      Layered Security &amp; Privacy
+                    </a>
+                  </Link>
+                  <Link href="/alpr/edge-applications">
+                    <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">
+                      Edge Applications
+                    </a>
+                  </Link>
+                </div>
+              ) : (
+                item.options.map((opt) => (
+                  <Link key={opt.path} href={opt.path}>
+                    <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">
+                      {opt.label}
+                    </a>
+                  </Link>
+                ))
+              )}
             </div>
           ))}
           <div className="flex flex-col gap-2 pt-2">

@@ -49,6 +49,17 @@ export default function AdTechResourcesPage() {
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 Questions Retail Leaders Should Ask Before Investing in Parking Analytics
               </p>
+            <a href="/blog/adtech" className="inline-flex">
+              <Button
+                size="sm"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full h-10 px-5 text-sm md:text-base shadow-md shadow-primary/20"
+              >
+                <span className="flex items-start gap-1">
+                  <span>Read blog</span>
+                  <ExternalLink className="h-3.5 w-3.5 mt-[1px]" />
+                </span>
+              </Button>
+            </a>
             </div>
 
             <div className="pt-6">

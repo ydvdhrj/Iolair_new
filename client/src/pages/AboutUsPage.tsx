@@ -81,7 +81,7 @@ export default function AboutUsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
               {/* Kennedy */}
-              <article className="glass-card rounded-2xl p-6 md:p-8 flex flex-col gap-5 h-full">
+              <article className="rounded-3xl border border-primary/20 bg-[hsl(262,88%,92%)] shadow-sm p-6 md:p-8 flex flex-col gap-5 h-full">
                 <div className="flex items-center gap-4 md:gap-5">
                   <img
                     src={kennedyImg}
@@ -127,7 +127,7 @@ export default function AboutUsPage() {
               </article>
 
               {/* Patrick */}
-              <article className="glass-card rounded-2xl p-6 md:p-8 flex flex-col gap-5 h-full">
+              <article className="rounded-3xl border border-primary/20 bg-[hsl(262,88%,92%)] shadow-sm p-6 md:p-8 flex flex-col gap-5 h-full">
                 <div className="flex items-center gap-4 md:gap-5">
                   <img
                     src={patrickImg}

@@ -249,7 +249,7 @@ export default function AdTechPage() {
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
             <div className="rounded-3xl border border-primary/20 bg-[hsl(0,0%,98%)] shadow-sm overflow-hidden">
               {/* Feature Deep Dive heading card */}
-              <div className="p-8 md:p-12 lg:p-14 border-b border-primary/20 bg-[hsl(0,0%,90%)]">
+              <div className="p-8 md:p-12 lg:p-14 border-b border-primary/20 bg-[hsl(262,88%,92%)]">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary mb-4">
                   Feature Deep Dive
                 </h2>

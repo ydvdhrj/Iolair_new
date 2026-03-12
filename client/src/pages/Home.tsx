@@ -21,7 +21,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { VisionAIFeatureTracks } from "@/components/VisionAIFeatureTracks";
 
-import heroPageImg from "@assets/main-hero.png";
+import heroPageImg from "@assets/home-hero-street.png";
 import retailHeroImg from "@assets/retail-hero.png";
 import safetyTeamImg from "@assets/safety-enforcement-team.png";
 import seeResultsHighwayImg from "@assets/see-results-highway.png";
@@ -203,7 +203,7 @@ export default function Home() {
       <section className="relative min-h-screen flex flex-col justify-center pt-24 md:pt-28 pb-14 md:pb-20 overflow-hidden hero-pattern">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/15 rounded-full blur-[140px] -z-10 opacity-60" />
         <div className="absolute top-1/4 right-0 w-[500px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10 opacity-40" />
-        <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-0 flex-1">
+        <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-0 flex-1">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -231,7 +231,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative w-full max-w-[480px] mx-auto aspect-square"
+            className="relative w-full max-w-[800px] mx-auto aspect-[4.7/3]"
           >
             <div className="relative w-full h-full rounded-2xl overflow-hidden border border-border/60 shadow-2xl shadow-primary/10">
               <img

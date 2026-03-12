@@ -60,7 +60,7 @@ export function Footer() {
                 </Link>
               </li>
               <li className="pl-4 text-muted-foreground">
-                <Link href="/adtech">
+                <Link href="/adtech/loyalty-offers">
                   <a className="hover:text-primary transition-colors">
                     &gt; Loyalty and Offers
                   </a>
@@ -74,28 +74,21 @@ export function Footer() {
                 </Link>
               </li>
               <li className="pl-4 text-muted-foreground">
-                <Link href="/alpr">
-                  <a className="hover:text-primary transition-colors">
-                    &gt; ALPR Platform
-                  </a>
-                </Link>
-              </li>
-              <li className="pl-4 text-muted-foreground">
-                <Link href="/adtech">
+                <Link href="/alpr/unified-dashboard">
                   <a className="hover:text-primary transition-colors">
                     &gt; Unified Dashboard
                   </a>
                 </Link>
               </li>
               <li className="pl-4 text-muted-foreground">
-                <Link href="/alpr">
+                <Link href="/alpr/layered-security-privacy">
                   <a className="hover:text-primary transition-colors">
                     &gt; Layered Security & Privacy
                   </a>
                 </Link>
               </li>
               <li className="pl-4 text-muted-foreground">
-                <Link href="/industry-solutions">
+                <Link href="/alpr/edge-applications">
                   <a className="hover:text-primary transition-colors">
                     &gt; Edge Applications
                   </a>
