@@ -306,13 +306,13 @@ export default function ALPRPage() {
         {/* 2. Intro text */}
         <section className="pt-14 md:pt-20 pb-5 md:pb-8 section-soft">
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
               Traditional traffic enforcement often misses critical events,
               provides limited situational awareness, and increases burden on law
               enforcement. When threats go unseen and unresolved, communities
               lose trust.
             </p>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               Vision AI empowers authorities to identify incidents early, improve
               accuracy, reduce operational burden, and enable faster, evidence
               based decisions.
@@ -326,13 +326,15 @@ export default function ALPRPage() {
         {/* 4. Key benefits + Feature Deep Dive */}
         <section className="py-14 md:py-20 section-soft">
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+            <div className="mb-6">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">
+                Key benefits
+              </h2>
+              <div className="h-1 w-16 rounded-full bg-primary" />
+            </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
               {/* Key benefits */}
               <div className="flex flex-col">
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">
-                  Key benefits
-                </h2>
-                <div className="h-1 w-16 rounded-full bg-primary mb-6" />
                 <ul className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed list-none">
                   <li className="flex gap-3 items-start">
                     <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
@@ -362,7 +364,7 @@ export default function ALPRPage() {
               </div>
 
               {/* Feature Deep Dive: background image only */}
-              <div className="relative min-h-[360px] md:min-h-[420px] rounded-2xl overflow-hidden">
+              <div className="relative min-h-[240px] md:min-h-[260px] rounded-2xl overflow-hidden">
                 <img
                   src={alprDeepDiveBg}
                   alt=""
@@ -383,7 +385,7 @@ export default function ALPRPage() {
                   Feature Deep Dive
                 </h2>
                 <div className="h-1 w-20 rounded-full bg-primary mb-6" />
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                   We eliminate fragmented disparate systems, delayed detection, inconsistent
                   monitoring, and security risks. We provide end-to-end privacy, compliance,
                   and data security for traffic enforcement.

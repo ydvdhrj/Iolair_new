@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import safetyKeyImg from "@assets/safety-enforcement-key.png";
+import safetyEnforcementBannerImg from "../../../attached_assets/SafetyEnforcement-Banner.png";
 
 const SAFETY_KEY_CHALLENGES = [
   "Officers cannot be present everywhere",
@@ -20,20 +21,38 @@ export default function SafetyEnforcementPage() {
 
       <main className="container mx-auto px-4 md:px-6 py-24">
         <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
-          {/* Intro */}
+          {/* Intro + banner */}
           <section>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-8 text-foreground -ml-[2px]">
-              Safety Enforcement
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Keeping a community safe across age groups, lifestyles, and vulnerabilities
-              presents complex and evolving challenges for the public safety and traffic
-              enforcement industry. Law enforcement agencies are tasked with safeguarding
-              people with limited resources, fragmented systems, and incomplete real time
-              visibility. As urban environments grow denser and more dynamic, maintaining
-              consistent situational awareness and taking timely action before potential
-              threats escalate becomes increasingly difficult.
-            </p>
+            <div className="relative overflow-hidden rounded-[32px] border border-border/80 bg-gradient-to-r from-primary/5 via-background to-primary/5 px-8 py-8 md:px-12 md:py-10 shadow-sm mb-8">
+              <div className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
+              <h1 className="relative text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-center tracking-tight text-foreground">
+                Safety Enforcement
+              </h1>
+            </div>
+            <div className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
+                <div className="flex items-center">
+                  <p>
+                    Keeping a community safe across age groups, lifestyles, and vulnerabilities
+                    presents complex and evolving challenges for the public safety and traffic
+                    enforcement industry. Law enforcement agencies are tasked with safeguarding
+                    people with limited resources, fragmented systems, and incomplete real time
+                    visibility. As urban environments grow denser and more dynamic, maintaining
+                    consistent situational awareness and taking timely action before potential
+                    threats escalate becomes increasingly difficult.
+                  </p>
+                </div>
+                <div className="w-full flex justify-center md:justify-end h-full">
+                  <div className="relative w-full max-w-[380px] h-full rounded-2xl overflow-hidden shadow-sm">
+                    <img
+                      src={safetyEnforcementBannerImg}
+                      alt="Safety enforcement"
+                      className="absolute inset-0 w-full h-full object-cover object-left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* Key Challenges */}

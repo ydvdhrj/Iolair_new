@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import retailKeyImg from "@assets/retail-key.jpg";
+import retailBannerImg from "../../../attached_assets/Retail-Banner.jpg";
 
 const KEY_CHALLENGES = [
   "Increasing responsibility to protect customer privacy and comply with data protection regulations",
@@ -17,25 +18,41 @@ export default function RetailPage() {
 
       <main className="container mx-auto px-4 md:px-6 py-24">
         <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
-          {/* Hero */}
+          {/* Hero + intro */}
           <section>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mt-0 mb-8 leading-tight text-left text-foreground -ml-[2px]">
-              Retail
-            </h1>
-            <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
-              <p>
-                Retailers today operate in an increasingly complex environment where
-                customer expectations evolve rapidly across physical and digital
-                spaces. Understanding what customers need in the moment, while
-                respecting their right to privacy, has become one of the
-                industry&apos;s greatest challenges.
-              </p>
-              <p>
-                At Iolaire.AI, we tackle this critical challenge by combining Vision
-                AI and shopper data sets along with precision ads tailored to real
-                time demographics. This approach attracts engagement, enables
-                transactions, and delivers delight in the moments that matter most.
-              </p>
+            <div className="relative overflow-hidden rounded-[32px] border border-border/80 bg-gradient-to-r from-primary/5 via-background to-primary/5 px-8 py-8 md:px-12 md:py-10 shadow-sm mb-8">
+              <div className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
+              <h1 className="relative text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-center tracking-tight text-foreground">
+                Retail
+              </h1>
+            </div>
+            <div className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
+                <div className="space-y-6 flex flex-col justify-center">
+                  <p>
+                    Retailers today operate in an increasingly complex environment where
+                    customer expectations evolve rapidly across physical and digital
+                    spaces. Understanding what customers need in the moment, while
+                    respecting their right to privacy, has become one of the
+                    industry's greatest challenges.
+                  </p>
+                  <p>
+                    At Iolaire.AI, we tackle this critical challenge by combining Vision
+                    AI and shopper data sets along with precision ads tailored to real
+                    time demographics. This approach attracts engagement, enables
+                    transactions, and delivers delight in the moments that matter most.
+                  </p>
+                </div>
+                <div className="w-full flex justify-center md:justify-end h-full">
+                  <div className="relative w-full max-w-[380px] h-full rounded-2xl overflow-hidden shadow-sm">
+                    <img
+                      src={retailBannerImg}
+                      alt="Retail"
+                      className="absolute inset-0 w-full h-full object-cover object-left"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 

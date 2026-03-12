@@ -5,8 +5,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { AutoplayVideoWithPlayPause } from "@/components/AutoplayVideoWithPlayPause";
 import { Button } from "@/components/ui/button";
-import adtechHeroImg from "@assets/adtech-hero.png";
-import alprDeepDiveBg from "@assets/alpr-deep-dive-bg.png";
+import adtechHeroImg from "../../../attached_assets/AdTechBanner.jpg";
+import keyBenefitsImg from "../../../attached_assets/AdTech-Key-Benefits.jpg";
 import adtechPlatformImg from "@assets/adtech-platform.jpg";
 import loyaltyOffersImg from "@assets/Loyalty-Offers.jpg";
 import edgeApplicationsImg from "@assets/adtechedge-application.jpg";
@@ -79,17 +79,17 @@ function AdTechProductsSlider() {
     >
       <div className="relative w-full max-w-6xl mx-auto px-4 md:px-6">
         <div className="relative rounded-3xl bg-[#020617] text-white overflow-hidden shadow-2xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-14 p-6 md:p-10 lg:p-12 items-center">
-            <div className="relative">
-              <div className="relative aspect-video rounded-xl overflow-hidden bg-foreground/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 p-6 md:p-10 lg:p-12 items-center">
+            <div className="relative h-full">
+              <div className="relative h-[220px] md:h-[260px] lg:h-[300px] rounded-xl overflow-hidden bg-foreground/10">
                 <img
                   src={slide.media.src}
                   alt=""
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
             </div>
-            <div className="space-y-5 md:space-y-6">
+            <div className="space-y-5 md:space-y-6 max-w-sm md:max-w-md">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
                   {slide.tag}
@@ -149,21 +149,28 @@ export default function AdTechPage() {
       <main className="pt-16">
         {/* 1. Hero */}
         <section
-          className="w-full relative overflow-hidden bg-white pb-14 md:pb-20"
+          className="w-full relative overflow-hidden bg-white pb-0 md:pb-0"
           aria-label="AdTech Platform hero"
         >
           <div
             className="relative w-full max-h-[85vh] min-h-[400px] bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${adtechHeroImg})`, aspectRatio: "1920 / 810" }}
           />
-          <div className="absolute inset-0 flex items-center justify-center bg-foreground/30">
-            <div className="container mx-auto px-4 md:px-6 text-center max-w-4xl">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground mb-4 leading-tight">
-                AdTech Platform
-              </h1>
-              <p className="text-xl md:text-2xl text-primary-foreground/95 font-medium">
-                The Widening Gap Between Data and Impact
-              </p>
+          <div className="absolute inset-0 flex items-start justify-start">
+            <div className="mx-auto w-full pl-4 pr-4 pt-4 md:pl-10 md:pr-0 md:pt-6 lg:pl-16 lg:pr-0 lg:pt-8">
+              <div className="inline-flex max-w-xl bg-black/35 text-primary-foreground rounded-2xl px-5 py-4 md:px-8 md:py-6 shadow-xl">
+                <div className="space-y-2 md:space-y-3">
+                  <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">
+                    AdTech Platform
+                  </h1>
+                  <p className="text-lg md:text-2xl font-semibold leading-snug">
+                    Real-Time Impact. Realized.
+                  </p>
+                  <p className="text-sm md:text-base lg:text-lg leading-relaxed">
+                    Transform retail advertising with our edge based AI advertising platform, delivering hyper personalized, real time campaigns that reach shoppers at the right moment.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -171,15 +178,15 @@ export default function AdTechPage() {
         {/* 2. Intro text */}
         <section className="pt-14 md:pt-20 pb-0 section-soft">
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
               For forward-thinking retailers, the core challenge is clear: How do you close the time
               gap to deliver truly impactful advertising, right now?
             </p>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
               Customer behavior and demographics continuously vary throughout the day, yet most
               retail advertising remains static and delayed.
             </p>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               Our platform closes this gap by delivering real-time insights at the point of
               engagement, enabling retailers to deliver timely, relevant advertising that drives
               conversions when customer intent is highest.
@@ -193,12 +200,14 @@ export default function AdTechPage() {
         {/* 4. Key benefits + Feature Deep Dive */}
         <section className="py-14 md:py-20 bg-background">
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+            <div className="mb-6">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">
+                Key benefits
+              </h2>
+              <div className="h-1 w-16 rounded-full bg-primary" />
+            </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
               <div className="flex flex-col">
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">
-                  Key benefits
-                </h2>
-                <div className="h-1 w-16 rounded-full bg-primary mb-6" />
                 <ul className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed list-none">
                   <li className="flex gap-3 items-start">
                     <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
@@ -233,11 +242,11 @@ export default function AdTechPage() {
                   </li>
                 </ul>
               </div>
-              <div className="relative min-h-[360px] md:min-h-[420px] rounded-2xl overflow-hidden bg-muted">
+              <div className="relative min-h-[240px] md:min-h-[260px] rounded-2xl overflow-hidden bg-muted">
                 <img
-                  src={alprDeepDiveBg}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-cover"
+                  src={keyBenefitsImg}
+                  alt="Illustration of AdTech key benefits"
+                  className="absolute inset-0 w-full h-full object-cover filter brightness-105 contrast-115 saturate-115"
                 />
               </div>
             </div>
@@ -254,11 +263,11 @@ export default function AdTechPage() {
                   Feature Deep Dive
                 </h2>
                 <div className="h-1 w-20 rounded-full bg-primary mb-6" />
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
                   We provide actionable insights into customer behavior, dwell time, and intent, helping
                   retailers make confident decisions without being overwhelmed by large volumes of data.
                 </p>
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                   Our platform reduces wasted advertising spend and connects every impression to
                   real-world engagement and business outcomes.
                 </p>
@@ -363,7 +372,7 @@ export default function AdTechPage() {
                 <img
                   src={edgeApplicationsImg}
                   alt="Edge Applications"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
             </div>

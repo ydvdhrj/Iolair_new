@@ -102,10 +102,10 @@ export function Footer() {
               Platform Architecture
             </h4>
             <ul className="space-y-2 text-sm font-sans">
-              <li>
+              <li className="pl-4 text-muted-foreground">
                 <Link href="/platform-architecture">
-                  <a className="text-primary hover:underline font-medium">
-                    Explore the platform
+                  <a className="hover:text-primary transition-colors">
+                    &gt; Explore the platform
                   </a>
                 </Link>
               </li>

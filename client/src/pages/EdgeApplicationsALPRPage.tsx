@@ -8,13 +8,16 @@ export default function EdgeApplicationsALPRPage() {
 
       <main className="container mx-auto px-4 md:px-6 py-24">
         <div className="max-w-4xl mx-auto space-y-10">
-          <header className="space-y-4">
-            <span className="text-primary font-bold tracking-widest uppercase text-[0.9rem]">
-              ALPR Platform
-            </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight">
-              Edge Applications
-            </h1>
+          <header>
+            <div className="relative overflow-hidden rounded-[32px] border border-border/80 bg-gradient-to-r from-primary/5 via-background to-primary/5 px-8 py-8 md:px-12 md:py-10 shadow-sm">
+              <div className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
+              <span className="absolute top-4 left-6 md:left-8 text-primary font-bold tracking-widest uppercase text-[0.9rem]">
+                ALPR Platform
+              </span>
+              <h1 className="relative text-2xl md:text-3xl lg:text-4xl font-heading font-bold leading-tight text-center">
+                Edge Applications
+              </h1>
+            </div>
           </header>
 
           <section className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">

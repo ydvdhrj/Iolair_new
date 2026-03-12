@@ -102,7 +102,7 @@ export function Navbar() {
                   {item.name === "PRODUCTS" ? (
                     <div className="flex gap-6">
                       <div className="flex flex-col gap-1.5 min-w-[180px]">
-                        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground px-1">
+                        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary px-1">
                           AdTech Platform
                         </span>
                         <Link href="/adtech">
@@ -117,7 +117,7 @@ export function Navbar() {
                         </Link>
                       </div>
                       <div className="flex flex-col gap-1.5 min-w-[200px]">
-                        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground px-1">
+                        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary px-1">
                           ALPR Platform
                         </span>
                         <Link href="/alpr">
@@ -189,7 +189,7 @@ export function Navbar() {
               <span className="text-sm font-bold text-muted-foreground uppercase tracking-widest px-2">{item.name}</span>
               {item.name === "PRODUCTS" ? (
                 <div className="flex flex-col gap-1.5">
-                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.18em] px-3 mt-1">
+                  <span className="text-xs font-semibold text-primary uppercase tracking-[0.18em] px-3 mt-1">
                     AdTech Platform
                   </span>
                   <Link href="/adtech">
@@ -202,7 +202,7 @@ export function Navbar() {
                       Loyalty &amp; Offers
                     </a>
                   </Link>
-                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.18em] px-3 mt-3">
+                  <span className="text-xs font-semibold text-primary uppercase tracking-[0.18em] px-3 mt-3">
                     ALPR Platform
                   </span>
                   <Link href="/alpr">
