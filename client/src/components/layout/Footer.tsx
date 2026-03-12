@@ -45,8 +45,8 @@ export function Footer() {
   return (
     <footer className="bg-card border-t border-border font-sans">
       <div className="container mx-auto px-4 md:px-6 font-sans">
-        {/* Row 1: Products, Company, Logo + Social */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 py-12 md:py-16">
+        {/* Row 1: Products, Platform Architecture, Company, Logo + Social */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 py-12 md:py-16">
           <div>
             <h4 className="text-primary font-bold uppercase tracking-wider text-sm mb-4 font-sans">
               Products
@@ -98,6 +98,21 @@ export function Footer() {
                 <Link href="/industry-solutions">
                   <a className="hover:text-primary transition-colors">
                     &gt; Edge Applications
+                  </a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-primary font-bold uppercase tracking-wider text-sm mb-4 font-sans">
+              Platform Architecture
+            </h4>
+            <ul className="space-y-2 text-sm font-sans">
+              <li>
+                <Link href="/platform-architecture">
+                  <a className="text-primary hover:underline font-medium">
+                    Explore the platform
                   </a>
                 </Link>
               </li>

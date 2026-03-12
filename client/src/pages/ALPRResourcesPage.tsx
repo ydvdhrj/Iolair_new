@@ -13,7 +13,7 @@ export default function ALPRResourcesPage() {
           {/* Top header chip with light design */}
           <div className="relative overflow-hidden rounded-[32px] border border-border/80 bg-gradient-to-r from-primary/5 via-background to-primary/5 px-8 py-8 md:px-12 md:py-10 shadow-sm">
             <div className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
-            <h1 className="relative text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-center tracking-tight">
+            <h1 className="relative text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-center tracking-tight">
               ALPR Resources
             </h1>
           </div>

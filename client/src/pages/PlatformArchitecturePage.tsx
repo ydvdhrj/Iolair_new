@@ -22,7 +22,7 @@ export default function PlatformArchitecturePage() {
               <p className="text-primary font-bold tracking-[0.24em] uppercase text-base md:text-lg mb-4">
                 Platform Architecture
               </p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight mb-5">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold leading-tight mb-5">
                 Engineered for Real-Time Insight,
                 <span className="block text-primary">At the Edge.</span>
               </h1>

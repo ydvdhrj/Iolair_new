@@ -12,8 +12,8 @@ export default function AboutUsPage() {
         <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
           {/* About Us intro */}
           <section>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 text-foreground">
-              About Us
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 text-foreground">
+              Company
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Our leadership team brings 70+ years of combined experience in scaling

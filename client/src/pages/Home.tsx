@@ -21,7 +21,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { VisionAIFeatureTracks } from "@/components/VisionAIFeatureTracks";
 
-import heroPageImg from "@assets/HeroPage.png";
+import heroPageImg from "@assets/main-hero.png";
 import retailHeroImg from "@assets/retail-hero.png";
 import safetyTeamImg from "@assets/safety-enforcement-team.png";
 import seeResultsHighwayImg from "@assets/see-results-highway.png";
@@ -153,11 +153,11 @@ function SeeTheResultsCarousel() {
           </div>
 
           {/* Manual controls */}
-          <div className="absolute inset-0 flex items-center justify-end px-4 z-10 pointer-events-none">
+          <div className="absolute inset-0 flex items-center justify-end px-4 z-20">
             <button
               type="button"
               onClick={goToNext}
-              className="pointer-events-auto inline-flex items-center justify-center h-10 w-10 rounded-full bg-background/80 text-foreground shadow-md hover:bg-background"
+              className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-background/80 text-foreground shadow-md hover:bg-background"
               aria-label="Next slide"
             >
               <ChevronRight className="h-5 w-5" />
@@ -200,7 +200,7 @@ export default function Home() {
       <Navbar />
 
       {/* 1. HERO SECTION - fills first viewport */}
-      <section className="relative min-h-screen flex flex-col justify-center pt-24 pb-20 md:pt-28 md:pb-24 overflow-hidden hero-pattern">
+      <section className="relative min-h-screen flex flex-col justify-center pt-24 md:pt-28 pb-14 md:pb-20 overflow-hidden hero-pattern">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/15 rounded-full blur-[140px] -z-10 opacity-60" />
         <div className="absolute top-1/4 right-0 w-[500px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10 opacity-40" />
         <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-0 flex-1">
@@ -231,7 +231,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative h-[320px] sm:h-[400px] lg:h-[70vh] lg:min-h-[420px]"
+            className="relative w-full max-w-[480px] mx-auto aspect-square"
           >
             <div className="relative w-full h-full rounded-2xl overflow-hidden border border-border/60 shadow-2xl shadow-primary/10">
               <img
@@ -258,7 +258,7 @@ export default function Home() {
               <span className="text-primary font-bold tracking-widest uppercase text-[1.05rem] mb-4 block">
                 Product Suite
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mt-0 mb-4 leading-tight text-left">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mt-0 mb-4 leading-tight text-left -ml-[2px]">
                 Retail
               </h2>
               <p className="text-xl md:text-2xl font-medium text-foreground mb-6">
@@ -300,7 +300,7 @@ export default function Home() {
               <span className="text-primary font-bold tracking-widest uppercase text-[1.05rem] mb-4 block">
                 Product Suite
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mt-0 mb-4 leading-tight text-left">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mt-0 mb-4 leading-tight text-left -ml-[2px]">
                 Safety Enforcement
               </h2>
               <p className="text-xl md:text-2xl font-medium text-foreground mb-6">
@@ -371,9 +371,12 @@ export default function Home() {
             </div>
             <div className="flex justify-center">
               <Link href="/calendar">
-                <a className="link-underline inline-flex items-center gap-1 text-primary font-semibold">
-                  Request a demo <span className="ml-1">-&gt;</span>
-                </a>
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-8"
+                >
+                  Request a demo <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </Link>
             </div>
           </div>
@@ -388,9 +391,8 @@ export default function Home() {
                   Future of Vision AI is here
                 </h3>
                 <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto">
-                  Transformative Vision AI solutions designed for industry needs,
-                  securing communities through reliable intelligence while operating
-                  efficiently within existing infrastructure.
+                Transformative Vision AI platform designed for retail and public safety needs,
+                 delivering reliable intelligence while operating efficiently within existing infrastructure.
                 </p>
                 <Link href="/platform-architecture" className="inline-flex">
                   <Button

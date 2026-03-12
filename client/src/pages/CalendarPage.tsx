@@ -171,7 +171,7 @@ export default function CalendarPage() {
         <div className="relative z-10 container mx-auto px-4 md:px-6 pt-20 pb-16">
           {/* Hero Section */}
           <div className="text-center mb-8">
-            <h1 className="text-3xl md:text-4xl font-heading font-bold mb-3 bg-gradient-to-r from-foreground via-primary to-success bg-clip-text text-transparent">
+          <h1 className="text-2xl md:text-3xl font-heading font-bold mb-3 bg-gradient-to-r from-foreground via-primary to-success bg-clip-text text-transparent">
               Book an Appointment
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
