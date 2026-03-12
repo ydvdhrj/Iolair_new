@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { FileText, Cookie, Settings } from "lucide-react";
+import logoNew from "@assets/LogoNew.png";
 
 /* Inline flag SVGs for cross-platform visibility (Windows often doesn't render flag emojis) */
 function FlagUS({ className }: { className?: string }) {
@@ -125,7 +126,7 @@ export function Footer() {
             <div className="flex items-center mb-4">
               <div className="h-10 w-auto rounded-md bg-white flex items-center justify-center px-2 py-1">
                 <img
-                  src="/logo.png"
+                  src={logoNew}
                   alt="IOLAIRE.AI"
                   className="bg-white h-8 w-auto object-contain"
                 />

@@ -120,7 +120,7 @@ function ALPRProductsSlider() {
   };
 
   return (
-    <section className="relative py-14 md:py-20 bg-background overflow-hidden" data-section="products">
+    <section className="relative py-14 md:py-20 section-soft overflow-hidden" data-section="products">
       <div className="relative w-full max-w-6xl mx-auto px-4 md:px-6">
         <div className="relative rounded-3xl bg-[#020617] text-white overflow-hidden shadow-2xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-14 p-6 md:p-10 lg:p-12 items-center">
@@ -242,22 +242,24 @@ export default function ALPRPage() {
                 />
               )}
             </div>
-            <div className="demo-image-section__card absolute bottom-6 right-6 z-[2] max-w-[340px] hidden md:block">
+            <div className="demo-image-section__card absolute bottom-10 right-6 z-[2] max-w-[320px] hidden md:block">
               <div
                 id="anpr-card"
-                className="vehicle-detection-card rounded-xl bg-black/70 text-white border border-white/15 shadow-2xl p-5"
+                className="vehicle-detection-card w-[320px] h-[260px] rounded-xl bg-black/70 text-white border border-white/15 shadow-2xl p-4"
               >
                 <div className={`vehicle-card-top space-y-4 ${cardUpdating ? "is-updating" : ""}`}>
-                  <div className="vehicle-card-left">
-                    <div className="license-plate-display inline-block rounded bg-primary px-3 py-1.5">
-                      <div className="plate-number js-plate-number text-primary-foreground font-bold text-lg tracking-wide">
-                        {currentVehicle?.fallbackPlate ?? "--"}
-                      </div>
-                      <div className="plate-region js-plate-region text-primary-foreground/80 text-sm">
-                        {currentVehicle?.region ?? "--"}
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="vehicle-card-left">
+                      <div className="license-plate-display inline-block rounded bg-primary px-3 py-1.5">
+                        <div className="plate-number js-plate-number text-primary-foreground font-bold text-lg tracking-wide">
+                          {currentVehicle?.fallbackPlate ?? "--"}
+                        </div>
+                        <div className="plate-region js-plate-region text-primary-foreground/80 text-sm">
+                          {currentVehicle?.region ?? "--"}
+                        </div>
                       </div>
                     </div>
-                    <div className="anpr-inline mt-2">
+                    <div className="anpr-inline">
                       <span className="anpr-status inline-flex items-center px-2.5 py-1 rounded-full bg-success/20 text-success text-sm font-medium js-anpr-status">
                         {cardUpdating ? "Detecting..." : "Plate Detected"}
                       </span>
@@ -302,7 +304,7 @@ export default function ALPRPage() {
         </section>
 
         {/* 2. Intro text */}
-        <section className="py-14 md:py-20 section-soft">
+        <section className="pt-14 md:pt-20 pb-5 md:pb-8 section-soft">
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
               Traditional traffic enforcement often misses critical events,
@@ -322,7 +324,7 @@ export default function ALPRPage() {
         <ALPRProductsSlider />
 
         {/* 4. Key benefits + Feature Deep Dive */}
-        <section className="py-14 md:py-20 bg-background">
+        <section className="py-14 md:py-20 section-soft">
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
               {/* Key benefits */}
@@ -372,11 +374,11 @@ export default function ALPRPage() {
         </section>
 
         {/* 6. Feature Deep Dive + four product sections */}
-        <section className="py-14 md:py-20">
+        <section className="py-14 md:py-20 section-soft">
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-            <div className="rounded-3xl border border-border bg-card/90 shadow-sm overflow-hidden">
+            <div className="rounded-3xl border border-primary/20 bg-[hsl(0,0%,98%)] shadow-sm overflow-hidden">
               {/* Feature Deep Dive heading card */}
-              <div className="p-8 md:p-12 lg:p-14 border-b border-border/80 bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
+              <div className="p-8 md:p-12 lg:p-14 border-b border-primary/20 bg-[hsl(0,0%,90%)]">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary mb-4">
                   Feature Deep Dive
                 </h2>
@@ -389,7 +391,7 @@ export default function ALPRPage() {
               </div>
 
               {/* 4 product sections */}
-              <div className="p-8 md:p-12 lg:p-14 space-y-16 md:space-y-24 bg-[hsl(0,0%,96%)]">
+              <div className="p-8 md:p-12 lg:p-14 space-y-16 md:space-y-24 bg-[hsl(0,0%,98%)]">
             {/* 1. ALPR Platform: text left, video right */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
