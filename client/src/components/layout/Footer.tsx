@@ -1,6 +1,5 @@
 import { Link } from "wouter";
 import { FileText, Cookie, Settings } from "lucide-react";
-import logoNew from "@assets/LogoNew.png";
 
 /* Inline flag SVGs for cross-platform visibility (Windows often doesn't render flag emojis) */
 function FlagUS({ className }: { className?: string }) {
@@ -45,22 +44,22 @@ export function Footer() {
   return (
     <footer className="bg-card border-t border-border font-sans">
       <div className="container mx-auto px-4 md:px-6 font-sans">
-        {/* Row 1: Products, Platform Architecture, Company, Logo + Social */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 py-12 md:py-16">
+        {/* Row 1: Products, Company, Logo + Social */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 py-12 md:py-16">
           <div>
             <h4 className="text-primary font-bold uppercase tracking-wider text-sm mb-4 font-sans">
               Products
             </h4>
             <ul className="space-y-2 text-sm font-sans">
               <li>
-                <Link href="/hla">
+                <Link href="/adtech">
                   <a className="text-primary hover:underline font-medium">
                     AdTech Platform
                   </a>
                 </Link>
               </li>
               <li className="pl-4 text-muted-foreground">
-                <Link href="/hla">
+                <Link href="/adtech">
                   <a className="hover:text-primary transition-colors">
                     &gt; Loyalty and Offers
                   </a>
@@ -81,7 +80,7 @@ export function Footer() {
                 </Link>
               </li>
               <li className="pl-4 text-muted-foreground">
-                <Link href="/hla">
+                <Link href="/adtech">
                   <a className="hover:text-primary transition-colors">
                     &gt; Unified Dashboard
                   </a>
@@ -98,21 +97,6 @@ export function Footer() {
                 <Link href="/industry-solutions">
                   <a className="hover:text-primary transition-colors">
                     &gt; Edge Applications
-                  </a>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-primary font-bold uppercase tracking-wider text-sm mb-4 font-sans">
-              Platform Architecture
-            </h4>
-            <ul className="space-y-2 text-sm font-sans">
-              <li>
-                <Link href="/platform-architecture">
-                  <a className="text-primary hover:underline font-medium">
-                    Platform Overview
                   </a>
                 </Link>
               </li>
@@ -139,11 +123,11 @@ export function Footer() {
 
           <div className="flex flex-col items-start md:items-end font-sans">
             <div className="flex items-center mb-4">
-              <div className="h-10 w-auto flex items-center justify-center px-2 py-1">
+              <div className="h-10 w-auto rounded-md bg-white flex items-center justify-center px-2 py-1">
                 <img
-                  src={logoNew}
-                  alt=""
-                  className="h-8 w-auto object-contain"
+                  src="/logo.png"
+                  alt="IOLAIRE.AI"
+                  className="bg-white h-8 w-auto object-contain"
                 />
               </div>
             </div>

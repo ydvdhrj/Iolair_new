@@ -7,13 +7,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import ALPRPage from "@/pages/ALPRPage";
-import HLAPage from "@/pages/HLAPage";
+import AdTechPage from "@/pages/AdTechPage";
 import AboutUsPage from "@/pages/AboutUsPage";
 import GetInTouchPage from "@/pages/GetInTouchPage";
 import CareersPage from "@/pages/CareersPage";
 import OfficeLocationsPage from "@/pages/OfficeLocationsPage";
 import ALPRResourcesPage from "@/pages/ALPRResourcesPage";
-import HLAResourcesPage from "@/pages/HLAResourcesPage";
+import AdTechResourcesPage from "@/pages/AdTechResourcesPage";
 import IndustrySolutionsPage from "@/pages/IndustrySolutionsPage";
 import RetailPage from "@/pages/RetailPage";
 import SafetyEnforcementPage from "@/pages/SafetyEnforcementPage";
@@ -32,7 +32,7 @@ function Router() {
       <Route path="/" component={Home} />
       {/* Products */}
       <Route path="/alpr" component={ALPRPage} />
-      <Route path="/hla" component={HLAPage} />
+      <Route path="/adtech" component={AdTechPage} />
       {/* Industry Solutions */}
       <Route path="/industry-solutions" component={IndustrySolutionsPage} />
       <Route path="/retail" component={RetailPage} />
@@ -41,7 +41,7 @@ function Router() {
       <Route path="/platform-architecture" component={PlatformArchitecturePage} />
       {/* Resources */}
       <Route path="/alpr-resources" component={ALPRResourcesPage} />
-      <Route path="/hla-resources" component={HLAResourcesPage} />
+      <Route path="/adtech-resources" component={AdTechResourcesPage} />
       {/* About Us */}
       <Route path="/about-us" component={AboutUsPage} />
       <Route path="/get-in-touch" component={GetInTouchPage} />

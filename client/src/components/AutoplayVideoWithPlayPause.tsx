@@ -26,6 +26,13 @@ export function AutoplayVideoWithPlayPause({
     else pause();
   }, [isPlaying]);
 
+  // When src changes (e.g. in a slider), start playing the new video
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !isPlaying) return;
+    video.play().catch(() => {});
+  }, [src, isPlaying]);
+
   const toggle = () => setIsPlaying((p) => !p);
 
   return (

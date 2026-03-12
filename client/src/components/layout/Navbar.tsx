@@ -26,7 +26,7 @@ export function Navbar() {
     { 
       name: "PRODUCTS", 
       options: [
-        { label: "AdTech Platform", path: "/hla" },
+        { label: "AdTech Platform", path: "/adtech" },
         { label: "ALPR Platform", path: "/alpr" }
       ]
     },
@@ -40,7 +40,7 @@ export function Navbar() {
     { 
       name: "RESOURCES", 
       options: [
-        { label: "AdTech Resources", path: "/hla-resources" },
+        { label: "AdTech Resources", path: "/adtech-resources" },
         { label: "ALPR Resources", path: "/alpr-resources" }
       ]
     },

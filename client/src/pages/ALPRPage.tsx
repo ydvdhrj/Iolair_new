@@ -7,49 +7,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import heroBannerImg from "@assets/hero-banner.png";
 import alprDeepDiveBg from "@assets/alpr-deep-dive-bg.png";
+import virginiaLicensePlateImg from "@assets/virginia-license-plate.png";
 import alprPlatformVideo from "@/assets/alpr-platform.mp4";
 import unifiedDashboardVideo from "@/assets/unified-dashboard.mp4";
 import layerSecurityVideo from "@/assets/layer-security.mp4";
 import edgeApplicationVideo from "@/assets/edge-application.mp4";
-
-const PRODUCT_SLIDES = [
-  {
-    id: "alpr",
-    tag: "Products",
-    name: "ALPR Platform",
-    accentClass: "bg-[#feac00]",
-    description:
-      "Our advanced automated license plate reader (ALPR) platform monitors real time traffic.",
-    imageSrc: heroBannerImg,
-  },
-  {
-    id: "alerts",
-    tag: "Products",
-    name: "Real Time AI Alerts",
-    accentClass: "bg-[#e84826]",
-    description:
-      "Get instant, actionable alerts from your Vision AI feeds with real-time detection and notification.",
-    imageSrc: alprDeepDiveBg,
-  },
-  {
-    id: "security",
-    tag: "Products",
-    name: "Layered Security & Privacy",
-    accentClass: "bg-[#639b5c]",
-    description:
-      "Privacy-first architecture with encryption, tokenization, and compliance built in.",
-    imageSrc: alprDeepDiveBg,
-  },
-  {
-    id: "edge",
-    tag: "Products",
-    name: "Edge Applications",
-    accentClass: "bg-[#78afdb]",
-    description:
-      "Run Vision AI and analytics at the edge for low latency and resilient operations.",
-    imageSrc: alprDeepDiveBg,
-  },
-];
 
 const ALPR_PRODUCT_SLIDES = [
   {
@@ -57,7 +19,8 @@ const ALPR_PRODUCT_SLIDES = [
     tag: "Products",
     name: "ALPR Platform",
     description:
-      "advanced automated license plate reader (ALPR) platform monitors real time traffic.",
+      "Our advanced automated license plate reader (ALPR) platform monitors real time traffic.",
+    highlight: "Our",
     accentClass: "bg-[#5E17EB]",
     media: { type: "video" as const, src: alprPlatformVideo },
   },
@@ -66,7 +29,18 @@ const ALPR_PRODUCT_SLIDES = [
     tag: "Features",
     name: "Real Time AI Alerts",
     description:
-      'immediately generates an alert for law enforcement: "FELONY WARRANT - STOLEN VEHICLE."',
+      'Vision AI identifies a stolen license plate and issues an alert.',
+    highlight: "Vision AI",
+    accentClass: "bg-[#639b5c]",
+    media: { type: "image" as const, src: virginiaLicensePlateImg },
+  },
+  {
+    id: "unified-dashboard",
+    tag: "Features",
+    name: "Unified Dashboard",
+    description:
+      'Real time alerts are displayed on a dahsboard for law enforcement: "FELONY WARRANT - STOLEN VEHICLE."',
+    highlight: "Real time",
     accentClass: "bg-[#e84826]",
     media: { type: "video" as const, src: unifiedDashboardVideo },
   },
@@ -75,7 +49,8 @@ const ALPR_PRODUCT_SLIDES = [
     tag: "Features",
     name: "Layered Security & Privacy",
     description:
-      "ensures layered security and compliance across platforms to protect public data and preserve privacy.",
+      "All this while ensuring layered security and compliance across platforms to protect public data and preserve privacy.",
+    highlight: "protect public data",
     accentClass: "bg-[#feac00]",
     media: { type: "video" as const, src: layerSecurityVideo },
   },
@@ -85,6 +60,7 @@ const ALPR_PRODUCT_SLIDES = [
     name: "Edge Applications",
     description:
       "integrates IoT applications at the edge such as signal intervention and water main leak detection.",
+    highlight: "IoT applications",
     accentClass: "bg-[#78afdb]",
     media: { type: "video" as const, src: edgeApplicationVideo },
   },
@@ -127,60 +103,9 @@ const DEMO_VEHICLES = [
     color: "Red",
     direction: "Moving West",
     confidence: "96.5%",
-    box: { left: 0.68, top: 0.52, width: 8, height: 4 },
+    box: { left: 0.70, top: 0.52, width: 8, height: 4 },
   },
 ];
-
-function ProductsCarousel() {
-  const [productSlideIndex, setProductSlideIndex] = useState(0);
-  useEffect(() => {
-    const id = setInterval(
-      () => setProductSlideIndex((i) => (i + 1) % PRODUCT_SLIDES.length),
-      6000
-    );
-    return () => clearInterval(id);
-  }, []);
-
-  return (
-    <div className="relative min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden">
-      {PRODUCT_SLIDES.map((slide, i) => (
-        <div
-          key={slide.id}
-          className={`absolute inset-0 grid grid-cols-1 md:grid-cols-2 transition-opacity duration-700 ${
-            i === productSlideIndex ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-          }`}
-        >
-          <div className="relative h-full min-h-[240px] md:min-h-0 bg-muted">
-            {slide.imageSrc ? (
-              <img
-                src={slide.imageSrc}
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover object-center"
-              />
-            ) : (
-              <div className={`absolute inset-0 ${slide.accentClass} opacity-90`} aria-hidden />
-            )}
-          </div>
-          <div className="relative h-full flex items-center justify-center p-6 md:p-10 lg:p-12">
-            <div className="w-full max-w-md rounded-2xl bg-foreground/85 backdrop-blur-sm p-6 md:p-8 border border-primary-foreground/10">
-              <span className="text-xs font-bold uppercase tracking-wider text-primary-foreground/80">
-                {slide.tag}
-              </span>
-              <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground mt-2 mb-4 leading-tight">
-                {slide.name}
-              </h2>
-              <p className="text-primary-foreground/90 leading-relaxed">
-                <span className="font-semibold text-primary-foreground">Our</span>{" "}
-                {slide.description}
-              </p>
-            </div>
-          </div>
-        </div>
-      ))}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-foreground/5 pointer-events-none z-[5]" aria-hidden />
-    </div>
-  );
-}
 
 function ALPRProductsSlider() {
   const [index, setIndex] = useState(0);
@@ -201,7 +126,15 @@ function ALPRProductsSlider() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-14 p-6 md:p-10 lg:p-12 items-center">
             <div className="relative">
               {slide.media.type === "video" ? (
-                <AutoplayVideoWithPlayPause src={slide.media.src} />
+                <AutoplayVideoWithPlayPause key={slide.id} src={slide.media.src} />
+              ) : slide.media.type === "image" ? (
+                <div className="relative aspect-video rounded-xl overflow-hidden bg-foreground/10">
+                  <img
+                    src={slide.media.src}
+                    alt=""
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
               ) : null}
             </div>
             <div className="space-y-5 md:space-y-6">
@@ -212,15 +145,18 @@ function ALPRProductsSlider() {
                 <span
                   className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white shadow-sm ${slide.accentClass}`}
                 >
-                  Vision AI
+                  {slide.name}
                 </span>
               </div>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold leading-tight">
-                {slide.name}
-              </h2>
               <p className="text-sm md:text-base text-white/80 leading-relaxed">
-                <span className="font-semibold text-white">Our </span>
-                {slide.description}
+                {slide.description.split(slide.highlight).map((part, i, parts) => (
+                  <span key={i}>
+                    {part}
+                    {i < parts.length - 1 ? (
+                      <span className="font-semibold text-white">{slide.highlight}</span>
+                    ) : null}
+                  </span>
+                ))}
               </p>
             </div>
           </div>
@@ -299,8 +235,8 @@ export default function ALPRPage() {
                   style={{
                     left: `${currentVehicle.box.left * 100}%`,
                     top: `${currentVehicle.box.top * 100}%`,
-                    width: `${currentVehicle.box.width}%`,
-                    height: `${currentVehicle.box.height ?? 4}%`,
+                    width: "6%",
+                    height: "4%",
                   }}
                   aria-hidden
                 />

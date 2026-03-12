@@ -19,7 +19,7 @@ export default function RetailPage() {
         <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
           {/* Hero */}
           <section>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-8 text-foreground">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mt-0 mb-8 leading-tight text-left text-foreground">
               Retail
             </h1>
             <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed">

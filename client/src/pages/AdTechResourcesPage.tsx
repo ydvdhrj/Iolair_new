@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 
-export default function HLAResourcesPage() {
+export default function AdTechResourcesPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans">
       <Navbar />

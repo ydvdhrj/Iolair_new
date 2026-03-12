@@ -258,7 +258,7 @@ export default function Home() {
               <span className="text-primary font-bold tracking-widest uppercase text-[1.05rem] mb-4 block">
                 Product Suite
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-4">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mt-0 mb-4 leading-tight text-left">
                 Retail
               </h2>
               <p className="text-xl md:text-2xl font-medium text-foreground mb-6">
@@ -300,7 +300,7 @@ export default function Home() {
               <span className="text-primary font-bold tracking-widest uppercase text-[1.05rem] mb-4 block">
                 Product Suite
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-4">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mt-0 mb-4 leading-tight text-left">
                 Safety Enforcement
               </h2>
               <p className="text-xl md:text-2xl font-medium text-foreground mb-6">
@@ -429,7 +429,7 @@ export default function Home() {
                 AdTech Platform
               </div>
               <div className="flex flex-col sm:flex-row gap-3 flex-1 min-w-0">
-                <Link href="/hla" className="flex-1 min-w-0">
+                <Link href="/adtech" className="flex-1 min-w-0">
                   <a
                     className="group block relative flex flex-col justify-end rounded-2xl p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
                     style={{ backgroundColor: PLATFORM_CARD_COLORS[0] }}
@@ -444,7 +444,7 @@ export default function Home() {
                     </div>
                   </a>
                 </Link>
-                <Link href="/hla" className="flex-1 min-w-0">
+                <Link href="/adtech" className="flex-1 min-w-0">
                   <a
                     className="group block relative flex flex-col justify-end rounded-2xl p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
                     style={{ backgroundColor: PLATFORM_CARD_COLORS[1] }}
@@ -459,7 +459,7 @@ export default function Home() {
                     </div>
                   </a>
                 </Link>
-                <Link href="/hla" className="flex-1 min-w-0 md:-mb-2">
+                <Link href="/adtech" className="flex-1 min-w-0 md:-mb-2">
                   <a
                     className="group block relative flex flex-col justify-end rounded-2xl md:rounded-b-none p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
                     style={{ backgroundColor: PLATFORM_CARD_COLORS[4] }}
