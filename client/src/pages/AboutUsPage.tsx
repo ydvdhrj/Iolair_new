@@ -11,11 +11,14 @@ export default function AboutUsPage() {
       <main className="container mx-auto px-4 md:px-6 py-24">
         <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
           {/* About Us intro */}
-          <section>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 text-foreground">
-              Company
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+          <section className="space-y-8">
+            <div className="relative overflow-hidden rounded-[32px] border border-border/80 bg-gradient-to-r from-primary/5 via-background to-primary/5 px-8 py-8 md:px-12 md:py-10 shadow-sm">
+              <div className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
+              <h1 className="relative text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-center tracking-tight">
+                Company
+              </h1>
+            </div>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               Our leadership team brings 70+ years of combined experience in scaling
               emerging technologies and businesses. IOLAIRE.AI was founded to solve
               a vexing problem in traffic safety enforcement – timely detection of
