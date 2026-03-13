@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { FileText, Cookie, Settings } from "lucide-react";
 import logoNew from "@assets/LogoNew.png";
+import pdfIcon from "@assets/pdf-icon.png";
 
 /* Inline flag SVGs for cross-platform visibility (Windows often doesn't render flag emojis) */
 function FlagUS({ className }: { className?: string }) {
@@ -186,18 +187,44 @@ export function Footer() {
         <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-sans">
           <p className="text-muted-foreground font-sans">© 2026 IOLAIRE.AI</p>
           <div className="flex flex-wrap items-center justify-center gap-4 text-primary font-sans">
-            <Link href="/terms-of-service">
-              <a className="inline-flex items-center gap-1.5 hover:underline">
-                <FileText className="h-4 w-4" />
-                Terms of Service
+            <div className="flex items-center gap-2">
+              <Link href="/terms-of-service">
+                <a className="inline-flex items-center gap-1.5 hover:underline">
+                  <FileText className="h-4 w-4" />
+                  Terms of Service
+                </a>
+              </Link>
+              <a
+                href="/pdfs/terms-of-service.pdf"
+                download
+                className="inline-flex items-center justify-center px-2 py-1 border border-primary/40 rounded-full hover:bg-primary/10"
+              >
+                <img
+                  src={pdfIcon}
+                  alt="Download Terms of Service (PDF)"
+                  className="h-4 w-4 object-contain"
+                />
               </a>
-            </Link>
-            <Link href="/privacy-policy">
-              <a className="inline-flex items-center gap-1.5 hover:underline">
-                <FileText className="h-4 w-4" />
-                Privacy Policy
+            </div>
+            <div className="flex items-center gap-2">
+              <Link href="/privacy-policy">
+                <a className="inline-flex items-center gap-1.5 hover:underline">
+                  <FileText className="h-4 w-4" />
+                  Privacy Policy
+                </a>
+              </Link>
+              <a
+                href="/pdfs/privacy-policy.pdf"
+                download
+                className="inline-flex items-center justify-center px-2 py-1 border border-primary/40 rounded-full hover:bg-primary/10"
+              >
+                <img
+                  src={pdfIcon}
+                  alt="Download Privacy Policy (PDF)"
+                  className="h-4 w-4 object-contain"
+                />
               </a>
-            </Link>
+            </div>
             <Link href="/privacy-settings">
               <a className="inline-flex items-center gap-1.5 hover:underline">
                 <Settings className="h-4 w-4" />

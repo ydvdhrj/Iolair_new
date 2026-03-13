@@ -27,7 +27,12 @@ export default function AdTechResourcesPage() {
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 Where Hyperlocal Advertising Meets Real World Intent
               </p>
-              <a href="/whitepaper/adtech" className="inline-flex">
+              <a
+                href="/pdfs/whitepaper-adtech.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex"
+              >
                 <Button
                   size="sm"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full h-10 px-5 text-sm md:text-base shadow-md shadow-primary/20"

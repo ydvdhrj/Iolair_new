@@ -28,6 +28,8 @@ import LoyaltyOffersPage from "@/pages/LoyaltyOffersPage";
 import UnifiedDashboardPage from "@/pages/UnifiedDashboardPage";
 import LayeredSecurityPrivacyPage from "@/pages/LayeredSecurityPrivacyPage";
 import EdgeApplicationsALPRPage from "@/pages/EdgeApplicationsALPRPage";
+import AlprBlogPage from "@/pages/AlprBlogPage";
+import AdtechBlogPage from "@/pages/AdtechBlogPage";
 
 function Router() {
   const [location] = useLocation();
@@ -55,6 +57,8 @@ function Router() {
       {/* Resources */}
       <Route path="/alpr-resources" component={ALPRResourcesPage} />
       <Route path="/adtech-resources" component={AdTechResourcesPage} />
+      <Route path="/blog/alpr" component={AlprBlogPage} />
+      <Route path="/blog/adtech" component={AdtechBlogPage} />
       {/* About Us */}
       <Route path="/about-us" component={AboutUsPage} />
       <Route path="/get-in-touch" component={GetInTouchPage} />
