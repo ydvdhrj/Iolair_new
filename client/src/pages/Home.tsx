@@ -446,7 +446,7 @@ export default function Home() {
                     </div>
                   </a>
                 </Link>
-                <Link href="/adtech" className="flex-1 min-w-0">
+                <Link href="/adtech/loyalty-offers" className="flex-1 min-w-0">
                   <a
                     className="group block relative flex flex-col justify-end rounded-2xl p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
                     style={{ backgroundColor: PLATFORM_CARD_COLORS[1] }}
@@ -461,7 +461,7 @@ export default function Home() {
                     </div>
                   </a>
                 </Link>
-                <Link href="/adtech" className="flex-1 min-w-0 md:-mb-2">
+                <Link href="/alpr/unified-dashboard" className="flex-1 min-w-0 md:-mb-2">
                   <a
                     className="group block relative flex flex-col justify-end rounded-2xl md:rounded-b-none p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
                     style={{ backgroundColor: PLATFORM_CARD_COLORS[4] }}
@@ -501,7 +501,7 @@ export default function Home() {
                     </div>
                   </a>
                 </Link>
-                <Link href="/industry-solutions" className="flex-1 min-w-0">
+                <Link href="/alpr/edge-applications" className="flex-1 min-w-0">
                   <a
                     className="group block relative flex flex-col justify-end rounded-2xl p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
                     style={{ backgroundColor: PLATFORM_CARD_COLORS[3] }}
@@ -516,7 +516,7 @@ export default function Home() {
                     </div>
                   </a>
                 </Link>
-                <Link href="/alpr" className="flex-1 min-w-0 md:-mt-2">
+                <Link href="/alpr/layered-security-privacy" className="flex-1 min-w-0 md:-mt-2">
                   <a
                     className="group block relative flex flex-col justify-end rounded-2xl md:rounded-t-none p-6 min-h-[140px] md:min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] active:translate-y-0 h-full"
                     style={{ backgroundColor: PLATFORM_CARD_COLORS[4] }}

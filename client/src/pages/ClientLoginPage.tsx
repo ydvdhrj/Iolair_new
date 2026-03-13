@@ -2,7 +2,7 @@ import { FormEvent } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import heroDisplayImg from "@assets/hero-display.png";
+import clientLoginBg from "@assets/Client-Login-bg.jpg";
 
 export default function ClientLoginPage() {
   const handleSubmit = (e: FormEvent) => {
@@ -15,19 +15,15 @@ export default function ClientLoginPage() {
       <Navbar />
 
       <main className="pt-20 md:pt-24 pb-16">
-        <section className="relative min-h-[calc(100vh-80px-80px)] flex items-center justify-center">
-          {/* Background image */}
-          <div className="absolute inset-0 -z-10">
-            <img
-              src={heroDisplayImg}
-              alt="Client platform background"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-background/60 backdrop-blur-[2px]" />
-          </div>
+        <section
+          className="relative min-h-[calc(100vh-80px-80px)] flex items-center justify-end px-4 md:px-8 bg-cover bg-center"
+          style={{ backgroundImage: `url(${clientLoginBg})` }}
+        >
+          {/* Soft white overlay so image is visible but subtle */}
+          <div className="absolute inset-0 bg-white/20 pointer-events-none" />
 
-          {/* Centered login card */}
-          <div className="w-full max-w-md px-4">
+          {/* Login card anchored to the right */}
+          <div className="relative z-10 w-full max-w-md">
             <div className="rounded-3xl bg-card/95 shadow-2xl border border-border/70 px-6 py-8 md:px-8 md:py-9">
               <h1 className="text-2xl md:text-3xl font-heading font-bold text-center mb-6">
                 Login
