@@ -22,18 +22,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent background scrolling when mobile menu is open
-  useEffect(() => {
-    if (!mobileMenuOpen) return;
-
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.body.style.overflow = originalOverflow;
-    };
-  }, [mobileMenuOpen]);
-
   const navItems = [
     {
       name: "PRODUCTS",
@@ -194,7 +182,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-16 bottom-0 bg-background/95 backdrop-blur-xl border-b border-border p-4 flex flex-col gap-4 animate-in slide-in-from-top-5 overflow-y-auto">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-4 flex flex-col gap-4 animate-in slide-in-from-top-5 max-h-[calc(100vh-4rem)] overflow-y-auto">
           {navItems.map((item) => (
             <div key={item.name} className="flex flex-col gap-1.5">
               <span className="text-sm font-bold text-muted-foreground uppercase tracking-widest px-2">{item.name}</span>
