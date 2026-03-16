@@ -30,6 +30,8 @@ import LayeredSecurityPrivacyPage from "@/pages/LayeredSecurityPrivacyPage";
 import EdgeApplicationsALPRPage from "@/pages/EdgeApplicationsALPRPage";
 import AlprBlogPage from "@/pages/AlprBlogPage";
 import AdtechBlogPage from "@/pages/AdtechBlogPage";
+import AdtechWhitepaperPage from "@/pages/AdtechWhitepaperPage";
+import AlprWhitepaperPage from "@/pages/AlprWhitepaperPage";
 
 function Router() {
   const [location] = useLocation();
@@ -59,6 +61,8 @@ function Router() {
       <Route path="/adtech-resources" component={AdTechResourcesPage} />
       <Route path="/blog/alpr" component={AlprBlogPage} />
       <Route path="/blog/adtech" component={AdtechBlogPage} />
+      <Route path="/whitepaper/adtech" component={AdtechWhitepaperPage} />
+      <Route path="/whitepaper/alpr" component={AlprWhitepaperPage} />
       {/* About Us */}
       <Route path="/about-us" component={AboutUsPage} />
       <Route path="/get-in-touch" component={GetInTouchPage} />

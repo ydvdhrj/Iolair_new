@@ -53,32 +53,80 @@ export default function UnifiedDashboardPage() {
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground">
               How Our Unified View Dashboard Supports Officers in Critical Moments
             </h2>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>Offers unified intelligence in one interface.</li>
-              <li>
-                Reduces cognitive load by presenting prioritized, contextual alerts instead of raw
-                data streams.
+            <ul className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed list-none">
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>Offers unified intelligence in one interface.</span>
               </li>
-              <li>
-                Enables real time situational awareness using edge processing and continuous data
-                streaming.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Reduces cognitive load by presenting prioritized, contextual alerts instead of raw
+                  data streams.
+                </span>
               </li>
-              <li>
-                Provides a single source of truth through secure APIs that integrate multiple
-                systems and data sources.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Enables real time situational awareness using edge processing and continuous data
+                  streaming.
+                </span>
               </li>
-              <li>Accelerates decision making through real time correlation of events.</li>
-              <li>
-                Improves response coordination with visual overlays, location intelligence, and
-                shared operational views.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Provides a single source of truth through secure APIs that integrate multiple
+                  systems and data sources.
+                </span>
               </li>
-              <li>
-                Scales efficiently by supporting high volume data processing and complex
-                environments through a unified architecture.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>Accelerates decision making through real time correlation of events.</span>
               </li>
-              <li>
-                Strengthens operational reliability by delivering consistent workflows, analytics,
-                and alerting in one controlled platform.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Improves response coordination with visual overlays, location intelligence, and
+                  shared operational views.
+                </span>
+              </li>
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Scales efficiently by supporting high volume data processing and complex
+                  environments through a unified architecture.
+                </span>
+              </li>
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Strengthens operational reliability by delivering consistent workflows, analytics,
+                  and alerting in one controlled platform.
+                </span>
               </li>
             </ul>
           </section>

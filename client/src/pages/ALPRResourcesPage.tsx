@@ -27,12 +27,7 @@ export default function ALPRResourcesPage() {
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 A responsible blueprint for creating Safety Enforcement.
               </p>
-              <a
-                href="/pdfs/whitepaper-alpr.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex"
-              >
+              <a href="/whitepaper/alpr" className="inline-flex">
                 <Button
                   size="sm"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full h-10 px-5 text-sm md:text-base shadow-md shadow-primary/20"

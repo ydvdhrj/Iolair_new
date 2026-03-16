@@ -6,12 +6,12 @@ import { Footer } from "@/components/layout/Footer";
 import { AutoplayVideoWithPlayPause } from "@/components/AutoplayVideoWithPlayPause";
 import { Button } from "@/components/ui/button";
 import adtechHeroImg from "../../../attached_assets/AdTechBanner.jpg";
-import keyBenefitsImg from "../../../attached_assets/AdTech-Key-Benefits.jpg";
+import keyBenefitsImg from "../../../attached_assets/adtech-key-benefits.png";
 import adtechPlatformImg from "@assets/adtech-platform.jpg";
 import loyaltyOffersImg from "@assets/Loyalty-Offers.jpg";
 import edgeApplicationsImg from "@assets/adtechedge-application.jpg";
 import dynamicAttributionImg from "@assets/DynamicAttribution.jpg";
-import layeredSecurityImg from "@assets/adtechlayered-security.jpg";
+import layeredSecurityImg from "@assets/adtech-layered-security-privacy.png";
 import virginiaLicensePlateImg from "@assets/virginia-license-plate.png";
 import alprPlatformVideo from "@/assets/alpr-platform.mp4";
 import unifiedDashboardVideo from "@/assets/unified-dashboard.mp4";
@@ -113,24 +113,47 @@ function AdTechProductsSlider() {
             </div>
           </div>
 
-          {/* Bottom-aligned slide controls (previous/next arrows) */}
-          <div className="absolute inset-x-0 bottom-4 flex justify-end px-6 md:px-10">
-            <div className="inline-flex items-center gap-3 rounded-full bg-white/5 backdrop-blur-sm p-1 shadow-lg shadow-black/40">
+          {/* Slide controls (previous/next arrows) */}
+          {/* Desktop / tablet: bottom-right overlay */}
+          <div className="hidden md:flex absolute inset-x-0 bottom-4 justify-end px-6 md:px-10">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur-sm p-1 shadow-lg shadow-black/40">
               <button
                 type="button"
                 onClick={handlePrev}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#111827] text-white hover:bg-[#1f2937] transition-colors"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-[#111827] text-white hover:bg-[#1f2937] transition-colors"
                 aria-label="Previous AdTech product"
               >
-                <ArrowLeft className="w-5 h-5" />
+                <ArrowLeft className="w-4 h-4" />
               </button>
               <button
                 type="button"
                 onClick={handleNext}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5E17EB] text-white hover:bg-[#4b12c2] transition-colors"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-[#5E17EB] text-white hover:bg-[#4b12c2] transition-colors"
                 aria-label="Next AdTech product"
               >
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile: controls below content, no overlap with text */}
+          <div className="flex md:hidden justify-end px-4 pb-3">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur-sm p-1 shadow-lg shadow-black/30">
+              <button
+                type="button"
+                onClick={handlePrev}
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-[#111827] text-white hover:bg-[#1f2937] transition-colors"
+                aria-label="Previous AdTech product"
+              >
+                <ArrowLeft className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={handleNext}
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-[#5E17EB] text-white hover:bg-[#4b12c2] transition-colors"
+                aria-label="Next AdTech product"
+              >
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -246,7 +269,7 @@ export default function AdTechPage() {
                 <img
                   src={keyBenefitsImg}
                   alt="Illustration of AdTech key benefits"
-                  className="absolute inset-0 w-full h-full object-cover filter brightness-105 contrast-115 saturate-115"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -258,7 +281,7 @@ export default function AdTechPage() {
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
             <div className="rounded-3xl border border-primary/20 bg-[hsl(0,0%,98%)] shadow-sm overflow-hidden">
               {/* Feature Deep Dive heading card */}
-              <div className="p-8 md:p-12 lg:p-14 border-b border-primary/20 bg-[hsl(262,88%,92%)]">
+              <div className="p-8 md:p-12 lg:p-14 border-b border-primary/20 bg-[hsl(262,88%,96%)]">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary mb-4">
                   Feature Deep Dive
                 </h2>

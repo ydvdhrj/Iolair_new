@@ -39,30 +39,72 @@ export default function EdgeApplicationsALPRPage() {
           </section>
 
           <section className="space-y-3 text-base md:text-lg text-muted-foreground leading-relaxed">
-            <ul className="list-disc pl-5 space-y-2">
-              <li>
-                Low latency AI data processing at the edge accelerates detection and response,
-                when every second matters.
+            <ul className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed list-none">
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Low latency AI data processing at the edge accelerates detection and response,
+                  when every second matters.
+                </span>
               </li>
-              <li>
-                Officers are no longer hampered by receiving intelligence after events unfold; they
-                gain the ability to intervene proactively.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Officers are no longer hampered by receiving intelligence after events unfold; they
+                  gain the ability to intervene proactively.
+                </span>
               </li>
-              <li>
-                Reduced operational cost saves bandwidth and compute expense by only streaming
-                relevant raw video tied to real time alerts.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Reduced operational cost saves bandwidth and compute expense by only streaming
+                  relevant raw video tied to real time alerts.
+                </span>
               </li>
-              <li>
-                Applications running locally on the ALPR platform are no longer dependent on
-                constant connectivity.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Applications running locally on the ALPR platform are no longer dependent on
+                  constant connectivity.
+                </span>
               </li>
-              <li>Vehicle movement and patterns are easier to track in real time.</li>
-              <li>
-                Manual review decreases as automation and prioritization improve, reducing fatigue
-                and missed signals while delivering real time intelligence and simplifying
-                enforcement.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>Vehicle movement and patterns are easier to track in real time.</span>
               </li>
-              <li>Exposure risk decreases by avoiding the need to centrally process all data.</li>
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Manual review decreases as automation and prioritization improve, reducing fatigue
+                  and missed signals while delivering real time intelligence and simplifying
+                  enforcement.
+                </span>
+              </li>
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>Exposure risk decreases by avoiding the need to centrally process all data.</span>
+              </li>
             </ul>
           </section>
 

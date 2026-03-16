@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { FileText, Cookie, Settings } from "lucide-react";
-import logoNew from "@assets/LogoNew.png";
+import logoNew from "@assets/iolaire-logo.png";
 import pdfIcon from "@assets/pdf-icon.png";
 
 /* Inline flag SVGs for cross-platform visibility (Windows often doesn't render flag emojis) */

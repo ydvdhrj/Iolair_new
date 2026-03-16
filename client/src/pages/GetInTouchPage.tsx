@@ -26,12 +26,12 @@ export default function GetInTouchPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="rounded-2xl border border-border bg-card/70 px-5 py-5 space-y-2">
-                <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em] flex items-center gap-2">
+                {/* <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em] flex items-center gap-2">
                   <span role="img" aria-label="United States">
                     🇺🇸
                   </span>
                   <span>United States</span>
-                </p>
+                </p> */}
                 <p className="text-base md:text-lg font-heading font-semibold text-foreground">
                   San Jose, CA (HQ)
                 </p>
@@ -47,12 +47,12 @@ export default function GetInTouchPage() {
               </div>
 
               <div className="rounded-2xl border border-border bg-card/70 px-5 py-5 space-y-2">
-                <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em] flex items-center gap-2">
+                {/* <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em] flex items-center gap-2">
                   <span role="img" aria-label="United States">
                     🇺🇸
                   </span>
                   <span>United States</span>
-                </p>
+                </p> */}
                 <p className="text-base md:text-lg font-heading font-semibold text-foreground">
                   Dallas, TX
                 </p>

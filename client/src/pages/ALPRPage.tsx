@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { AutoplayVideoWithPlayPause } from "@/components/AutoplayVideoWithPlayPause";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft } from "lucide-react";
-import heroBannerImg from "@assets/hero-banner.png";
+import heroBannerImg from "@assets/hero-banner.jpg";
 import alprDeepDiveBg from "@assets/alpr-deep-dive-bg.png";
 import virginiaLicensePlateImg from "@assets/virginia-license-plate.png";
 import alprPlatformVideo from "@/assets/alpr-platform.mp4";
@@ -72,7 +72,7 @@ const ALPR_PRODUCT_SLIDES = [
 const DEMO_VEHICLES = [
   {
     id: "car-left-silver",
-    fallbackPlate: "OR-A21B",
+    fallbackPlate: "LQR-A21B",
     region: "Oregon",
     model: "Accord",
     make: "Honda",
@@ -81,6 +81,18 @@ const DEMO_VEHICLES = [
     confidence: "95.8%",
     // Slightly further left and a bit higher to sit on the plate
     box: { left: 0.14, top: 0.52, width: 7.5, height: 4 },
+  },
+  {
+    id: "bus-left-blue",
+    fallbackPlate: "YSAM000",
+    region: "Oregon",
+    model: "9700 Coach",
+    make: "Volvo",
+    color: "Blue",
+    direction: "Moving West",
+    confidence: "96.3%",
+    // Slightly further left and a bit higher to sit on the plate
+    box: { left: 0.37, top: 0.41, width: 7.5, height: 4 },
   },
   {
     id: "car-center-blue-bmw",
@@ -92,7 +104,7 @@ const DEMO_VEHICLES = [
     direction: "Moving West",
     confidence: "97.2%",
     // Move more toward the center and slightly adjust height for the BMW plate
-    box: { left: 0.32, top: 0.90, width: 7.5, height: 4 },
+    box: { left: 0.32, top: 0.905, width: 7.5, height: 4 },
   },
   {
     id: "car-right-red",
@@ -104,6 +116,17 @@ const DEMO_VEHICLES = [
     direction: "Moving West",
     confidence: "96.5%",
     box: { left: 0.70, top: 0.52, width: 8, height: 4 },
+  },
+  {
+    id: "car-center-black",
+    fallbackPlate: "EST-1788",
+    region: "Florida",
+    model: "Accord",
+    make: "Honda",
+    color: "Black",
+    direction: "Moving West",
+    confidence: "95.7%",
+    box: { left: 0.57, top: 0.39, width: 5, height: 3 },
   },
 ];
 
@@ -161,24 +184,47 @@ function ALPRProductsSlider() {
             </div>
           </div>
 
-          {/* Bottom-aligned slide controls (previous/next arrows) */}
-          <div className="absolute inset-x-0 bottom-4 flex justify-end px-6 md:px-10">
-            <div className="inline-flex items-center gap-3 rounded-full bg-white/5 backdrop-blur-sm p-1 shadow-lg shadow-black/40">
+          {/* Slide controls (previous/next arrows) */}
+          {/* Desktop / tablet: bottom-right overlay */}
+          <div className="hidden md:flex absolute inset-x-0 bottom-4 justify-end px-6 md:px-10">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur-sm p-1 shadow-lg shadow-black/40">
               <button
                 type="button"
                 onClick={handlePrev}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#111827] text-white hover:bg-[#1f2937] transition-colors"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-[#111827] text-white hover:bg-[#1f2937] transition-colors"
                 aria-label="Previous product"
               >
-                <ArrowLeft className="w-5 h-5" />
+                <ArrowLeft className="w-4 h-4" />
               </button>
               <button
                 type="button"
                 onClick={handleNext}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5E17EB] text-white hover:bg-[#4b12c2] transition-colors"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-[#5E17EB] text-white hover:bg-[#4b12c2] transition-colors"
                 aria-label="Next product"
               >
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile: controls below content, no overlap with text */}
+          <div className="flex md:hidden justify-end px-4 pb-3">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur-sm p-1 shadow-lg shadow-black/30">
+              <button
+                type="button"
+                onClick={handlePrev}
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-[#111827] text-white hover:bg-[#1f2937] transition-colors"
+                aria-label="Previous product"
+              >
+                <ArrowLeft className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={handleNext}
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-[#5E17EB] text-white hover:bg-[#4b12c2] transition-colors"
+                aria-label="Next product"
+              >
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -380,7 +426,7 @@ export default function ALPRPage() {
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
             <div className="rounded-3xl border border-primary/20 bg-[hsl(0,0%,98%)] shadow-sm overflow-hidden">
               {/* Feature Deep Dive heading card */}
-              <div className="p-8 md:p-12 lg:p-14 border-b border-primary/20 bg-[hsl(262,88%,92%)]">
+              <div className="p-8 md:p-12 lg:p-14 border-b border-primary/20 bg-[hsl(262,88%,96%)]">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary mb-4">
                   Feature Deep Dive
                 </h2>
