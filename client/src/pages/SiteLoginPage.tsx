@@ -94,11 +94,6 @@ export default function SiteLoginPage() {
                 >
                   Submit
                 </Button>
-
-                <p className="text-[11px] text-muted-foreground text-center mt-3">
-                  ID: <span className="font-mono">iolaire.ai</span> &nbsp; Password:{" "}
-                  <span className="font-mono">Gatpesauden12!@</span>
-                </p>
               </form>
             </div>
           </div>

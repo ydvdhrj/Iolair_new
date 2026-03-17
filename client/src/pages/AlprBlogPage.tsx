@@ -107,14 +107,9 @@ export default function AlprBlogPage() {
 
           <section className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
             <div className="rounded-2xl bg-primary/5 border border-primary/30 px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div>
-                <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em] mb-1">
-                  Get a demo
-                </p>
-                <p className="text-sm md:text-base text-muted-foreground">
-                  Explore a privacy first safety enforcement platform built for public trust.
-                </p>
-              </div>
+              <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em]">
+                Get a demo
+              </p>
               <Link href="/calendar">
                 <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-5 h-10 text-sm md:text-base">
                   Explore a Privacy First Safety Enforcement Platform
@@ -201,20 +196,12 @@ export default function AlprBlogPage() {
                 <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em] mb-1">
                   Learn more
                 </p>
-                <p className="text-sm md:text-base text-muted-foreground">
-                  Discover how our secure AI-powered ALPR platform supports privacy-first
-                  enforcement.
-                </p>
               </div>
-              <a
-                href="https://iolairedemo.netlify.app/ai-agent"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <Link href="/alpr">
                 <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-5 h-10 text-sm md:text-base">
                   Discover Secure AI Powered ALPR Platform
                 </Button>
-              </a>
+              </Link>
             </div>
           </section>
 
@@ -264,6 +251,21 @@ export default function AlprBlogPage() {
                 </span>
               </li>
             </ul>
+          </section>
+
+          <section className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+            <div className="rounded-2xl bg-primary/5 border border-primary/30 px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em] mb-1">
+                  Whitepaper
+                </p>
+              </div>
+              <Link href="/whitepaper/alpr">
+                <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-5 h-10 text-sm md:text-base text-center">
+                  Deep Dive into A Responsible Blueprint for Creating Safety Enforcement
+                </Button>
+              </Link>
+            </div>
           </section>
 
           <section className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">

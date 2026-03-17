@@ -43,6 +43,28 @@ export default function AdtechBlogPage() {
             </p>
           </section>
 
+          {/* CTA 1 – before Question 1 */}
+          <section className="space-y-4">
+            <div className="rounded-2xl bg-primary/5 border border-primary/30 px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em] mb-1">
+                  Deliver Real Time Personalized Campaigns
+                </p>
+              </div>
+              <Link href="/adtech">
+                <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-5 h-11 text-xs md:text-sm leading-snug text-center">
+                  Deliver Real Time
+                  <br />
+                  Personalized
+                  <br />
+                  Campaigns that
+                  <br />
+                  Drive ROI
+                </Button>
+              </Link>
+            </div>
+          </section>
+
           <section className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground">
               1. What Business Problems Are We Trying to Solve?
@@ -87,6 +109,22 @@ export default function AdtechBlogPage() {
               immediacy transforms parking analytics from a passive measurement tool into an
               active driver of conversion, experience, and long term loyalty.
             </p>
+          </section>
+
+          {/* CTA 2 – before Question 3 */}
+          <section className="space-y-4">
+            <div className="rounded-2xl bg-primary/5 border border-primary/30 px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em] mb-1">
+                  Learn more
+                </p>
+              </div>
+              <Link href="/adtech">
+                <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-5 h-11 text-xs md:text-sm leading-snug text-center">
+                  Retail Advertising Continues to Miss the Point of Purchase Decision. Here’s Why
+                </Button>
+              </Link>
+            </div>
           </section>
 
           <section className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -184,23 +222,7 @@ export default function AdtechBlogPage() {
             </p>
           </section>
 
-          <section className="space-y-4">
-            <div className="rounded-2xl bg-primary/5 border border-primary/30 px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div>
-                <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em] mb-1">
-                  Talk to our team
-                </p>
-                <p className="text-sm md:text-base text-muted-foreground">
-                  See how real time AdTech can turn parking analytics into a strategic advantage.
-                </p>
-              </div>
-              <Link href="/calendar">
-                <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-5 h-10 text-sm md:text-base">
-                  Book a demo
-                </Button>
-              </Link>
-            </div>
-          </section>
+          {/* Removed final CTA as requested */}
         </article>
       </main>
 

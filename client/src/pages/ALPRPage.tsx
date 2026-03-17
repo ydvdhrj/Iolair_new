@@ -142,6 +142,14 @@ function ALPRProductsSlider() {
     setIndex((i) => (i - 1 + ALPR_PRODUCT_SLIDES.length) % ALPR_PRODUCT_SLIDES.length);
   };
 
+  // Auto-advance every 5 seconds
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % ALPR_PRODUCT_SLIDES.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative py-14 md:py-20 section-soft overflow-hidden" data-section="products">
       <div className="relative w-full max-w-6xl mx-auto px-4 md:px-6">

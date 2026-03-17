@@ -7,7 +7,7 @@ import { AutoplayVideoWithPlayPause } from "@/components/AutoplayVideoWithPlayPa
 import { Button } from "@/components/ui/button";
 import adtechHeroImg from "../../../attached_assets/AdTechBanner.jpg";
 import keyBenefitsImg from "../../../attached_assets/adtech-key-benefits.png";
-import adtechPlatformImg from "@assets/adtech-platform.jpg";
+import retailBillboardImg from "../../../attached_assets/SCAN HERE (1).jpg.jpeg";
 import loyaltyOffersImg from "@assets/Loyalty-Offers.jpg";
 import edgeApplicationsImg from "@assets/adtechedge-application.jpg";
 import dynamicAttributionImg from "@assets/DynamicAttribution.jpg";
@@ -16,6 +16,8 @@ import virginiaLicensePlateImg from "@assets/virginia-license-plate.png";
 import alprPlatformVideo from "@/assets/alpr-platform.mp4";
 import unifiedDashboardVideo from "@/assets/unified-dashboard.mp4";
 import layerSecurityVideo from "@/assets/layer-security.mp4";
+
+const adtechPlatformImg = retailBillboardImg;
 
 const ADTECH_PRODUCT_SLIDES = [
   {
@@ -72,6 +74,14 @@ function AdTechProductsSlider() {
     setIndex((i) => (i - 1 + ADTECH_PRODUCT_SLIDES.length) % ADTECH_PRODUCT_SLIDES.length);
   };
 
+  // Auto-advance every 5 seconds
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % ADTECH_PRODUCT_SLIDES.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section
       className="relative pt-14 md:pt-20 pb-14 md:pb-20 bg-background overflow-hidden"
@@ -85,7 +95,9 @@ function AdTechProductsSlider() {
                 <img
                   src={slide.media.src}
                   alt=""
-                  className="w-full h-full object-cover object-top"
+                  className={`w-full h-full object-cover object-top ${
+                    slide.id === "layered-security" ? "transform scale-[1.02]" : ""
+                  }`}
                 />
               </div>
             </div>
@@ -289,7 +301,7 @@ export default function AdTechPage() {
                 <img
                   src={keyBenefitsImg}
                   alt="Illustration of AdTech key benefits"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover transform scale-[1.05]"
                 />
               </div>
             </div>
@@ -483,7 +495,7 @@ export default function AdTechPage() {
                 <img
                   src={layeredSecurityImg}
                   alt="Layered Security & Privacy"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transform scale-[1.05]"
                 />
               </div>
             </div>

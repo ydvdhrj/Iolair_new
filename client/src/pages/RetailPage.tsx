@@ -36,6 +36,18 @@ export default function RetailPage() {
                     respecting their right to privacy, has become one of the
                     industry's greatest challenges.
                   </p>
+
+                  {/* Mobile: image directly after first paragraph */}
+                  <div className="md:hidden w-full flex justify-center">
+                    <div className="relative w-full max-w-[380px] rounded-2xl overflow-hidden shadow-sm mt-2">
+                      <img
+                        src={retailBannerImg}
+                        alt="Retail"
+                        className="w-full h-full object-cover object-left"
+                      />
+                    </div>
+                  </div>
+
                   <p>
                     At Iolaire.AI, we tackle this critical challenge by combining Vision
                     AI and shopper data sets along with precision ads tailored to real
@@ -43,7 +55,8 @@ export default function RetailPage() {
                     transactions, and delivers delight in the moments that matter most.
                   </p>
                 </div>
-                <div className="w-full flex justify-center md:justify-end h-full">
+                {/* Desktop / tablet: image in second column */}
+                <div className="hidden md:flex w-full justify-end h-full">
                   <div className="relative w-full max-w-[380px] h-full rounded-2xl overflow-hidden shadow-sm">
                     <img
                       src={retailBannerImg}

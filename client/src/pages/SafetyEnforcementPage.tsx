@@ -31,7 +31,7 @@ export default function SafetyEnforcementPage() {
             </div>
             <div className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
-                <div className="flex items-center">
+                <div className="flex flex-col justify-center space-y-6">
                   <p>
                     Keeping a community safe across age groups, lifestyles, and vulnerabilities
                     presents complex and evolving challenges for the public safety and traffic
@@ -41,8 +41,20 @@ export default function SafetyEnforcementPage() {
                     consistent situational awareness and taking timely action before potential
                     threats escalate becomes increasingly difficult.
                   </p>
+
+                  {/* Mobile: image directly after first paragraph */}
+                  <div className="md:hidden w-full flex justify-center">
+                    <div className="relative w-full max-w-[380px] rounded-2xl overflow-hidden shadow-sm mt-2">
+                      <img
+                        src={safetyEnforcementBannerImg}
+                        alt="Safety enforcement"
+                        className="w-full h-full object-cover object-left"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="w-full flex justify-center md:justify-end h-full">
+                {/* Desktop / tablet: image in second column */}
+                <div className="hidden md:flex w-full justify-end h-full">
                   <div className="relative w-full max-w-[380px] h-full rounded-2xl overflow-hidden shadow-sm">
                     <img
                       src={safetyEnforcementBannerImg}
