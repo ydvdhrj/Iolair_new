@@ -175,11 +175,14 @@ export default function AdTechPage() {
           className="w-full relative overflow-hidden bg-white pb-0 md:pb-0"
           aria-label="AdTech Platform hero"
         >
+          {/* Background image */}
           <div
-            className="relative w-full max-h-[85vh] min-h-[400px] bg-cover bg-center bg-no-repeat"
+            className="relative w-full max-h-[85vh] min-h-[320px] md:min-h-[400px] bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${adtechHeroImg})`, aspectRatio: "1920 / 810" }}
           />
-          <div className="absolute inset-0 flex items-start justify-start">
+
+          {/* Desktop / tablet: overlay card on top of image */}
+          <div className="hidden md:block absolute inset-0">
             <div className="mx-auto w-full pl-4 pr-4 pt-4 md:pl-10 md:pr-0 md:pt-6 lg:pl-16 lg:pr-0 lg:pt-8">
               <div className="inline-flex max-w-xl bg-black/35 text-primary-foreground rounded-2xl px-5 py-4 md:px-8 md:py-6 shadow-xl">
                 <div className="space-y-2 md:space-y-3">
@@ -193,6 +196,23 @@ export default function AdTechPage() {
                     Transform retail advertising with our edge based AI advertising platform, delivering hyper personalized, real time campaigns that reach shoppers at the right moment.
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile: card below image instead of overlay */}
+          <div className="md:hidden px-4 pb-6 pt-4">
+            <div className="max-w-xl mx-auto bg-black/75 text-primary-foreground rounded-2xl px-4 py-4 shadow-xl">
+              <div className="space-y-2">
+                <h1 className="text-2xl font-heading font-bold leading-tight">
+                  AdTech Platform
+                </h1>
+                <p className="text-base font-semibold leading-snug">
+                  Real-Time Impact. Realized.
+                </p>
+                <p className="text-sm leading-relaxed">
+                  Transform retail advertising with our edge based AI advertising platform, delivering hyper personalized, real time campaigns that reach shoppers at the right moment.
+                </p>
               </div>
             </div>
           </div>

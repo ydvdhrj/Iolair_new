@@ -27,7 +27,7 @@ export default function AdtechWhitepaperPage() {
             </Link>
             <a href="/pdfs/whitepaper-adtech.pdf" target="_blank" rel="noreferrer">
               <Button size="sm" className="rounded-full">
-                Download PDF
+                Calculate your ROI
               </Button>
             </a>
           </div>

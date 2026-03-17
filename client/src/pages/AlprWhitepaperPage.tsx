@@ -27,7 +27,7 @@ export default function AlprWhitepaperPage() {
             </Link>
             <a href="/pdfs/whitepaper-alpr.pdf" target="_blank" rel="noreferrer">
               <Button size="sm" className="rounded-full">
-                Download PDF
+                Calculate your ROI
               </Button>
             </a>
           </div>

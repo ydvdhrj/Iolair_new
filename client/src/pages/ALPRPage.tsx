@@ -262,17 +262,16 @@ export default function ALPRPage() {
           aria-label="Vision AI demo"
         >
           <div
-            className="demo-image-section__inner relative w-full max-h-[85vh] min-h-[400px]"
+            className="demo-image-section__inner relative w-full max-h-[85vh]"
             style={{ aspectRatio: "1920 / 810" }}
           >
             <div
               className="demo-image-section__bg absolute inset-0 bg-cover bg-center bg-no-repeat bg-[#0b1220]"
               style={{ backgroundImage: `url(${heroBannerImg})` }}
             />
-            {/* Hide overlay and card on small screens; show only hero image */}
             <div
               id="vehicle-detection-overlay"
-              className="vehicle-detection-overlay absolute inset-0 pointer-events-none z-[1] hidden md:block"
+              className="vehicle-detection-overlay absolute inset-0 pointer-events-none z-[1]"
               aria-hidden
             >
               {currentVehicle && (
@@ -283,6 +282,7 @@ export default function ALPRPage() {
                     top: `${currentVehicle.box.top * 100}%`,
                     width: "6%",
                     height: "4%",
+                    borderWidth: "1px",
                   }}
                   aria-hidden
                 />
@@ -342,6 +342,68 @@ export default function ALPRPage() {
                         {currentVehicle?.confidence ?? "--"}
                       </span>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mobile ANPR card below hero image */}
+        <section className="md:hidden px-4 pt-4 pb-6 section-soft">
+          <div className="max-w-md mx-auto">
+            <div
+              id="anpr-card-mobile"
+              className="vehicle-detection-card w-full rounded-xl bg-black/80 text-white border border-white/15 shadow-2xl p-4"
+            >
+              <div className={`vehicle-card-top space-y-4 ${cardUpdating ? "is-updating" : ""}`}>
+                <div className="flex items-start justify-between gap-4">
+                  <div className="vehicle-card-left">
+                    <div className="license-plate-display inline-block rounded bg-primary px-3 py-1.5">
+                      <div className="plate-number js-plate-number text-primary-foreground font-bold text-lg tracking-wide">
+                        {currentVehicle?.fallbackPlate ?? "--"}
+                      </div>
+                      <div className="plate-region js-plate-region text-primary-foreground/80 text-sm">
+                        {currentVehicle?.region ?? "--"}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="anpr-inline">
+                    <span className="anpr-status inline-flex items-center px-2.5 py-1 rounded-full bg-success/20 text-success text-sm font-medium js-anpr-status">
+                      {cardUpdating ? "Detecting..." : "Plate Detected"}
+                    </span>
+                  </div>
+                </div>
+                <div className="vehicle-details-compact space-y-2 text-sm">
+                  <div className="detail-line flex justify-between gap-2">
+                    <span className="detail-label text-muted-foreground">Vehicle Model:</span>
+                    <span className="detail-value js-vehicle-model font-medium">
+                      {currentVehicle?.model ?? "--"}
+                    </span>
+                  </div>
+                  <div className="detail-line flex justify-between gap-2">
+                    <span className="detail-label text-muted-foreground">Vehicle Make:</span>
+                    <span className="detail-value js-vehicle-make font-medium">
+                      {currentVehicle?.make ?? "--"}
+                    </span>
+                  </div>
+                  <div className="detail-line flex justify-between gap-2">
+                    <span className="detail-label text-muted-foreground">Vehicle Color:</span>
+                    <span className="detail-value js-vehicle-color font-medium">
+                      {currentVehicle?.color ?? "--"}
+                    </span>
+                  </div>
+                  <div className="detail-line flex justify-between gap-2">
+                    <span className="detail-label text-muted-foreground">Direction:</span>
+                    <span className="detail-value js-vehicle-direction font-medium">
+                      {currentVehicle?.direction ?? "--"}
+                    </span>
+                  </div>
+                  <div className="detail-line flex justify-between gap-2">
+                    <span className="detail-label text-muted-foreground">Confidence:</span>
+                    <span className="detail-value js-vehicle-confidence font-medium">
+                      {currentVehicle?.confidence ?? "--"}
+                    </span>
                   </div>
                 </div>
               </div>

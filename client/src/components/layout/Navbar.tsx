@@ -185,42 +185,42 @@ export function Navbar() {
         <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-4 flex flex-col gap-4 animate-in slide-in-from-top-5 max-h-[calc(100vh-4rem)] overflow-y-auto">
           {navItems.map((item) => (
             <div key={item.name} className="flex flex-col gap-1.5">
-              <span className="text-sm font-bold text-muted-foreground uppercase tracking-widest px-2">{item.name}</span>
+              <span className="text-xs font-bold text-muted-foreground uppercase tracking-[0.18em] px-2">{item.name}</span>
               {item.name === "PRODUCTS" ? (
                 <div className="flex flex-col gap-1.5">
-                  <span className="text-xs font-semibold text-primary uppercase tracking-[0.18em] px-3 mt-1">
+                  <span className="text-[0.65rem] font-semibold text-primary uppercase tracking-[0.2em] px-3 mt-1">
                     AdTech Platform
                   </span>
                   <Link href="/adtech">
-                    <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">
+                    <a className="text-base text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-1.5 rounded-lg transition-all duration-200">
                       Overview
                     </a>
                   </Link>
                   <Link href="/adtech/loyalty-offers">
-                    <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">
+                    <a className="text-base text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-1.5 rounded-lg transition-all duration-200">
                       Loyalty &amp; Offers
                     </a>
                   </Link>
-                  <span className="text-xs font-semibold text-primary uppercase tracking-[0.18em] px-3 mt-3">
+                  <span className="text-[0.65rem] font-semibold text-primary uppercase tracking-[0.2em] px-3 mt-3">
                     ALPR Platform
                   </span>
                   <Link href="/alpr">
-                    <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">
+                    <a className="text-base text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-1.5 rounded-lg transition-all duration-200">
                       Overview
                     </a>
                   </Link>
                   <Link href="/alpr/unified-dashboard">
-                    <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">
+                    <a className="text-base text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-1.5 rounded-lg transition-all duration-200">
                       Unified Dashboard
                     </a>
                   </Link>
                   <Link href="/alpr/layered-security-privacy">
-                    <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">
+                    <a className="text-base text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-1.5 rounded-lg transition-all duration-200">
                       Layered Security &amp; Privacy
                     </a>
                   </Link>
                   <Link href="/alpr/edge-applications">
-                    <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">
+                    <a className="text-base text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-1.5 rounded-lg transition-all duration-200">
                       Edge Applications
                     </a>
                   </Link>
@@ -228,7 +228,7 @@ export function Navbar() {
               ) : (
                 item.options.map((opt) => (
                   <Link key={opt.path} href={opt.path}>
-                    <a className="text-lg text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-2 rounded-lg transition-all duration-200">
+                    <a className="text-base text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-1.5 rounded-lg transition-all duration-200">
                       {opt.label}
                     </a>
                   </Link>

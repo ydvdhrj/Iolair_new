@@ -61,22 +61,46 @@ export default function AlprBlogPage() {
               Key Challenges Safety Enforcement Leaders Face when Evaluating Safety Enforcement
               Platforms
             </h3>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>
-                Technologies that are perceived as excessive or intrusive can reduce compliance,
-                invite resistance, and weaken the effectiveness of enforcement programs.
+            <ul className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed list-none">
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Technologies that are perceived as excessive or intrusive can reduce compliance,
+                  invite resistance, and weaken the effectiveness of enforcement programs.
+                </span>
               </li>
-              <li>
-                Solutions that collect more personal data than is operationally necessary increase
-                legal exposure and public concern.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Solutions that collect more personal data than is operationally necessary increase
+                  legal exposure and public concern.
+                </span>
               </li>
-              <li>
-                Unclear alignment to data deletion compliance regulations – agencies face
-                increased risk during audits, legal challenges, and policy reviews.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Unclear alignment to data deletion compliance regulations – agencies face
+                  increased risk during audits, legal challenges, and policy reviews.
+                </span>
               </li>
-              <li>
-                Weak role-based access, limited audit trails, and unclear usage policies expose
-                agencies to misuse risk and undermine overall confidence in the system.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Weak role-based access, limited audit trails, and unclear usage policies expose
+                  agencies to misuse risk and undermine overall confidence in the system.
+                </span>
               </li>
             </ul>
           </section>
@@ -111,24 +135,58 @@ export default function AlprBlogPage() {
               secure analysis in real time. Below are more check points that ensure reliable and
               privacy first public safety enforcement technology:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>
-                Technology compliant with federal, state, and local data regulations.
+            <ul className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed list-none">
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>Technology compliant with federal, state, and local data regulations.</span>
               </li>
-              <li>
-                Information retained only as long as it is justified for operational and
-                legitimate investigative purposes.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Information retained only as long as it is justified for operational and
+                  legitimate investigative purposes.
+                </span>
               </li>
-              <li>
-                Another layer of security includes data verification, transmission, and storage
-                using strong encryption.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Another layer of security includes data verification, transmission, and storage
+                  using strong encryption.
+                </span>
               </li>
-              <li>
-                Strict access controls aligned to enforcement workflows to ensure sensitive
-                information is protected at every stage.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Strict access controls aligned to enforcement workflows to ensure sensitive
+                  information is protected at every stage.
+                </span>
               </li>
-              <li>Edge-based processing limits centralized data accumulation.</li>
-              <li>Built in policy controls and audit readiness.</li>
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>Edge-based processing limits centralized data accumulation.</span>
+              </li>
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>Built in policy controls and audit readiness.</span>
+              </li>
             </ul>
             <p>
               Separating enforcement intelligence from direct identity exposure further reduces
@@ -177,17 +235,33 @@ export default function AlprBlogPage() {
               their ability to operate effectively over time.
             </p>
             <p>Public oversight expectations have shifted significantly:</p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>
-                Citizens no longer view safety and accountability as tradeoffs, they expect both.
+            <ul className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed list-none">
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  Citizens no longer view safety and accountability as tradeoffs, they expect both.
+                </span>
               </li>
-              <li>
-                Enforcement technologies are becoming more visible, scrutinized closely.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>Enforcement technologies are becoming more visible, scrutinized closely.</span>
               </li>
-              <li>
-                When privacy trust values and surveillance ethical issues cannot be balanced,
-                explained or verified, they quickly become public controversies, drawing legal,
-                political, and media attention.
+              <li className="flex gap-3 items-start">
+                <span
+                  className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]"
+                  aria-hidden
+                />
+                <span>
+                  When privacy trust values and surveillance ethical issues cannot be balanced,
+                  explained or verified, they quickly become public controversies, drawing legal,
+                  political, and media attention.
+                </span>
               </li>
             </ul>
           </section>
