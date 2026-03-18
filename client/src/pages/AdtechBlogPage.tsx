@@ -48,12 +48,12 @@ export default function AdtechBlogPage() {
             <div className="rounded-2xl bg-primary/5 border border-primary/30 px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
                 <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em] mb-1">
-                  Deliver Real Time Personalized Campaigns that
+                  Deliver Real Time Personalized Campaigns that Drive ROI
                 </p>
               </div>
               <Link href="/calendar">
                 <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-5 h-11 text-xs md:text-sm leading-snug text-center">
-                Drive ROI
+                Know more
                 </Button>
               </Link>
             </div>
