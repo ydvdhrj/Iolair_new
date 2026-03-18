@@ -144,7 +144,7 @@ function SeeTheResultsCarousel() {
                   }
                   className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute bottom-4 right-4 bg-white/70 text-foreground text-[1.2rem] sm:text-[1.35rem] md:text-[1.5rem] px-5 py-2 rounded-full backdrop-blur-sm shadow-md flex items-center gap-1.5">
+                <div className="absolute bottom-4 right-4 bg-white/100 text-foreground text-[1.2rem] sm:text-[1.35rem] md:text-[1.5rem] px-5 py-2 rounded-full backdrop-blur-sm shadow-md flex items-center gap-1.5 border border-white/70">
                   <span>{i === 0 ? "AdTech" : "ALPR"}</span>
                   <span className="text-gradient font-semibold">Platform</span>
                 </div>
@@ -153,11 +153,11 @@ function SeeTheResultsCarousel() {
           </div>
 
           {/* Manual controls */}
-          <div className="absolute inset-0 flex items-center justify-end px-4 z-20">
+          <div className="absolute inset-0 flex items-center justify-end px-4 z-20 pointer-events-none">
             <button
               type="button"
               onClick={goToNext}
-              className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-background/80 text-foreground shadow-md hover:bg-background"
+              className="pointer-events-auto inline-flex items-center justify-center h-10 w-10 rounded-full bg-background/80 text-foreground shadow-md hover:bg-background"
               aria-label="Next slide"
             >
               <ChevronRight className="h-5 w-5" />
@@ -173,15 +173,16 @@ function SeeTheResultsCarousel() {
                   <br />
                   for yourself
                 </h2>
-                <Link href="/calendar">
-                  <Button
-                    size="sm"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full w-full sm:w-auto h-10 text-sm md:h-12 md:text-base"
-                  >
+                <Button
+                  asChild
+                  size="sm"
+                  className="bg-primary hover:bg-primary/90 text-white font-extrabold rounded-full w-full sm:w-auto h-10 text-sm md:h-12 md:text-base ring-1 ring-white/20 [text-shadow:0_1px_2px_rgba(0,0,0,0.45)]"
+                >
+                  <Link href="/calendar">
                     Book an appointment{" "}
                     <Calendar className="ml-2 h-3 w-3 md:h-4 md:w-4" />
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -203,7 +204,7 @@ export default function Home() {
       <section className="relative min-h-screen flex flex-col justify-center pt-24 md:pt-28 pb-14 md:pb-20 overflow-hidden hero-pattern">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/15 rounded-full blur-[140px] -z-10 opacity-60" />
         <div className="absolute top-1/4 right-0 w-[500px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10 opacity-40" />
-        <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-0 flex-1">
+        <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-12 items-center relative z-0 flex-1">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -231,9 +232,9 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative w-full max-w-[800px] mx-auto aspect-[4.7/3]"
+            className="relative w-full lg:max-w-none mx-auto aspect-[8/5]"
           >
-            <div className="relative w-full h-full rounded-2xl overflow-hidden border border-border/60 shadow-2xl shadow-primary/10">
+            <div className="relative w-full h-full rounded-2xl overflow-hidden border border-border/60 shadow-2xl shadow-primary/10 lg:scale-[1.05] lg:origin-center">
               <img
                 src={heroPageImg}
                 alt="IOLAIRE.AI Hero"

@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import adtechWhitepaperPdf from "../../../attached_assets/pdfs/17032026_Whitepaper_AdTech.pdf";
 
 export default function AdtechWhitepaperPage() {
   return (
@@ -25,7 +26,7 @@ export default function AdtechWhitepaperPage() {
                 ← Back to AdTech Resources
               </Button>
             </Link>
-            <a href="/pdfs/whitepaper-adtech.pdf" target="_blank" rel="noreferrer">
+            <a href={"/calendar"} target="_blank" rel="noreferrer">
               <Button size="sm" className="rounded-full">
                 Calculate your ROI
               </Button>
@@ -34,7 +35,7 @@ export default function AdtechWhitepaperPage() {
 
           <div className="mt-4 rounded-2xl border border-border bg-card overflow-hidden">
             <iframe
-              src="/pdfs/whitepaper-adtech.pdf"
+              src={adtechWhitepaperPdf}
               title="AdTech Whitepaper"
               className="w-full h-[70vh]"
             />

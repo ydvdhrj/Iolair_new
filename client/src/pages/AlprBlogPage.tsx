@@ -108,11 +108,11 @@ export default function AlprBlogPage() {
           <section className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
             <div className="rounded-2xl bg-primary/5 border border-primary/30 px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em]">
-                Get a demo
+                Explore a Privacy First Safety Enforcement Platform
               </p>
               <Link href="/calendar">
                 <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-5 h-10 text-sm md:text-base">
-                  Explore a Privacy First Safety Enforcement Platform
+                Get a demo
                 </Button>
               </Link>
             </div>
@@ -194,12 +194,12 @@ export default function AlprBlogPage() {
             <div className="rounded-2xl bg-primary/5 border border-primary/30 px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
                 <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em] mb-1">
-                  Learn more
+                  Discover Secure AI Powered ALPR Platform
                 </p>
               </div>
               <Link href="/alpr">
                 <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-5 h-10 text-sm md:text-base">
-                  Discover Secure AI Powered ALPR Platform
+                Learn more
                 </Button>
               </Link>
             </div>
@@ -257,12 +257,12 @@ export default function AlprBlogPage() {
             <div className="rounded-2xl bg-primary/5 border border-primary/30 px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
                 <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em] mb-1">
-                  Whitepaper
+                  Deep Dive into A Responsible Blueprint for Creating Safety Enforcement
                 </p>
               </div>
               <Link href="/whitepaper/alpr">
                 <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-5 h-10 text-sm md:text-base text-center">
-                  Deep Dive into A Responsible Blueprint for Creating Safety Enforcement
+                Whitepaper
                 </Button>
               </Link>
             </div>

@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import alprWhitepaperPdf from "../../../attached_assets/pdfs/1703026_Whitepaper_Safety_Enforcement.pdf";
 
 export default function AlprWhitepaperPage() {
   return (
@@ -25,7 +26,7 @@ export default function AlprWhitepaperPage() {
                 ← Back to ALPR Resources
               </Button>
             </Link>
-            <a href="/pdfs/whitepaper-alpr.pdf" target="_blank" rel="noreferrer">
+            <a href={"/calendar"} target="_blank" rel="noreferrer">
               <Button size="sm" className="rounded-full">
                 Calculate your ROI
               </Button>
@@ -34,7 +35,7 @@ export default function AlprWhitepaperPage() {
 
           <div className="mt-4 rounded-2xl border border-border bg-card overflow-hidden">
             <iframe
-              src="/pdfs/whitepaper-alpr.pdf"
+              src={alprWhitepaperPdf}
               title="ALPR Whitepaper"
               className="w-full h-[70vh]"
             />
