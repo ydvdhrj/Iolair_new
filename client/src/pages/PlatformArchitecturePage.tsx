@@ -12,8 +12,8 @@ export default function PlatformArchitecturePage() {
 
       <main className="pt-24 md:pt-28 pb-20 md:pb-24">
         {/* Hero / Intro */}
-        <section className="section-soft border-b border-border/60">
-          <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] gap-10 lg:gap-16 items-center">
+        <section className="section-soft border-b border-border/60 pb-14 md:pb-20">
+          <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-start">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -55,6 +55,7 @@ export default function PlatformArchitecturePage() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.05 }}
+              className="lg:mt-12"
             >
               <div className="rounded-2xl border border-border/60 bg-card/80 backdrop-blur-sm p-6 md:p-7 space-y-4 shadow-lg shadow-primary/5">
                 <h2 className="text-lg md:text-xl font-heading font-semibold mb-1">
@@ -119,6 +120,7 @@ export default function PlatformArchitecturePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.4, delay: 0.05 }}
+              className="lg:mt-1"
             >
               <div className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm p-6 md:p-7 space-y-5">
                 <h3 className="text-lg md:text-xl font-heading font-semibold">
@@ -260,15 +262,10 @@ export default function PlatformArchitecturePage() {
                 Schedule time with our team to walk through deployment models, integrations, and
                 how the platform can be tailored to your environment.
               </p>
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className="flex justify-center">
                 <Link href="/calendar">
                   <Button size="lg" className="rounded-full">
                     Book a discovery session
-                  </Button>
-                </Link>
-                <Link href="/">
-                  <Button variant="outline" size="lg" className="rounded-full">
-                    Return to homepage
                   </Button>
                 </Link>
               </div>

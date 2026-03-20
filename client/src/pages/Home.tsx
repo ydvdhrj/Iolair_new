@@ -620,7 +620,7 @@ export default function Home() {
               </div>
 
               {/* Additional Platform Features below Edge Applications */}
-              <div className="pt-2 space-y-3">
+              <div className="space-y-3">
                 <div className="flex items-center justify-center text-base font-heading font-bold text-foreground">
                   Additional Platform Features
                 </div>

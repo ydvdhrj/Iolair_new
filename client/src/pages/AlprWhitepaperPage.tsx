@@ -34,11 +34,15 @@ export default function AlprWhitepaperPage() {
           </div>
 
           <div className="mt-4 rounded-2xl border border-border bg-card overflow-hidden">
-            <iframe
-              src={alprWhitepaperPdf}
-              title="ALPR Whitepaper"
+            <object
+              data={alprWhitepaperPdf}
+              type="application/pdf"
               className="w-full h-[70vh]"
-            />
+            >
+              <a href={alprWhitepaperPdf} target="_blank" rel="noreferrer">
+                Open PDF in new tab
+              </a>
+            </object>
           </div>
         </section>
       </main>

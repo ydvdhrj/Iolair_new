@@ -157,7 +157,13 @@ function ALPRProductsSlider() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-14 p-6 md:p-10 lg:p-12 items-center">
             <div className="relative">
               {slide.media.type === "video" ? (
-                <AutoplayVideoWithPlayPause key={slide.id} src={slide.media.src} />
+                <AutoplayVideoWithPlayPause
+                  key={slide.id}
+                  src={slide.media.src}
+                  videoClassName={
+                    slide.id === "unified-dashboard" ? "object-[50%_0%]" : undefined
+                  }
+                />
               ) : slide.media.type === "image" ? (
                 <div className="relative aspect-video rounded-xl overflow-hidden bg-foreground/10">
                   <img
@@ -543,7 +549,10 @@ export default function ALPRPage() {
             {/* 2. Unified Dashboard: video left, text right */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div className="order-2 lg:order-1">
-                <AutoplayVideoWithPlayPause src={unifiedDashboardVideo} />
+                <AutoplayVideoWithPlayPause
+                  src={unifiedDashboardVideo}
+                  videoClassName="object-[50%_0%]"
+                />
               </div>
               <div className="order-1 lg:order-2">
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">

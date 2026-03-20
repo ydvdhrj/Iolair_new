@@ -6,12 +6,14 @@ type AutoplayVideoWithPlayPauseProps = {
   src: string;
   className?: string;
   poster?: string;
+  videoClassName?: string;
 };
 
 export function AutoplayVideoWithPlayPause({
   src,
   className,
   poster,
+  videoClassName,
 }: AutoplayVideoWithPlayPauseProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -48,7 +50,7 @@ export function AutoplayVideoWithPlayPause({
         muted
         playsInline
         loop
-        className="w-full h-full object-cover object-center"
+        className={cn("w-full h-full object-cover object-center", videoClassName)}
         onClick={toggle}
         aria-label="Video"
       />

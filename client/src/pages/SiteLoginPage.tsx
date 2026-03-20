@@ -1,8 +1,7 @@
 import { FormEvent, useState } from "react";
 import { useLocation } from "wouter";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import logoNew from "@assets/iolaire-logo.png";
 
 const STATIC_ID = "iolaire.ai";
 const STATIC_PASSWORD = "Gatpesauden12!@";
@@ -32,12 +31,16 @@ export default function SiteLoginPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans">
-      <Navbar />
-
-      <main className="pt-20 md:pt-24 pb-16">
-        <section className="container mx-auto px-4 md:px-6 flex justify-center">
+      <main className="min-h-screen flex items-center justify-center px-4 md:px-6">
           <div className="w-full max-w-md">
             <div className="rounded-3xl bg-card shadow-2xl border border-border px-6 py-8 md:px-8 md:py-9">
+              <div className="flex justify-center mb-4">
+                <img
+                  src={logoNew}
+                  alt="Iolaire"
+                  className="h-10 w-auto"
+                />
+              </div>
               <h1 className="text-2xl md:text-3xl font-heading font-bold text-center mb-2">
                 Login to Continue
               </h1>
@@ -97,10 +100,7 @@ export default function SiteLoginPage() {
               </form>
             </div>
           </div>
-        </section>
       </main>
-
-      <Footer />
     </div>
   );
 }

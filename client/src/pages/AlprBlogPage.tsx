@@ -194,7 +194,7 @@ export default function AlprBlogPage() {
             <div className="rounded-2xl bg-primary/5 border border-primary/30 px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
                 <p className="text-sm font-semibold text-primary uppercase tracking-[0.18em] mb-1">
-                  Discover Secure AI Powered ALPR Platform
+                  Discover Our Secure AI Powered ALPR Platform
                 </p>
               </div>
               <Link href="/alpr">
