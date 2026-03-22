@@ -591,7 +591,7 @@ export default function ALPRPage() {
                 <div className="h-1 w-16 rounded-full bg-primary mb-6" />
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    At IOLAIRE.AI, we recognize that safeguarding resident privacy is
+                    At iolaire.ai, we recognize that safeguarding resident privacy is
                     essential to maintaining public trust. For this reason, we apply
                     strict data protection standards and ensure that all information is
                     handled responsibly and transparently.

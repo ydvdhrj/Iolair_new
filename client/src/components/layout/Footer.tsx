@@ -136,7 +136,7 @@ export function Footer() {
               <div className="h-10 w-auto rounded-md bg-card flex items-center justify-center px-2 py-1">
                 <img
                   src={logoNew}
-                  alt="IOLAIRE.AI"
+                  alt="iolaire.ai"
                   className="h-8 w-auto object-contain"
                 />
               </div>
@@ -185,64 +185,70 @@ export function Footer() {
 
         {/* Row 3: Copyright + legal links */}
         <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-sans">
-          <p className="text-muted-foreground font-sans">© 2026 IOLAIRE.AI</p>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-primary font-sans">
-            <div className="flex items-center gap-2">
+          <p className="text-muted-foreground font-sans">© 2026 iolaire.ai</p>
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-5 gap-y-2 text-primary font-sans">
+            <div className="flex h-10 items-center gap-2 shrink-0">
               <Link href="/terms-of-service">
-                <a className="inline-flex items-center gap-1.5 hover:underline">
-                  <FileText className="h-4 w-4" />
+                <a className="inline-flex h-10 items-center gap-1.5 hover:underline">
+                  <FileText className="h-4 w-4 shrink-0" />
                   Terms of Service
                 </a>
               </Link>
               <a
                 href="/pdfs/terms-of-service.pdf"
                 download
-                className="inline-flex items-center justify-center px-2 py-1 border border-primary/40 rounded-full hover:bg-primary/10"
+                className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-primary/40 hover:bg-primary/10"
+                aria-label="Download Terms of Service (PDF)"
               >
                 <img
                   src={pdfIcon}
-                  alt="Download Terms of Service (PDF)"
+                  alt=""
                   className="h-4 w-4 object-contain"
                 />
               </a>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex h-10 items-center gap-2 shrink-0">
               <Link href="/privacy-policy">
-                <a className="inline-flex items-center gap-1.5 hover:underline">
-                  <FileText className="h-4 w-4" />
+                <a className="inline-flex h-10 items-center gap-1.5 hover:underline">
+                  <FileText className="h-4 w-4 shrink-0" />
                   Privacy Policy
                 </a>
               </Link>
               <a
                 href="/pdfs/privacy-policy.pdf"
                 download
-                className="inline-flex items-center justify-center px-2 py-1 border border-primary/40 rounded-full hover:bg-primary/10"
+                className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-primary/40 hover:bg-primary/10"
+                aria-label="Download Privacy Policy (PDF)"
               >
                 <img
                   src={pdfIcon}
-                  alt="Download Privacy Policy (PDF)"
+                  alt=""
                   className="h-4 w-4 object-contain"
                 />
               </a>
             </div>
-            <Link href="/privacy-settings">
-              <a className="inline-flex items-center gap-1.5 hover:underline">
-                <Settings className="h-4 w-4" />
-                Privacy Settings
-              </a>
-            </Link>
-            <button
-              type="button"
-              onClick={() => {
-                if (typeof window !== "undefined") {
-                  window.dispatchEvent(new Event("open-cookie-settings"));
-                }
-              }}
-              className="inline-flex items-center gap-1.5 hover:underline text-primary"
-            >
-              <Cookie className="h-4 w-4" />
-              Manage Cookies
-            </button>
+            <div className="flex h-10 items-center shrink-0">
+              <Link href="/privacy-settings">
+                <a className="inline-flex h-10 items-center gap-1.5 hover:underline">
+                  <Settings className="h-4 w-4 shrink-0" />
+                  Privacy Settings
+                </a>
+              </Link>
+            </div>
+            <div className="flex h-10 items-center shrink-0">
+              <button
+                type="button"
+                onClick={() => {
+                  if (typeof window !== "undefined") {
+                    window.dispatchEvent(new Event("open-cookie-settings"));
+                  }
+                }}
+                className="inline-flex h-10 items-center gap-1.5 text-primary hover:underline"
+              >
+                <Cookie className="h-4 w-4 shrink-0" />
+                Manage Cookies
+              </button>
+            </div>
           </div>
         </div>
       </div>
