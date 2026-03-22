@@ -21,12 +21,12 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { VisionAIFeatureTracks } from "@/components/VisionAIFeatureTracks";
 
-import heroPageImg from "@assets/home-hero-street.png";
-import retailHeroImg from "@assets/retail-hero.png";
+import heroPageImg from "@assets/HeroPage2.png";
+import retailHeroImg from "@assets/1 (1).png";
 import safetyTeamImg from "@assets/safety-enforcement-team.png";
 import seeResultsHighwayImg from "@assets/see-results-highway.png";
 import seeResultsBillboardImg from "@assets/see-results-billboard.png";
-import seeResultsAlprImg from "@assets/see-results-alpr.png";
+import seeResultsAlprImg from "@assets/Imagee.jpg";
 
 import icon5g from "@assets/vision-ai/5g.png";
 import iconApis from "@assets/vision-ai/apis.png";
@@ -140,7 +140,7 @@ function SeeTheResultsCarousel() {
                   alt={
                     i === 0
                       ? "Digital billboard advertising in an urban setting"
-                      : "ALPR system - real-time vehicle detection and alerts"
+                      : "ALPR in a busy city intersection with plate read and vehicle data overlay"
                   }
                   className="w-full h-full object-cover object-center"
                 />
@@ -232,12 +232,12 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative w-full lg:max-w-none mx-auto aspect-[8/5]"
+            className="relative w-full lg:max-w-none mx-auto aspect-[7.9/4.9]"
           >
             <div className="relative w-full h-full rounded-2xl overflow-hidden border border-border/60 shadow-2xl shadow-primary/10 lg:scale-[1.05] lg:origin-center">
               <img
                 src={heroPageImg}
-                alt="IOLAIRE.AI Hero"
+                alt="iolaire.ai Hero"
                 className="w-full h-full object-cover"
               />
             </div>

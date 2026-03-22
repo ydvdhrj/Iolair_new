@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { WhitepaperPdfViewer } from "@/components/WhitepaperPdfViewer";
 import { Link } from "wouter";
 import adtechWhitepaperPdf from "../../../attached_assets/pdfs/17032026_Whitepaper_AdTech.pdf";
 
@@ -33,17 +34,7 @@ export default function AdtechWhitepaperPage() {
             </a>
           </div>
 
-          <div className="mt-4 rounded-2xl border border-border bg-card overflow-hidden">
-            <object
-              data={adtechWhitepaperPdf}
-              type="application/pdf"
-              className="w-full h-[70vh]"
-            >
-              <a href={adtechWhitepaperPdf} target="_blank" rel="noreferrer">
-                Open PDF in new tab
-              </a>
-            </object>
-          </div>
+          <WhitepaperPdfViewer file={adtechWhitepaperPdf} />
         </section>
       </main>
 
