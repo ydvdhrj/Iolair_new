@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -35,48 +35,11 @@ import AdtechWhitepaperPage from "@/pages/AdtechWhitepaperPage";
 import AlprWhitepaperPage from "@/pages/AlprWhitepaperPage";
 
 function Router() {
-  const [location, setLocation] = useLocation();
-  const [isSiteAuthenticated, setIsSiteAuthenticated] = useState<boolean | null>(null);
-
-  // Read site-auth state from localStorage on first load and when custom auth event fires
-  useEffect(() => {
-    const readAuth = () => {
-      try {
-        const stored = window.localStorage.getItem("iolaire-site-auth");
-        setIsSiteAuthenticated(stored === "logged-in");
-      } catch {
-        setIsSiteAuthenticated(false);
-      }
-    };
-
-    readAuth();
-    window.addEventListener("iolaire-site-auth-changed", readAuth);
-
-    return () => {
-      window.removeEventListener("iolaire-site-auth-changed", readAuth);
-    };
-  }, []);
+  const [location] = useLocation();
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [location]);
-
-  // For unauthenticated visitors, always show the simple site login page,
-  // except when they directly open the dedicated client login.
-  useEffect(() => {
-    if (isSiteAuthenticated === null) return;
-
-    if (!isSiteAuthenticated && location !== "/site-login" && location !== "/client-login") {
-      setLocation("/site-login");
-    } else if (isSiteAuthenticated && location === "/site-login") {
-      setLocation("/");
-    }
-  }, [isSiteAuthenticated, location, setLocation]);
-
-  // Avoid rendering routes until we know auth state to prevent flicker
-  if (isSiteAuthenticated === null) {
-    return null;
-  }
 
   return (
     <Switch>

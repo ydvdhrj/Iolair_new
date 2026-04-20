@@ -22,7 +22,7 @@ import { Footer } from "@/components/layout/Footer";
 import { VisionAIFeatureTracks } from "@/components/VisionAIFeatureTracks";
 
 import heroPageImg from "@assets/HeroPage2.png";
-import retailHeroImg from "@assets/1 (1).png";
+import retailHeroImg from "@assets/Retail_Homepage.png";
 import safetyTeamImg from "@assets/safety-enforcement-team.png";
 import seeResultsHighwayImg from "@assets/see-results-highway.png";
 import seeResultsBillboardImg from "@assets/see-results-billboard.png";
